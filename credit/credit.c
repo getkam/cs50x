@@ -15,6 +15,7 @@ int main(void)
     while(number < 0);
 
     bool checksum = verifyCheckSum(number);
+    printf("checksum %d\n", checksum);
 
     if (checksum == true)
     {
@@ -60,7 +61,7 @@ bool verifyCheckSum(long int number)
     int total = sumOfMultiplied + sumOfNOTMultiplied;
 
     printf("total: %i\n", total);
-    
+
     return (total % 10)? true : false;
 }
 
