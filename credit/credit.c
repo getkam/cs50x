@@ -14,14 +14,30 @@ int main(void)
     int mutiplied;
     int sumOfMultiplied;
 
-
-    for(long int remainedNumber = number; remainedNumber > 0;  remainedNumber/10)
+    int index = 1;
+    for(long int remNo = number; remNo > 0;  remNo=remNo/10)
     {
-       int rest = remainedNumber % 10;
+        int rest = remNo % 10;
 
+        if (index%2>0) //not multiplied
+        {
 
-       printf("rest: %i\n", rest);
-       printf("remained number: %li\n", remainedNumber);
+        }
+        else
+        if(index%2==0)//multiplied
+        {
+            mutiplied = rest*2;
+            sumOfDigits = 0;
+            do
+            {
+
+            }while
+
+            sumOfMultiplied = sumOfMultiplied +
+        }
+        index++;
+        printf("rest: %i\n", rest);
+        printf("remained number: %li\n", remNo);
     }
 }
 
