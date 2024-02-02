@@ -60,22 +60,28 @@ string getCardProvider(long int number)
 {
     int index = 1;
     int firstTwoDigits = 0;
+
     for(long int remNo = number; remNo > 10;  remNo=remNo/10)
     {
         firstTwoDigits = remNo;
         index ++;
     }
+
     if(firstTwoDigits == 34 || firstTwoDigits == 37){
         return "AMEX\n"
     }
     else
     if(firstTwoDigits / 10 == 4) {
-
+        return "VISA\n"
     }
     else
     if(firstTwoDigits >= 51 and firstTwoDigits <= 55)
     {
-        return 
+        return "MASTERCARD\n"
+    }
+    else
+    {
+        return "INVALID\n"
     }
 
 
