@@ -11,20 +11,21 @@ int main(void)
     }
     while(number < 0);
 
-    int mutiplied;
-    int sumOfMultiplied;
+    int mutiplied = 0;
+    int sumOfMultiplied = 0;
+    int sumOfNOTMultiplied = 0;
 
     int index = 1;
     for(long int remNo = number; remNo > 0;  remNo=remNo/10)
     {
         int rest = remNo % 10;
 
-        if (index%2>0) //not multiplied
+        if (index % 2 > 0) //not multiplied
         {
-
+            sumOfNOTMultiplied = sumOfNOTMultiplied + rest;
         }
         else
-        if(index%2==0)//multiplied
+        if(index % 2 == 0)//multiplied
         {
             mutiplied = rest*2;
             int sumOfDigits = 0;
@@ -37,10 +38,11 @@ int main(void)
 
             sumOfMultiplied = sumOfMultiplied + sumOfDigits;
         }
-        
+
         index++;
-        printf("rest: %i\n", rest);
-        printf("remained number: %li\n", remNo);
+
+        printf("sum: %i\n", sumOfMultiplied+sumOfNOTMultiplied);
+
     }
 }
 
