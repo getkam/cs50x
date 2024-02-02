@@ -71,11 +71,13 @@ string getCardProvider(long int number)
         legth ++;
     }
 //American Express uses 15-digit numbers, MasterCard uses 16-digit numbers, and Visa uses 13- and 16-digit
-    if((firstTwoDigits == 34 || firstTwoDigits == 37) && legth ==15){
+    if((firstTwoDigits == 34 || firstTwoDigits == 37) && legth ==15)
+    {
         return "AMEX\n";
     }
     else
-    if(firstTwoDigits / 10 == 4 && (legth == 13 || legth == 16)) {
+    if(firstTwoDigits / 10 == 4 && (legth == 13 || legth == 16))
+    {
         return "VISA\n";
     }
     else
