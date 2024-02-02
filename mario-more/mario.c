@@ -24,7 +24,7 @@ int main(void)
         printf("  ");
         printHashes(hashes);
         printf("\n");
-    }
+ cd cre   }
 }
 
 void printSpaces(int number)
