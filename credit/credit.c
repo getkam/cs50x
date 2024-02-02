@@ -70,7 +70,12 @@ string getCardProvider(long int number)
     }
     else
     if(firstTwoDigits / 10 == 4) {
-        
+
+    }
+    else
+    if(firstTwoDigits >= 51 and firstTwoDigits <= 55)
+    {
+        return 
     }
 
 
