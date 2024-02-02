@@ -17,8 +17,7 @@ int main(void)
     //checksum
     bool isCorrect = verifyCheckSum(number);
     string x = getCardProvider(number);
-    printf("is correct?: %d\n", isCorrect);
-
+    printf("%s", x);
 
 }
 
@@ -58,34 +57,29 @@ bool verifyCheckSum(long int number)
 
 string getCardProvider(long int number)
 {
-    int index = 1;
+    int legth = 1;
     int firstTwoDigits = 0;
 
     for(long int remNo = number; remNo > 10;  remNo=remNo/10)
     {
         firstTwoDigits = remNo;
-        index ++;
+        legth ++;
     }
-
-    if(firstTwoDigits == 34 || firstTwoDigits == 37){
-        return "AMEX\n"
-    }
-    else
-    if(firstTwoDigits / 10 == 4) {
-        return "VISA\n"
+//American Express uses 15-digit numbers, MasterCard uses 16-digit numbers, and Visa uses 13- and 16-digit
+    if((firstTwoDigits == 34 || firstTwoDigits == 37) && legth ==15){
+        return "AMEX\n";
     }
     else
-    if(firstTwoDigits >= 51 and firstTwoDigits <= 55)
+    if(firstTwoDigits / 10 == 4 && (legth == 13 || legth == 16)) {
+        return "VISA\n";
+    }
+    else
+    if(firstTwoDigits >= 51 && firstTwoDigits <= 55 && legth == 16)
     {
-        return "MASTERCARD\n"
+        return "MASTERCARD\n";
     }
     else
     {
-        return "INVALID\n"
+        return "INVALID\n";
     }
-
-
-    printf("number of digits:  %i\n", index);
-    printf("firstTwoDigits: %i\n", firstTwoDigits);
-    return "bla bla";
 }
