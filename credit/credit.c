@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 bool verifyCheckSum(long int number);
-string getC
+string getCardProvider(long int number);
 
 int main(void)
 {
@@ -53,4 +53,9 @@ bool verifyCheckSum(long int number)
         index++;
     }
     return (sumOfMultiplied % 10)? true : false;
+}
+
+string getCardProvider(long int number)
+{
+    
 }
