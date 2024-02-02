@@ -27,11 +27,13 @@ int main(void)
         if(index%2==0)//multiplied
         {
             mutiplied = rest*2;
-            sumOfDigits = 0;
+            int sumOfDigits = 0;
             do
             {
-                
-            }while(multiplied>0)
+                sumOfDigits = sumOfDigits + mutiplied % 10;
+                mutiplied = mutiplied / 10;
+            }
+            while(mutiplied > 0)
 
             sumOfMultiplied = sumOfMultiplied +
         }
