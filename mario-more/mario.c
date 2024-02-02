@@ -8,9 +8,11 @@ void printHashes(int number);
 int main(void)
 {
     int height;
-    do{
+    do
+    {
         height = get_int("Height: ");
-    }while(height < 1 || height > 8);
+    }
+    while (height < 1 || height > 8);
 
     for (int i = 0; i < height; i++)
     {
@@ -22,22 +24,21 @@ int main(void)
         printf("  ");
         printHashes(hashes);
         printf("\n");
-
-  }
+    }
 }
 
 void printSpaces(int number)
 {
-  for (int i = 0; i < number; i++)
-  {
-    printf(" ");
-  }
+    for (int i = 0; i < number; i++)
+    {
+        printf(" ");
+    }
 }
 
 void printHashes(int number)
 {
-  for (int h = 0; h < number; h++)
-  {
-    printf("#");
-  }
+    for (int h = 0; h < number; h++)
+    {
+        printf("#");
+    }
 }
