@@ -10,7 +10,7 @@ int main(void)
     int height;
     do{
         height = get_int("Height: ");
-    }while(height < 0 || height > 9);
+    }while(height < 1 || height > 8);
 
     for (int i = 0; i < height; i++)
     {
@@ -21,7 +21,6 @@ int main(void)
         printHashes(hashes);
         printf("  ");
         printHashes(hashes);
-        printSpaces(spaces);
         printf("\n");
 
   }
