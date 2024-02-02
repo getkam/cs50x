@@ -52,12 +52,13 @@ bool verifyCheckSum(long int number)
                 mutiplied = mutiplied / 10;
             }
             while(mutiplied > 0);
-
             sumOfMultiplied = sumOfMultiplied + sumOfDigits;
         }
         index++;
     }
-    return (sumOfMultiplied % 10)? true : false;
+    int total = sumOfMultiplied + sumOfNOTMultiplied;
+    printf("%i", total);
+    return (total % 10)? true : false;
 }
 
 string getCardProvider(long int number)
