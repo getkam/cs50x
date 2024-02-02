@@ -57,5 +57,8 @@ bool verifyCheckSum(long int number)
 
 string getCardProvider(long int number)
 {
-    
+     for(long int remNo = number; remNo > 2;  remNo=remNo/10)
+     {
+
+     }
 }
