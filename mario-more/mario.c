@@ -7,9 +7,10 @@ void printHashes(int number);
 
 int main(void)
 {
-  int height = get_int("Height: ");
-  if(height > 0 && height < 9)
-  {
+    int height;
+    do{
+height = get_int("Height: ");
+    }while(height > 0 && height < 9);
     for (int i = 0; i < height; i++)
     {
         int spaces = height - i - 1;
@@ -21,7 +22,7 @@ int main(void)
         printHashes(hashes);
         printSpaces(spaces);
         printf("\n");
-    }
+
   }
 }
 
