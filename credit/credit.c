@@ -16,6 +16,7 @@ int main(void)
 
     //checksum
     bool isCorrect = verifyCheckSum(number);
+    string x = getCardProvider(number);
     printf("is correct?: %d\n", isCorrect);
 
 
@@ -57,8 +58,14 @@ bool verifyCheckSum(long int number)
 
 string getCardProvider(long int number)
 {
-     for(long int remNo = number; remNo > 2;  remNo=remNo/10)
-     {
-        
-     }
+    int index = 0;
+    int firstTwoDigits = 0;
+    for(long int remNo = number; remNo > 2;  remNo=remNo/10)
+    {
+        firstTwoDigits = remNo;
+        index ++;
+    }
+    printf("index:  %i", index);
+    printf("firstTwoDigits: %i", firstTwoDigits);
+    return "bla bla";
 }
