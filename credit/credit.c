@@ -12,14 +12,14 @@ int main(void)
     while(number < 0);
 
     int mutiplied;
-    long remainedNumber;
+    long int remainedNumber;
 
     do
     {
-       int rest = (int) remainedNumber % 10;
+       int rest = remainedNumber % 10;
        remainedNumber = remainedNumber / 10;
        printf("rest: %i\n", rest);
-       printf("remained number: %l\n", remainedNumber);
+       printf("remained number: %li\n", remainedNumber);
     }
     while(remainedNumber > 0);
 }
