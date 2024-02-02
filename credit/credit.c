@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
+bool verifyCheckSum(int number);
+
 int main(void)
 {
     long number;
@@ -38,11 +40,10 @@ int main(void)
 
             sumOfMultiplied = sumOfMultiplied + sumOfDigits;
         }
-
         index++;
-
-        printf("sum: %i\n", sumOfMultiplied+sumOfNOTMultiplied);
-
     }
 }
 
+bool verifyCheckSum(int number){
+    
+}
