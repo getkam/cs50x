@@ -65,7 +65,14 @@ string getCardProvider(long int number)
         firstTwoDigits = remNo;
         index ++;
     }
-    switch()
+    if(firstTwoDigits == 34 || firstTwoDigits == 37){
+        return "AMEX\n"
+    }
+    else
+    if(firstTwoDigits / 10 == 4) {
+        
+    }
+
 
     printf("number of digits:  %i\n", index);
     printf("firstTwoDigits: %i\n", firstTwoDigits);
