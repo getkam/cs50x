@@ -48,7 +48,5 @@ int verifyCheckSum(long int number)
         }
         index++;
     }
-
-    printf("%i\n", sumOfMultiplied);
     return (sumOfMultiplied % 10)? 1 : 0;
 }
