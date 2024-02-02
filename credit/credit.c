@@ -30,8 +30,8 @@ int main(void)
             sumOfDigits = 0;
             do
             {
-
-            }while()
+                
+            }while(multiplied>0)
 
             sumOfMultiplied = sumOfMultiplied +
         }
