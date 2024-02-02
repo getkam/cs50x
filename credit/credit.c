@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int verifyCheckSum(int number);
+int verifyCheckSum(long int number);
 
 int main(void)
 {
@@ -49,6 +49,6 @@ int verifyCheckSum(long int number)
         index++;
     }
 
-    printf("%i", sumOfMultiplied);
-    return (sumOfMultiplied % 10) 0 : 1;
+    printf("%i\n", sumOfMultiplied);
+    return (sumOfMultiplied % 10)? 0 : 1;
 }
