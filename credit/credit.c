@@ -1,11 +1,11 @@
 #include <cs50.h>
 #include <stdio.h>
 
-bool verifyCheckSum(int number);
+int verifyCheckSum(int number);
 
 int main(void)
 {
-    long number;
+    long int number;
 
     do
     {
@@ -13,6 +13,12 @@ int main(void)
     }
     while(number < 0);
 
+    int isCorrect = verifyCheckSum(number);
+    printf("%i", isCorrect);
+}
+
+int verifyCheckSum(long int number)
+{
     int mutiplied = 0;
     int sumOfMultiplied = 0;
     int sumOfNOTMultiplied = 0;
@@ -42,8 +48,7 @@ int main(void)
         }
         index++;
     }
-}
 
-bool verifyCheckSum(int number){
-    
+    printf("%i", sumOfMultiplied);
+    return (sumOfMultiplied % 10) 0 : 1;
 }
