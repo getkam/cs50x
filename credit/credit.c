@@ -13,8 +13,10 @@ int main(void)
     }
     while(number < 0);
 
+    //checksum
     bool isCorrect = verifyCheckSum(number);
     printf("is correct?: %d\n", isCorrect);
+    
 }
 
 bool verifyCheckSum(long int number)
