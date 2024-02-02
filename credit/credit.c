@@ -16,6 +16,7 @@ int main(void)
     //checksum
     bool isCorrect = verifyCheckSum(number);
     printf("is correct?: %d\n", isCorrect);
+
     
 }
 
