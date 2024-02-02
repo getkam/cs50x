@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 bool verifyCheckSum(long int number);
+string getC
 
 int main(void)
 {
@@ -17,7 +18,7 @@ int main(void)
     bool isCorrect = verifyCheckSum(number);
     printf("is correct?: %d\n", isCorrect);
 
-    
+
 }
 
 bool verifyCheckSum(long int number)
