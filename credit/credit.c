@@ -37,6 +37,7 @@ int main(void)
 
             sumOfMultiplied = sumOfMultiplied + sumOfDigits;
         }
+        
         index++;
         printf("rest: %i\n", rest);
         printf("remained number: %li\n", remNo);
