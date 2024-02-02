@@ -12,7 +12,7 @@ int main(void)
     while(number < 0);
 
     int mutiplied;
-    long int remainedNumber;
+    long int remainedNumber = number;
 
     do
     {
