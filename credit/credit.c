@@ -58,7 +58,9 @@ bool verifyCheckSum(long int number)
         index++;
     }
     int total = sumOfMultiplied + sumOfNOTMultiplied;
+
     printf("total: %i\n", total);
+    
     return (total % 10)? true : false;
 }
 
