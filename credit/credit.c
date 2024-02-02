@@ -58,14 +58,14 @@ bool verifyCheckSum(long int number)
 
 string getCardProvider(long int number)
 {
-    int index = 0;
+    int index = 1;
     int firstTwoDigits = 0;
-    for(long int remNo = number; remNo > 2;  remNo=remNo/10)
+    for(long int remNo = number; remNo > 10;  remNo=remNo/10)
     {
         firstTwoDigits = remNo;
         index ++;
     }
-    printf("index:  %i", index);
-    printf("firstTwoDigits: %i", firstTwoDigits);
+    printf("number of digits:  %i\n", index+2);
+    printf("firstTwoDigits: %i\n", firstTwoDigits);
     return "bla bla";
 }
