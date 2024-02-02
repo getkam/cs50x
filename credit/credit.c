@@ -65,7 +65,7 @@ string getCardProvider(long int number)
         firstTwoDigits = remNo;
         index ++;
     }
-    printf("number of digits:  %i\n", index+2);
+    printf("number of digits:  %i\n", index);
     printf("firstTwoDigits: %i\n", firstTwoDigits);
     return "bla bla";
 }
