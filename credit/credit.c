@@ -14,10 +14,15 @@ int main(void)
     }
     while(number < 0);
 
-    //checksum
-    bool isCorrect = verifyCheckSum(number);
-    string x = getCardProvider(number);
-    printf("%s", x);
+
+    if (verifyCheckSum(number))
+    {
+        printf("%s", getCardProvider(number));
+    }
+    else
+    {
+        printf("INVALID\n");
+    }
 
 }
 
