@@ -33,9 +33,9 @@ int main(void)
                 sumOfDigits = sumOfDigits + mutiplied % 10;
                 mutiplied = mutiplied / 10;
             }
-            while(mutiplied > 0)
+            while(mutiplied > 0);
 
-            sumOfMultiplied = sumOfMultiplied +
+            sumOfMultiplied = sumOfMultiplied + sumOfDigits;
         }
         index++;
         printf("rest: %i\n", rest);
