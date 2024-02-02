@@ -35,16 +35,16 @@ bool verifyCheckSum(long int number)
     int index = 1;
     for(long int remNo = number; remNo > 0;  remNo=remNo/10)
     {
-        int rest = remNo % 10;
+        int digit = remNo % 10;
 
         if (index % 2 > 0) //not multiplied
         {
-            sumOfNOTMultiplied = sumOfNOTMultiplied + rest;
+            sumOfNOTMultiplied = sumOfNOTMultiplied + digit;
         }
         else
         if(index % 2 == 0)//multiplied
         {
-            mutiplied = rest*2;
+            mutiplied = digit*2;
             int sumOfDigits = 0;
             do
             {
