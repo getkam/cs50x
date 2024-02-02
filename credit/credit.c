@@ -8,6 +8,6 @@ int main(void)
     do
     {
         number = get_long("Number: ")
-    }while()
+    }while(number>0)
 }
 
