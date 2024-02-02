@@ -31,7 +31,7 @@ int main(void)
             do
             {
 
-            }while
+            }while()
 
             sumOfMultiplied = sumOfMultiplied +
         }
