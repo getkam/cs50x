@@ -33,9 +33,9 @@ bool verifyCheckSum(long int number)
     int sumOfNOTMultiplied = 0;
 
     int index = 1;
-    for(long int remNo = number; remNo > 0;  remNo=remNo/10)
+    for(long int remainingNo = number; remainingNo > 0;  remainingNo=remainingNo/10)
     {
-        int digit = remNo % 10;
+        int digit = remainingNo % 10;
 
         if (index % 2 > 0) //not multiplied
         {
@@ -65,9 +65,9 @@ string getCardProvider(long int number)
     int legth = 1;
     int firstTwoDigits = 0;
 
-    for(long int remNo = number; remNo > 10;  remNo=remNo/10)
+    for(long int remainingNo = number; remainingNo > 10;  remainingNo=remainingNo/10)
     {
-        firstTwoDigits = remNo;
+        firstTwoDigits = remainingNo;
         legth ++;
     }
 //American Express uses 15-digit numbers, MasterCard uses 16-digit numbers, and Visa uses 13- and 16-digit
