@@ -14,8 +14,9 @@ int main(void)
     }
     while(number < 0);
 
+    bool checksum = verifyCheckSum(number);
 
-    if (verifyCheckSum(number))
+    if (checksum == true)
     {
         printf("%s", getCardProvider(number));
     }
