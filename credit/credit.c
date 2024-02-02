@@ -14,7 +14,7 @@ int main(void)
     while(number < 0);
 
     int isCorrect = verifyCheckSum(number);
-    printf("%i", isCorrect);
+    printf("1 if is correct?: %i\n", isCorrect);
 }
 
 int verifyCheckSum(long int number)
@@ -50,5 +50,5 @@ int verifyCheckSum(long int number)
     }
 
     printf("%i\n", sumOfMultiplied);
-    return (sumOfMultiplied % 10)? 0 : 1;
+    return (sumOfMultiplied % 10)? 1 : 0;
 }
