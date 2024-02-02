@@ -1,5 +1,5 @@
 #include <cs50.h>
-#inculde <stdio.h>
+#include <stdio.h>
 
 int main(void)
 {
@@ -7,7 +7,7 @@ int main(void)
 
     do
     {
-        number = get_long("Number: ")
-    }while(number>0)
+        number = get_long("Number: ");
+    }while(number>0);
 }
 
