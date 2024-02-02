@@ -15,13 +15,13 @@ int main(void)
     while(number < 0);
 
     bool checksum = verifyCheckSum(number);
-    //string code = getCardProvider(number);
+    string code = getCardProvider(number);
 
     printf("checksum %d\n", checksum);
 
     if (checksum == true)
     {
-       // printf("%s", code);
+       printf("%s", code);
     }
     else
     {
@@ -64,7 +64,7 @@ bool verifyCheckSum(long int number)
 
     printf("total: %i\n", total);
 
-    return (total % 10)? true : false;
+    return (total % 10 == 0)? true : false;
 }
 
 string getCardProvider(long int number)
