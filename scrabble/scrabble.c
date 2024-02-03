@@ -14,7 +14,7 @@ int main(void)
     string word2 = get_string("Player2: ");
 
     int score1 = calculate_score(word1);
-    int score2 = calculate_score(word1);
+    int score2 = calculate_score(word2);
 
     if (score1 > score2)
     {
