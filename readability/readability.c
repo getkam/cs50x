@@ -55,7 +55,7 @@ int countWords(string s)
     int counter = 0;
     for (int i = 0, l = strlen(s); i < l; i++)
     {
-        if(isblank(s[i]))
+        if(isblank(s[i]) )
         {
             counter++;
         }
