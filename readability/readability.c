@@ -21,6 +21,7 @@ int main(void)
     //printf("sentences: %i\n", sentencesAmount);
     //printf("words: %i\n", wordsAmount);
     int index = calculateIndex(lettersAmount, sentencesAmount, wordsAmount);
+    printf("index: %i\n", index);
 }
 
 int countLetters(string s)
@@ -67,6 +68,8 @@ int countWords(string s)
 int calculateIndex(int letters, int sentences, int words)
 {
     float l = ((float) letters / words) * 100;
-    float l = ((float) letters / words) * 100;
+    float s = ((float) sentences / words) * 100;
+
+    return 0.0588 * l - 0.296 * s - 15.8;
 
 }
