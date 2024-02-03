@@ -29,7 +29,7 @@ int countLetters(string s)
     int counter = 0;
     for (int i = 0, l = strlen(s); i < l; i++)
     {
-        if(s[i] >= 'A' && s[i] <= 'z')
+        if(isalpha(s[i]))
         {
             counter++;
         }
