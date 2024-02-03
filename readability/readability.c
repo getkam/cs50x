@@ -42,8 +42,7 @@ int countSentences(string s)
     int counter = 0;
     for (int i = 0, l = strlen(s); i < l; i++)
     {
-        char c = s[i];
-        if(c == '.' ||  c == '!' || c == '?')
+        if(ispunct(s[i]))
         {
             counter++;
         }
@@ -56,8 +55,8 @@ int countWords(string s)
     int counter = 0;
     for (int i = 0, l = strlen(s); i < l; i++)
     {
-        char c = s[i];
-        if(s[i] == ' ')
+
+        if(isblank(s[i]))
         {
             counter++;
         }
