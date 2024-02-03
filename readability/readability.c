@@ -17,9 +17,9 @@ int main(void)
     int sentencesAmount = countSentences(text);
     int wordsAmount = countWords(text);
 
-    //printf("letters: %i\n", lettersAmount);
-    //printf("sentences: %i\n", sentencesAmount);
-    //printf("words: %i\n", wordsAmount);
+    printf("letters: %i\n", lettersAmount);
+    printf("sentences: %i\n", sentencesAmount);
+    printf("words: %i\n", wordsAmount);
     int index = calculateIndex(lettersAmount, sentencesAmount, wordsAmount);
     printf("index: %i\n", index);
 }
@@ -55,7 +55,6 @@ int countWords(string s)
     int counter = 0;
     for (int i = 0, l = strlen(s); i < l; i++)
     {
-
         if(isblank(s[i]))
         {
             counter++;
