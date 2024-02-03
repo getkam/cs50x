@@ -37,9 +37,16 @@ int calculate_score(string s)
     {
         if(s[i])
         {
-            if()
+            if(isupper(s[i]))
+            {
+                score += POINTS[s[i]-'A'];
+            }
+            else if (islower(s[i]))
+            {
+                score += POINTS[s[i]-'a'];
+            }
         }
     }
 
-return 1;
+    return score;
 }
