@@ -7,6 +7,7 @@
 int countLetters(string s);
 int countSentences(string s);
 int countWords(string s);
+int calculateIndex(int letters, int sentences, int words);
 
 int main(void)
 {
@@ -16,9 +17,10 @@ int main(void)
     int sentencesAmount = countSentences(text);
     int wordsAmount = countWords(text);
 
-    printf("letters: %i\n", lettersAmount);
-    printf("sentences: %i\n", sentencesAmount);
-    printf("words: %i\n", wordsAmount);
+    //printf("letters: %i\n", lettersAmount);
+    //printf("sentences: %i\n", sentencesAmount);
+    //printf("words: %i\n", wordsAmount);
+    int index = calculateIndex(lettersAmount, sentencesAmount, wordsAmount);
 }
 
 int countLetters(string s)
@@ -62,3 +64,7 @@ int countWords(string s)
     return ++counter;
 }
 
+int calculateIndex(int letters, int sentences, int words)
+{
+    
+}
