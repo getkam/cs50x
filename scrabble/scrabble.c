@@ -35,10 +35,9 @@ int calculate_score(string s)
 
     for (int i = 0, l = strlen(s); i < l ; i++)
     {
-        char c = isupper(s[i]);
-        if (c >= 'A' && c <= 'Z')
+        if(s[i])
         {
-            printf("%c %i \n", c, c)
+            if()
         }
     }
 
