@@ -6,6 +6,7 @@
 
 int countLetters(string s);
 int countSentences(string s);
+int countWords(string s);
 
 int main(void)
 {
@@ -13,23 +14,51 @@ int main(void)
 
     int lettersAmount = countLetters(text);
     int sentencesAmount = countSentences(text);
+    int wordsAmount = countWords(text);
 
+    printf("letters: %i\n", lettersAmount);
+    printf("sentences: %i\n", sentencesAmount);
+    printf("words: %i\n", wordsAmount);
 }
 
 int countLetters(string s)
 {
+    int counter = 0;
     for (int i = 0, l = strlen(s); i < l; i++)
     {
-        i++;
+        if(s[i] >= 'A' && s[i] <= 'z')
+        {
+            counter++;
+        }
     }
-    return i;
+    return counter;
 }
 
 int countSentences(string s)
 {
+    int counter = 0;
     for (int i = 0, l = strlen(s); i < l; i++)
     {
-        if(s[i]=='.)
+        char c = s[i];
+        if(c =='.' ||  c =='!' || c =='?')
+        {
+            counter++;
+        }
     }
-    return i;
+    return counter;
 }
+
+int countWords(string s)
+{
+    int counter = 0;
+    for (int i = 0, l = strlen(s); i < l; i++)
+    {
+        char c = s[i];
+        if(s[i] == ' ')
+        {
+            counter++;
+        }
+    }
+    return ++counter;
+}
+
