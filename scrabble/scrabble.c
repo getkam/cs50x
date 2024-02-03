@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 int calculate_score(string s);
 
@@ -22,7 +23,7 @@ int main(void)
     {
         printf("Player2 wins!\n");
     }
-    else if (score1 = score2)
+    else if (score1 == score2)
     {
         printf("Tie!\n");
     }
