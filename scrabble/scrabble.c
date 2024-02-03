@@ -31,7 +31,12 @@ int main(void)
 
 int calculate_score(string s)
 {
+    int score = 0;
 
+    for (int i = 0, l = strlen(s); i < l ; i++)
+    {
+        
+    }
 
 return 1;
 }
