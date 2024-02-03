@@ -67,7 +67,8 @@ int calculateIndex(int letters, int sentences, int words)
 {
     float l = ((float) letters / words) * 100;
     float s = ((float) sentences / words) * 100;
-
-    return 0.0588 * l - 0.296 * s - 15.8;
-
+    //printf("l: %f\n", l);
+    //printf("s: %f\n", s);
+    //printf("index inside: %f\n", 0.0588 * l - 0.296 * s - 15.8);
+    return round(0.0588 * l - 0.296 * s - 15.8);
 }
