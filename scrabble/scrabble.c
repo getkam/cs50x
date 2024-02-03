@@ -35,7 +35,10 @@ int calculate_score(string s)
 
     for (int i = 0, l = strlen(s); i < l ; i++)
     {
-        if (isupper(s[i))
+        if (isupper(s[i) >= 'A' && isupper(s[i]) <= 'Z')
+        {
+            
+        }
     }
 
 return 1;
