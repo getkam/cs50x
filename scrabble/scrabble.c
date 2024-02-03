@@ -35,7 +35,7 @@ int calculate_score(string s)
 
     for (int i = 0, l = strlen(s); i < l ; i++)
     {
-        
+        if (isupper(s[i))
     }
 
 return 1;
