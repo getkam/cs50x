@@ -42,7 +42,8 @@ int countSentences(string s)
     int counter = 0;
     for (int i = 0, l = strlen(s); i < l; i++)
     {
-        if(ispunct(s[i]) && s[i] != ',' && s[i] != '\'')
+        char c = s[i];
+        if(c == '.' && s[i] != ',' && s[i] != '\'')
         {
             counter++;
         }
