@@ -43,7 +43,7 @@ int countSentences(string s)
     for (int i = 0, l = strlen(s); i < l; i++)
     {
         char c = s[i];
-        if(c =='.' ||  c =='!' || c =='?')
+        if(c == '.' ||  c == '!' || c == '?')
         {
             counter++;
         }
