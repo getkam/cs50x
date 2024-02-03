@@ -66,5 +66,7 @@ int countWords(string s)
 
 int calculateIndex(int letters, int sentences, int words)
 {
-    
+    float l = ((float) letters / words) * 100;
+    float l = ((float) letters / words) * 100;
+
 }
