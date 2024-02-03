@@ -8,6 +8,8 @@ int main(void)
     string word1 = get_string("Player1: ");
     string word2 = get_string("Player2: ");
 
-    int score1 = 
-
+    int score1 = calculate_score(word1);
+    int score2 = calculate_score(word1);
 }
+
+int calculate_score(string s)
