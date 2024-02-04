@@ -26,19 +26,15 @@ int main(int argc, string argv[])
 
         for (int i = 0, l = strlen(plaintext); i < l; i++)
         {
-            int index;
-            //index in key
             if (isalpha(plaintext[i]))
             {
                 if (isupper(plaintext[i]))
                 {
-                    index = plaintext[i]-'A';
-                    printf("%c", toupper(key[index]));
+                    printf("%c", toupper(key[plaintext[i]-'A']));
                 }
                 else
                 {
-                    index = plaintext[i]-'a';
-                    printf("%c", tolower(key[index]));
+                    printf("%c", tolower(key[plaintext[i]-'a']));
                 }
             }
             else
