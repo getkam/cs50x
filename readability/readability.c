@@ -8,6 +8,7 @@ int countLetters(string s);
 int countSentences(string s);
 int countWords(string s);
 int calculateIndex(int letters, int sentences, int words);
+void printGrade(int index);
 
 int main(void)
 {
@@ -17,11 +18,12 @@ int main(void)
     int sentencesAmount = countSentences(text);
     int wordsAmount = countWords(text);
 
-    printf("letters: %i\n", lettersAmount);
-    printf("sentences: %i\n", sentencesAmount);
-    printf("words: %i\n", wordsAmount);
+    //printf("letters: %i\n", lettersAmount);
+    //printf("sentences: %i\n", sentencesAmount);
+    //printf("words: %i\n", wordsAmount);
     int index = calculateIndex(lettersAmount, sentencesAmount, wordsAmount);
-    printf("index: %i\n", index);
+    //printf("index: %i\n", index);
+    printGrade(index);
 }
 
 int countLetters(string s)
@@ -77,4 +79,12 @@ int calculateIndex(int letters, int sentences, int words)
     //printf("s: %f\n", s);
     //printf("index inside: %f\n", 0.0588 * l - 0.296 * s - 15.8);
     return round(0.0588 * l - 0.296 * s - 15.8);
+}
+
+void printGrade(int index)
+{
+    if (index < 1)
+    {
+        
+    }
 }
