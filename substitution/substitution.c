@@ -29,7 +29,7 @@ int main(int argc, string argv[])
 
 
             char cph = plaintext[i] - key[plaintext[i]-'A'];
-            printf("%c\n", cph)
+            printf("%c\n", cph);
         }
     }
 }
