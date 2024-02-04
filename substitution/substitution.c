@@ -17,6 +17,10 @@ int main(int argc, string argv[])
         printf("Key must contain 26 characters\n");
         return 1;
     }
+    else if ()
+    {
+        
+    }
     else
     {
         string plaintext = get_string("plaintext: ");
