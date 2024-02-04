@@ -21,21 +21,24 @@ int main(int argc, string argv[])
         string key = argv[1];
         printf("KEY: %s\n", key);
         printf("ciphertext: ");
+        char cph;
 
 
         for (int i = 0, l = strlen(plaintext); i < l; i++)
         {
+            int index;
             //index in key
             if (isupper(plaintext[i]))
             {
-                char cph = key[plaintext[i]-'A'];
+                index = plaintext[i]-'A';
             }
             else
             {
-               char cph = key[plaintext[i]-'a'];
-
+               index = plaintext[i]-'a';
             }
-            printf("%i\n", cph);
+
+            printf("%c", key[index]);
         }
+        printf("\n");
     }
 }
