@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <string.h>
 
+string getCapitalizedText(string text);
+
 int main(int argc, string argv[])
 {
     if (argc != 2){
@@ -16,9 +18,10 @@ int main(int argc, string argv[])
     else
     {
         string plaintext = get_string("plaintext: ");
-        string key = argv[1];
+        string key = getCapitalizedText(argv[1]);
         printf("KEY: %s\n", key);
         printf("ciphertext: ");
+    
 
         for (int i = 0, l = strlen(plaintext); i < l; i++)
         {
@@ -32,8 +35,9 @@ int main(int argc, string argv[])
 
 string getCapitalizedText(string text)
 {
-    for (int i = 0, l = strlen(plaintext); i < l; i++)
+    string capitalizedTekst = "";
+    for (int i = 0, l = strlen(text); i < l; i++)
     {
-        
+        strncat(capitalizedTekst, toupper(text[i]));
     }
 }
