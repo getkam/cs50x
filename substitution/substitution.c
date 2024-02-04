@@ -28,17 +28,22 @@ int main(int argc, string argv[])
         {
             int index;
             //index in key
-            if (plaintext[i] )
-            if (isupper(plaintext[i]))
+            if (isalpha(plaintext[i]))
             {
-                index = plaintext[i]-'A';
+                if (isupper(plaintext[i]))
+                {
+                    index = plaintext[i]-'A';
+                }
+                else
+                {
+                    index = plaintext[i]-'a';
+                }
+                printf("%c", key[index]);
             }
             else
             {
-               index = plaintext[i]-'a';
+                printf("%c", plaintext[i]);
             }
-
-            printf("%c", key[index]);
         }
         printf("\n");
     }
