@@ -8,11 +8,12 @@ bool verifyKey(string key);
 
 int main(int argc, string argv[])
 {
-    if (argc != 2){
+    if (argc != 2)
+    {
         printf("%s key\n", argv[0]);
         return 1;
     }
-    else if (verifyKey(key) == false)
+    else if(verifyKey(argv[1]) == false)
     {
         return 1;
     }
