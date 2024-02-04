@@ -61,6 +61,11 @@ bool verifyKey(string key)
                 return false;
             }
             else
-            
+            {
+                for (int j = 0, len = strlen(key); j < len; j++)
+                {
+                    
+                }
+            }
         }
 }
