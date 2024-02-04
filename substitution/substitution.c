@@ -17,12 +17,12 @@ int main(int argc, string argv[])
         printf("Key must contain 26 characters\n");
         return 1;
     }
-    else if ()
-    {
-        
-    }
     else
     {
+        for (int i = 0, l = strlen(key); i < l; i++)
+        {
+
+        }
         string plaintext = get_string("plaintext: ");
         string key = argv[1];
         printf("KEY: %s\n", key);
