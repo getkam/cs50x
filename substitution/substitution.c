@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 
-
+bool verifyKey(string key);
 
 int main(int argc, string argv[])
 {
@@ -12,20 +12,8 @@ int main(int argc, string argv[])
         printf("%s key\n", argv[0]);
         return 1;
     }
-    else if (strlen(argv[1]) != 26)
-    {
-        printf("Key must contain 26 characters\n");
-        return 1;
-    }
     else
     {
-        for (int i = 0, l = strlen(key); i < l; i++)
-        {
-            if (!isalpha(key[i]))
-            {
-                return 1;
-            }
-        }
         string plaintext = get_string("plaintext: ");
         string key = argv[1];
         printf("KEY: %s\n", key);
@@ -54,4 +42,23 @@ int main(int argc, string argv[])
         printf("\n");
         return 0;
     }
+}
+
+bool verifyKey(string key)
+{
+
+    else if (strlen(argv[1]) != 26)
+    {
+        printf("Key must contain 26 characters\n");
+        return 1;
+    }
+    else
+    {
+        for (int i = 0, l = strlen(key); i < l; i++)
+        {
+            if (!isalpha(key[i]))
+            {
+                return 1;
+            }
+        }
 }
