@@ -17,12 +17,12 @@ int main(int argc, string argv[])
     {
         string plaintext = get_string("plaintext: ");
         string key = argv[1];
-        printf("KEY: %s", key);
+        printf("KEY: %s\n", key);
         printf("ciphertext: ");
 
         for (int i = 0, l = strlen(plaintext); i < l; i++)
         {
-            
+            char cph = 
         }
     }
 }
