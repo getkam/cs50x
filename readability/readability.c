@@ -1,5 +1,5 @@
-#include <ctype.h>
 #include <cs50.h>
+#include <ctype.h>
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
@@ -12,7 +12,7 @@ void printGrade(int index);
 
 int main(void)
 {
-    string text  = get_string("Text: ");
+    string text = get_string("Text: ");
 
     int lettersAmount = countLetters(text);
     int sentencesAmount = countSentences(text);
@@ -31,7 +31,7 @@ int countLetters(string s)
     int counter = 0;
     for (int i = 0, l = strlen(s); i < l; i++)
     {
-        if(isalpha(s[i]))
+        if (isalpha(s[i]))
         {
             counter++;
         }
@@ -45,15 +45,15 @@ int countSentences(string s)
     for (int i = 0, l = strlen(s); i < l; i++)
     {
         char c = s[i];
-        bool isNextBlank = (s[i+1] == 0 || s[i+1] == ' ') ? true : false;
-        if(c == '.' || ((c =='?' || c == '!') && isNextBlank))
+        bool isNextBlank = (s[i + 1] == 0 || s[i + 1] == ' ') ? true : false;
+        if (c == '.' || ((c == '?' || c == '!') && isNextBlank))
         {
             counter++;
         }
     }
     if (strlen(s) > 0 && counter == 0)
     {
-        counter ++;
+        counter++;
     }
     return counter;
 }
@@ -63,7 +63,7 @@ int countWords(string s)
     int counter = 0;
     for (int i = 0, l = strlen(s); i < l; i++)
     {
-        if(isblank(s[i]) )
+        if (isblank(s[i]))
         {
             counter++;
         }
