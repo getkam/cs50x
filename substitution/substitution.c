@@ -21,7 +21,7 @@ int main(int argc, string argv[])
         string key = getCapitalizedText(argv[1]);
         printf("KEY: %s\n", key);
         printf("ciphertext: ");
-    
+
 
         for (int i = 0, l = strlen(plaintext); i < l; i++)
         {
@@ -35,9 +35,10 @@ int main(int argc, string argv[])
 
 string getCapitalizedText(string text)
 {
-    string capitalizedTekst = "";
+    char capitalizedTekst[] = "";
     for (int i = 0, l = strlen(text); i < l; i++)
     {
         strncat(capitalizedTekst, toupper(text[i]));
     }
+    return capitalizedTekst;
 }
