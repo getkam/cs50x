@@ -13,7 +13,7 @@ int main(int argc, string argv[])
         printf("%s key\n", argv[0]);
         return 1;
     }
-    else if(verifyKey(argv[1]) == false)
+    else if (verifyKey(argv[1]) == false)
     {
         return 1;
     }
@@ -25,18 +25,17 @@ int main(int argc, string argv[])
         printf("ciphertext: ");
         char cph;
 
-
         for (int i = 0, l = strlen(plaintext); i < l; i++)
         {
             if (isalpha(plaintext[i]))
             {
                 if (isupper(plaintext[i]))
                 {
-                    printf("%c", toupper(key[plaintext[i]-'A']));
+                    printf("%c", toupper(key[plaintext[i] - 'A']));
                 }
                 else
                 {
-                    printf("%c", tolower(key[plaintext[i]-'a']));
+                    printf("%c", tolower(key[plaintext[i] - 'a']));
                 }
             }
             else
@@ -69,7 +68,7 @@ bool verifyKey(string key)
             {
                 for (int j = i + 1, len = strlen(key); j < len; j++)
                 {
-                    if(key[i] == key[j])
+                    if (key[i] == key[j])
                     {
                         return false;
                     }
