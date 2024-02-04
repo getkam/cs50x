@@ -46,7 +46,7 @@ int countSentences(string s)
     {
         char c = s[i];
         bool isNextBlank = (s[i+1] == 0 || s[i+1] == ' ') ? true : false;
-        if(c == '.' || ((c =='!' || c == '!') && isNextBlank))
+        if(c == '.' || ((c =='?' || c == '!') && isNextBlank))
         {
             counter++;
         }
