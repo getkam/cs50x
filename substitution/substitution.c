@@ -21,7 +21,7 @@ int main(int argc, string argv[])
     {
         for (int i = 0, l = strlen(key); i < l; i++)
         {
-
+            
         }
         string plaintext = get_string("plaintext: ");
         string key = argv[1];
