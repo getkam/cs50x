@@ -26,14 +26,16 @@ int main(int argc, string argv[])
         for (int i = 0, l = strlen(plaintext); i < l; i++)
         {
             //index in key
-            if (isupper(plaintext[i])
+            if (isupper(plaintext[i]))
             {
                 char cph = key[plaintext[i]-'A'];
-                printf("%c\n", cph);
             }
+            else
+            {
+               char cph = key[plaintext[i]-'a'];
 
-            char cph = key[plaintext[i]-'A'];
-            printf("%c\n", cph);
+            }
+            printf("%i\n", cph);
         }
     }
 }
