@@ -64,7 +64,7 @@ bool verifyKey(string key)
             {
                 for (int j = i + 1, len = strlen(key); j < len; j++)
                 {
-
+                    if()
                 }
             }
         }
