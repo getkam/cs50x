@@ -16,6 +16,8 @@ int main(int argc, string argv[])
     else
     {
         string plaintext = get_string("plaintext: ");
+        string key = toupper(argv[1]);
+        printf("KEY: %s", key);
         printf("ciphertext: ");
 
         for (int i = 0, l = strlen(plaintext); i < l; i++)
