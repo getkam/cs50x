@@ -22,7 +22,10 @@ int main(int argc, string argv[])
 
         for (int i = 0, l = strlen(plaintext); i < l; i++)
         {
-            char cph = 
+            //index in key
+            
+
+            char cph = plaintext[i] - key[plaintext[i]-'A'];
         }
     }
 }
