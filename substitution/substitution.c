@@ -33,12 +33,13 @@ int main(int argc, string argv[])
                 if (isupper(plaintext[i]))
                 {
                     index = plaintext[i]-'A';
+                    printf("%c", toupper(key[index]));
                 }
                 else
                 {
                     index = plaintext[i]-'a';
+                    printf("%c", tolower(key[index]));
                 }
-                printf("%c", key[index]);
             }
             else
             {
