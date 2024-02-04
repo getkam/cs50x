@@ -15,6 +15,12 @@ int main(int argc, string argv[])
     }
     else
     {
-        
+        string plaintext = get_string("plaintext: ");
+        string ciphertext;
+
+        for (int i = 0, l = strlen(plaintext); i < l; i++)
+        {
+            
+        }
     }
 }
