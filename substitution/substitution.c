@@ -12,6 +12,10 @@ int main(int argc, string argv[])
         printf("%s key\n", argv[0]);
         return 1;
     }
+    else if (verifyKey(key) == false)
+    {
+        return 1;
+    }
     else
     {
         string plaintext = get_string("plaintext: ");
@@ -64,8 +68,12 @@ bool verifyKey(string key)
             {
                 for (int j = i + 1, len = strlen(key); j < len; j++)
                 {
-                    if()
+                    if(key[i] == key[j])
+                    {
+                        return false;
+                    }
                 }
             }
         }
+    }
 }
