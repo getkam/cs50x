@@ -4,7 +4,9 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(int arg)
+int main(int argc, char *argv[])
 {
-
+    if (argc != 27){
+        printf("key must be 26 letters\n");
+    }
 }
