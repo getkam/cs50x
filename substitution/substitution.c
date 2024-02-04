@@ -62,9 +62,9 @@ bool verifyKey(string key)
             }
             else
             {
-                for (int j = 0, len = strlen(key); j < len; j++)
+                for (int j = i + 1, len = strlen(key); j < len; j++)
                 {
-                    
+
                 }
             }
         }
