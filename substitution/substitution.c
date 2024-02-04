@@ -38,7 +38,7 @@ string getCapitalizedText(string text)
     char capitalizedTekst[] = "";
     for (int i = 0, l = strlen(text); i < l; i++)
     {
-        strncat(capitalizedTekst, &toupper(text[i]), 1);
+        strncat(capitalizedTekst, (char)toupper(text[i]), 1);
     }
     return capitalizedTekst;
 }
