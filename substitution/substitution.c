@@ -47,10 +47,10 @@ int main(int argc, string argv[])
 bool verifyKey(string key)
 {
 
-    else if (strlen(argv[1]) != 26)
+    if (strlen(key) != 26)
     {
         printf("Key must contain 26 characters\n");
-        return 1;
+        return false;
     }
     else
     {
@@ -58,7 +58,9 @@ bool verifyKey(string key)
         {
             if (!isalpha(key[i]))
             {
-                return 1;
+                return false;
             }
+            else
+            
         }
 }
