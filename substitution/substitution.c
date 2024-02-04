@@ -28,6 +28,7 @@ int main(int argc, string argv[])
         {
             int index;
             //index in key
+            if (plaintext[i] )
             if (isupper(plaintext[i]))
             {
                 index = plaintext[i]-'A';
