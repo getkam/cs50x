@@ -21,7 +21,10 @@ int main(int argc, string argv[])
     {
         for (int i = 0, l = strlen(key); i < l; i++)
         {
-            
+            if (!isalpha(key[i]))
+            {
+                return 1;
+            }
         }
         string plaintext = get_string("plaintext: ");
         string key = argv[1];
