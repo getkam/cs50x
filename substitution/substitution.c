@@ -18,7 +18,7 @@ int main(int argc, string argv[])
     else
     {
         string plaintext = get_string("plaintext: ");
-        string key = getCapitalizedText(argv[1]);
+        string key = argv[1];
         printf("KEY: %s\n", key);
         printf("ciphertext: ");
 
@@ -29,6 +29,7 @@ int main(int argc, string argv[])
 
 
             char cph = plaintext[i] - key[plaintext[i]-'A'];
+            printf("%c\n", cph)
         }
     }
 }
