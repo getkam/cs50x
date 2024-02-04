@@ -43,10 +43,15 @@ int countSentences(string s)
     for (int i = 0, l = strlen(s); i < l; i++)
     {
         char c = s[i];
-        if(c == '.' && s[i] != ',' && s[i] != '\'')
+        bool isNextBlank = (s[i+1] == 0 || s[i+1] == ' ') ? true : false;
+        if(c == '.' || ((c =='!' || c == '!') && isNextBlank))
         {
             counter++;
         }
+    }
+    if (strlen(s) > 0 && counter == 0)
+    {
+        counter ++;
     }
     return counter;
 }
