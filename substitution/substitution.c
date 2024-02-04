@@ -77,4 +77,5 @@ bool verifyKey(string key)
             }
         }
     }
+    return true;
 }
