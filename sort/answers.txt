@@ -1,4 +1,4 @@
-sort1 uses: TODO
+sort1 uses: Bubble
 
 How do you know?: reversed50000: 0.125, random50000.txt 5.867, sorted50000.txt 0.550s
 
