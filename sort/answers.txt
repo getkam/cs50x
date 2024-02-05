@@ -1,11 +1,11 @@
 sort1 uses: Bubble sort
 
-How do you know?: reversed50000: 4.832s, sorted50000.txt 0.420s - it is dealing better with sorted list - so based on omega(N)
+How do you know?: reversed50000: 4.832s, sorted50000.txt 0.420s - it is dealing better with sorted list so it indicates on Buble search which has better Omega function than Big O.
 
 sort2 uses: Merge sort
 
-How do you know?: reversed50000: 0.869s, sorted50000.txt 1.489s -
+How do you know?: reversed50000: 0.869s, sorted50000.txt 1.489s - the best results for many tries and similar Big O and Omega values.
 
 sort3 uses: Selection sort
 
-How do you know?: reversed50000: 2.680s, sorted50000.txt 2.343s
+How do you know?: reversed50000: 2.680s, sorted50000.txt 2.343s - due to higher valuses than in sort 2 it will be not Merge sort. Similar Big O and Omega values.
