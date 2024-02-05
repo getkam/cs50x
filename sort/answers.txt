@@ -2,7 +2,7 @@ sort1 uses: TODO
 
 How do you know?: reversed50000: 0.125, random50000.txt 5.867, sorted50000.txt 0.550s
 
-sort2 uses: TODO
+sort2 uses: Merge Sort
 
 How do you know?: reversed50000: 0.039s, random50000.txt 0.554s, sorted50000.txt 0.389s
 
