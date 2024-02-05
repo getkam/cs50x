@@ -1,6 +1,6 @@
 sort1 uses: Bubble sort
 
-How do you know?: reversed50000: 4.832s, sorted50000.txt 0.420s - it is dealing better with sorted list do
+How do you know?: reversed50000: 4.832s, sorted50000.txt 0.420s - it is dealing better with sorted list - so based on omega(N) 
 
 sort2 uses: Merge sort
 
