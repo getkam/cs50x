@@ -8,4 +8,4 @@ How do you know?: reversed50000: 0.039s, random50000.txt 0.554s, sorted50000.txt
 
 sort3 uses: TODO
 
-How do you know?: TODO
+How do you know?: reversed50000: 0.062s, random50000.txt 0.554s, sorted50000.txt 0.389s
