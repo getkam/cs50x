@@ -1,6 +1,6 @@
 sort1 uses: TODO
 
-How do you know?: reversed50000: 0.125
+How do you know?: reversed50000: 0.125, random50000.txt 5.867, 
 
 sort2 uses: TODO
 
