@@ -86,6 +86,6 @@ void print_winner(void)
             max = candidates[i].votes;
         }
     }
-    print
+    printf("%i\n", max);
     return;
 }
