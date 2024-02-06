@@ -53,6 +53,14 @@ int main(int argc, string argv[])
     {
         candidates[i] = argv[i + 1];
     }
+    // clear preferences
+    for (int i = 0; i < candidate_count; i++)
+    {
+        for (int j = 0; j < candidate_count; j++)
+        {
+            preferences[i][j] = 0;
+        }
+    }
 
     // Clear graph of locked in pairs
     for (int i = 0; i < candidate_count; i++)
