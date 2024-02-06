@@ -165,9 +165,9 @@ void add_pairs(void)
         }
     }
     //                                                            PRINTING TO DELETE
-    for (i = 0; i < pairIndex; i++)
+    for (int i = 0; i < pairIndex; i++)
     {
-        
+        printf("Pair %i: %i > %i\n", i, candidates[pairs[i].winner], candidates[pairs[i].loser] )
     }
     return;
 }
