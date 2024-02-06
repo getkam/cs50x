@@ -141,6 +141,7 @@ void record_preferences(int ranks[])
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
+    printf("inside add pairs");
     int pairIndex = 0;
     pair pairToAdd;
     for (int i = 0; i < candidate_count; i++)
