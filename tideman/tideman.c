@@ -156,7 +156,6 @@ void add_pairs(void)
                     pairToAdd.winner = i;
                     pairToAdd.loser = j;
                 }
-                //if equal -  ignore - not affecting the result
             }
             pairs[pairIndex] = pairToAdd;
         }
