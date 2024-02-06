@@ -83,7 +83,7 @@ int main(int argc, string argv[])
                 return 3;
             }
         }
-        for( int r = 0; r<candidate_count; r++)
+        for(int r = 0; r < candidate_count; r++)
         {
             printf("%i, ", ranks[r]);
         }
