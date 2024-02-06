@@ -156,12 +156,6 @@ void add_pairs(void)
                     pairToAdd.winner = i;
                     pairToAdd.loser = j;
                 }
-                else if (preferences[i][j] < preferences[j][i])
-                {
-                    printf("winner %i, loser %i\n", j, i);
-                    pairToAdd.winner = j;
-                    pairToAdd.loser = i;
-                }
                 //if equal -  ignore - not affecting the result
             }
             pairs[pairIndex] = pairToAdd;
