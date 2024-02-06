@@ -67,10 +67,9 @@ bool vote(string name)
 {
     for( int i = 0; i < candidate_count; i++)
     {
-        printf("candidates[i].name = %s, name: %s\n", candidates[i].name, name);
         if(strcmp(candidates[i].name, name)){
             candidates[i].votes++;
-            printf("Im inside the if\n");
+            printf("%s, %i\n",candidates[i].name, candidates[i].votes);
             return true;
         }
     }
