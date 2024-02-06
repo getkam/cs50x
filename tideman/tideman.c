@@ -91,12 +91,17 @@ int main(int argc, string argv[])
                 return 3;
             }
         }
-        for(int r = 0; r < candidate_count; r++)
-        {
-            printf("%i, ", ranks[r]);
-        }
         record_preferences(ranks);
 
+        printf("\n");
+    }
+    printf("preferences");                          ///         TO DELETE
+    for (int i = 0; i < candidate_count; i++)
+    {
+        for (int j = 0; j < candidate_count; j++)
+        {
+            printf("%i, ", preferences[i][j]);
+        }
         printf("\n");
     }
 
