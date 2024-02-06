@@ -102,7 +102,7 @@ bool vote(int rank, string name, int ranks[])
     {
         if (strcmp(candidates[i].name, name) == 0) // candidate found
         {
-            ranks[]
+            ranks[rank] = i;
             return true;
         }
     }
