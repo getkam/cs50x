@@ -173,48 +173,14 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    if (sizeof(pairs)>1){
 
-    }
 
     return;
 }
 
 pair mergeSort(pair listToSort[],int lb, int le, int rb, int re)
 {
-    int leftSize;
-    int rightSize;
-    if (sizeof(pairs)%2==0)
-    {
-        leftSize = rightSize = sizeof(listToSort)/2;
-    }
-    else
-    {
-        leftSize = sizeof(pairs)/2;
-        rightSize = sizeof(pairs)/2 +1;
-    }
-    pair sortedLeft[leftSize];
-    pair sortedRight[rightSize];
-
-    if(leftSize >1)
-    {
-       for (int i = 0; i < leftSize; i++)
-        {
-            leftSide[i] = listToSort[i];
-        }
-       sortedLeft = mergeSort(leftSide);
-    }
-
-
-        for (int i = mid+1; i < mid; i++)
-        {
-            leftSide[i] = listToSort[i];
-        }
-    }
-    else
-    {
-
-    }
+    if (listToSort[lb])
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
