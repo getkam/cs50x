@@ -278,15 +278,21 @@ void lock_pairs(void)
 {
     for (int i = 0; i < pair_count; i++)
     {
-
         locked[pairs[i].winner][pairs[i].loser] = true;
     }
+
+     printf("LOCKED\n");
+    for (int i = 0; i < pair_count; i++)
+    {
+        printf("",locked[pairs[i].winner][pairs[i].loser]);
+    }
+
     return;
 }
 
 bool checkIfNotCircle(void)
 {
-    
+
 }
 // Print the winner of the election
 void print_winner(void)
