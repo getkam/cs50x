@@ -282,9 +282,13 @@ void lock_pairs(void)
     }
 
      printf("LOCKED\n");
+     for (int j = 0; j < pair_count; i++)
+    {
     for (int i = 0; i < pair_count; i++)
     {
-        printf("",locked[pairs[i].winner][pairs[i].loser]);
+        printf("%s",locked[pairs[i].winner][pairs[i].loser]);
+    }
+    printf("\n");
     }
 
     return;
