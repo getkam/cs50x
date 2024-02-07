@@ -182,7 +182,7 @@ pair mergeSort(pair listToSort[],int leftIndex, int rightIndex)
 {
     if (listToSort[leftIndex] < listToSort[rightIndex])
     {
-        int 
+        int mid = 
     }
 }
 
