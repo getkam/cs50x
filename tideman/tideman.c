@@ -235,7 +235,7 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
             pointerToFinalList++;
             pointerRightList++;
         }
-
+    }
         while (pointerLeftList < sizeLeftSide)
         {
             listToSort[pointerToFinalList] = leftList[pointerLeftList];
@@ -249,8 +249,6 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
             pointerRightList++;
             pointerToFinalList++;
         }
-
-    }
     printf("I T E R A T I O N\n");
     printf("LEFT\n");
     for (int i = 0; i < sizeLeftSide; i++)
