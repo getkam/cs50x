@@ -160,6 +160,7 @@ void add_pairs(void)
             pairs[pairIndex] = pairToAdd;
             pairIndex++;
         }
+        
     }
     //                                                            PRINTING TO DELETE
     for (int i = 0; i < pairIndex; i++)
