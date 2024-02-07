@@ -155,10 +155,10 @@ void add_pairs(void)
                     printf("winner %i, loser %i\n", i, j);
                     pairToAdd.winner = i;
                     pairToAdd.loser = j;
-                    pairIndex++;
                 }
             }
             pairs[pairIndex] = pairToAdd;
+            pairIndex++;
         }
     }
     //                                                            PRINTING TO DELETE
