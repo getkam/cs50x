@@ -178,9 +178,12 @@ void sort_pairs(void)
     return;
 }
 
-pair mergeSort(pair listToSort[],int lb, int le, int rb, int re)
+pair mergeSort(pair listToSort[],int leftIndex, int rightIndex)
 {
-    if (listToSort[lb])
+    if (listToSort[leftIndex] < listToSort[rightIndex])
+    {
+        
+    }
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
