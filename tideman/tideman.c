@@ -284,7 +284,10 @@ void lock_pairs(void)
     return;
 }
 
-bool 
+bool checkIfNotCircle(void)
+{
+    
+}
 // Print the winner of the election
 void print_winner(void)
 {
