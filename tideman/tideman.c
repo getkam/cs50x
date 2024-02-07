@@ -25,6 +25,8 @@ pair pairs[MAX * (MAX - 1) / 2];
 int pair_count;
 int candidate_count;
 
+bool circleCheck[MAX];
+
 // Function prototypes
 bool vote(int rank, string name, int ranks[]);
 void record_preferences(int ranks[]);
@@ -277,7 +279,6 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    bool circleCheck[candidate_count];
     for (int c = 0; c < candidate_count; c++)
     {
         circleCheck[c] = false;
