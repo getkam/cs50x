@@ -180,15 +180,26 @@ void sort_pairs(void)
     return;
 }
 
-pair mergeSort(pair xxx[])
+pair mergeSort(pair listToSort[])
 {
     pair sortedLeft[];
     pair sortedRight[];
     int mid;
     if (sizeof(pairs)%2==0)
     {
-        pair leftSide[mid+1] = xxx[]
-       sortedLeft = mergeSort()
+        mid = sizeof(pairs)/2;
+        pair leftSide[mid + 1];
+        pair rightSide[mid + 1];
+
+        for (int i = 0; i < mid; i++)
+        {
+            leftSide[i] = listToSort[i];
+        }
+       sortedLeft = mergeSort(leftSide);
+        for (int i = mid+1; i < mid; i++)
+        {
+            leftSide[i] = listToSort[i];
+        }
     }
     else
     {
