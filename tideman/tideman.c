@@ -181,8 +181,9 @@ printf("\nAfter sort \n");
     {
         for (int j = 0; j < candidate_count; j++)
         {
-printf("winner %i, loser %i => value: %i\n", i, j, preferences[i][j]);
-        }}
+            printf("winner %i, loser %i => value: %i\n", i, j, preferences[i][j]);
+        }
+    }
 
     return;
 }
