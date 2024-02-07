@@ -217,7 +217,7 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
 
     while ((pointerLeftList < sizeLeftSide) && (pointerRightList < sizeRightSide))
     {
-
+        if (preferences[pairs[]])
     }
 
 
