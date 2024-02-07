@@ -172,8 +172,21 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    
+
+
     return;
+}
+
+pair mergeSort(pair leftSide[], pair rightSide[])
+{
+    if (sizeof(pairs)%2==0)
+    {
+        int mid = sizeof(pairs)/2
+    }
+    else
+    {
+
+    }
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
