@@ -194,7 +194,7 @@ void mergeSort(pair listToSort[],int leftIndex, int rightIndex)
 
 void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
 {
-    int sizeLeftSide = middle             - leftIndex + 1
+    int sizeLeftSide = middle - leftIndex + 1
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
