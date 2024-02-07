@@ -307,6 +307,15 @@ void lock_pairs(void)
     return;
 }
 
+bool checkIfNotCloseCircle(bool array, int index){
+    int count = 0;
+    for (int i = 0; i < candidate_count; i++){
+        if (array[i]== false){
+            
+        }
+    }
+}
+
 // Print the winner of the election
 void print_winner(void)
 {
