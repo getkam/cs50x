@@ -171,8 +171,12 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    // TODO
+    int mid
     return;
+}
+// Merge sort
+void merge_sort(pairs){
+
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
