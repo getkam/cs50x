@@ -34,7 +34,7 @@ void lock_pairs(void);
 void print_winner(void);
 void mergeSort(pair listToSort[], int leftIndex, int rightIndex);
 void merge(pair listToSort[], int leftIndex, int middle, int rightIndex);
-bool checkIfNotCloseCircle(bool array, int index);
+bool checkIfNotCloseCircle(bool array[], int index);
 
 int main(int argc, string argv[])
 {
@@ -284,9 +284,12 @@ void lock_pairs(void)
     }
     for (int i = 0; i < candidate_count; i++)
     {
-        if(checkIfNotCloseCircle(circleCheck, pairs[i].loser))
-        locked[pairs[i].winner][pairs[i].loser] = true;
-        circleCheck[pairs[i].loser] = true;
+        if(checkIfNotCloseCircle(circleCheck, pairs[i].loser) == false)
+        {
+            locked[pairs[i].winner][pairs[i].loser] = true;
+            circleCheck[pairs[i].loser] = true;
+        }
+
     }
 
     printf("CIRCLE CHECK\n");
@@ -309,20 +312,27 @@ void lock_pairs(void)
     return;
 }
 
-bool checkIfNotCloseCircle(bool array, int index)
+bool checkIfNotCloseCircle(bool array[], int index)
 {
     int count = 0;
-    for (int i = 0; i < candidate_count; i++){
-        if (array[i]== false){
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (array[i]== false)
+        {
             count++;
         }
     }
-    if (count == 1){
+    if (count == 1)
+    {
         return true;
     }
     else if (count > 1)
     {
         return false;
+    }
+    else
+    {
+        return true;
     }
 }
 
