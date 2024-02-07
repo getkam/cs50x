@@ -144,7 +144,7 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
     printf("inside add pairs\n");
-    int pair_count = 0;
+    pair_count = 0;
     pair pairToAdd;
     for (int i = 0; i < candidate_count; i++)
     {
