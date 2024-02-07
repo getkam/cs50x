@@ -276,28 +276,28 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    bool circleCheck[can];
-    for (int c = 0; c < pair_count; c++)
+    bool circleCheck[candidate_count];
+    for (int c = 0; c < candidate_count; c++)
     {
         circleCheck[c] = false;
     }
-    for (int i = 0; i < pair_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         locked[pairs[i].winner][pairs[i].loser] = true;
         circleCheck[pairs[i].loser] = true;
     }
 
     printf("CIRCLE CHECK\n");
-    for (int i = 0; i < pair_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         printf("%d ",circleCheck[i]);
     }
     printf("\n");
 
     printf("LOCKED\n");
-    for (int j = 0; j < pair_count; j++)
+    for (int j = 0; j < candidate_count; j++)
     {
-        for (int i = 0; i < pair_count; i++)
+        for (int i = 0; i < candidate_count; i++)
         {
             printf("%d ",locked[i][j]);
         }
