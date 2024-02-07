@@ -176,7 +176,8 @@ void sort_pairs(void)
 {
 
     mergeSort(pairs, 0, pair_count - 1);
-printf("\nAfter sort \n");
+
+    printf("\nAfter sort \n");
     for (int i = 0; i < pair_count; i++)
     {
             printf("winner %i, loser %i => value: %i\n", pairs[i].winner, pairs[i].loser, preferences[pairs[i].winner][pairs[i].loser]);
@@ -220,7 +221,7 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
     int pointerLeftList = 0;
     int pointerRightList = 0;
     int pointerToFinalList = leftIndex;
-
+    printf("ADDING SORTED\n");
     while ((pointerLeftList < sizeLeftSide) && (pointerRightList < sizeRightSide))
     {
         int valueFromLeftSide = preferences[leftList[pointerLeftList].winner][leftList[pointerLeftList].loser];
