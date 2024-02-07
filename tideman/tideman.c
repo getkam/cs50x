@@ -288,7 +288,7 @@ void lock_pairs(void)
         if(checkIfNotCloseCircle(circleCheck, pairs[i].loser) == false)
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
-            circleCheck[pairs[i].loser] = true;
+            circleCheck[pairs[i].winner] = true;
         }
 
     }
