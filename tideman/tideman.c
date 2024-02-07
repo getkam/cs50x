@@ -217,6 +217,7 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
 
     while ((pointerLeftList < sizeLeftSide) && (pointerRightList < sizeRightSide))
     {
+        int valueFromLeftSide = 
         if (preferences[pairs[leftList[pointerLeftList]].winner][pairs[leftList[pointerLeftList]].loser] > preferences[pairs[rightList[pointerRightList]].winner][pairs[rightList[pointerRightList]].loser])
         {
             //definetely left side has bigger value
