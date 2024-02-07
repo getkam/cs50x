@@ -283,6 +283,7 @@ void lock_pairs(void)
     }
     for (int i = 0; i < candidate_count; i++)
     {
+        if(checkIfNotCloseCircle(circleCheck, pairs[i].loser))
         locked[pairs[i].winner][pairs[i].loser] = true;
         circleCheck[pairs[i].loser] = true;
     }
@@ -313,6 +314,13 @@ bool checkIfNotCloseCircle(bool array, int index){
         if (array[i]== false){
             count++;
         }
+    }
+    if (count == 1){
+        return true;
+    }
+    else if (count > 1)
+    {
+        return false;
     }
 }
 
