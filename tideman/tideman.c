@@ -182,8 +182,6 @@ void sort_pairs(void)
 
 pair mergeSort(pair listToSort[])
 {
-    pair sortedLeft[];
-    pair sortedRight[];
     int leftSize;
     int rightSize;
     if (sizeof(pairs)%2==0)
@@ -195,6 +193,9 @@ pair mergeSort(pair listToSort[])
         leftSize = sizeof(pairs)/2;
         rightSize = sizeof(pairs)/2 +1;
     }
+    pair sortedLeft[leftSize];
+    pair sortedRight[rightSize];
+    
     if(leftSize >1)
     {
        for (int i = 0; i < leftSize; i++)
