@@ -32,6 +32,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
+pair mergeSort(pair leftSide[], pair rightSide[]);
 
 int main(int argc, string argv[])
 {
@@ -173,17 +174,21 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     if (sizeof(pairs)>1){
-        
+
     }
 
     return;
 }
 
-pair mergeSort(pair leftSide[], pair rightSide[])
+pair mergeSort(pair xxx[])
 {
+    pair sortedLeft[];
+    pair sortedRight[];
+    int mid;
     if (sizeof(pairs)%2==0)
     {
-        int mid = sizeof(pairs)/2
+        pair leftSide[mid+1] = xxx[]
+       sortedLeft = mergeSort()
     }
     else
     {
