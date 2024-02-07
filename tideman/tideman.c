@@ -196,8 +196,11 @@ void mergeSort(pair listToSort[], int leftIndex, int rightIndex)
 
 void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
 {
+
     int sizeLeftSide = middle - leftIndex + 1;
     int sizeRightSide = rightIndex - middle;
+    printf("sizeLeftSide %i\n", sizeLeftSide);
+    printf("sizeRightSide %i\n", sizeRightSide);
 
     pair leftList[sizeLeftSide];
     pair rightList[sizeRightSide];
