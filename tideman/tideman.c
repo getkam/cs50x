@@ -177,7 +177,7 @@ void sort_pairs(void)
 // Merge sort
 void merge_sort(pair leftSide[], pair rightSide[]){
 
-
+    if(sizeof(leftSide) <=1)
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
