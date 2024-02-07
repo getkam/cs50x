@@ -183,9 +183,11 @@ void sort_pairs(void)
 
 void mergeSort(pair listToSort[], int leftIndex, int rightIndex)
 {
+    printf("merge Sort: leftIndex: %i, rightIndex: %i, ", leftIndex, rightIndex);
     if (leftIndex < rightIndex)
     {
         int middle = (leftIndex + rightIndex )/2;
+        printf("middle: %i\n",middle);
 
         mergeSort(listToSort, leftIndex, middle);
         mergeSort(listToSort, middle + 1, rightIndex);
