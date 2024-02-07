@@ -175,7 +175,8 @@ void sort_pairs(void)
     return;
 }
 // Merge sort
-void merge_sort(pairs){
+void merge_sort(pair leftSide[], pair rightSide[]){
+
 
 }
 
