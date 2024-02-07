@@ -163,11 +163,6 @@ void add_pairs(void)
             }
         }
     }
-    //                                                            PRINTING TO DELETE
-    for (int i = 0; i < pair_count; i++)
-    {
-        printf("Pair %i: %i > %i\n", i, pairs[i].winner, pairs[i].loser);
-    }
     return;
 }
 
@@ -201,6 +196,7 @@ void mergeSort(pair listToSort[],int leftIndex, int rightIndex)
 
 void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
 {
+
     int sizeLeftSide = middle - leftIndex + 1;
     int sizeRightSide = rightIndex - middle;
 
