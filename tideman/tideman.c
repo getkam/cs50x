@@ -253,7 +253,7 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
     }
     printf("I T E R A T I O N\n");
     printf("LEFT\n");
-    for (int i = 0; i <= sizeLeftSide; i++)
+    for (int i = 0; i < sizeLeftSide; i++)
     {
             printf("winner %i, loser %i => value: %i\n", leftList[i].winner, leftList[i].loser, preferences[leftList[i].winner][leftList[i].loser]);
     }
