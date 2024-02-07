@@ -210,11 +210,11 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
     pair rightList[sizeRightSide];
 
     //fill temporary tables
-    for (int i; i < sizeLeftSide; i++)
+    for (int i = 0; i < sizeLeftSide; i++)
     {
         leftList[i] = listToSort[leftIndex + i];
     }
-    for (int i; i < sizeRightSide; i++)
+    for (int i = 0; i < sizeRightSide; i++)
     {
         rightList[i] = listToSort[rightIndex + i];
     }
@@ -226,8 +226,8 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
 
     while ((pointerLeftList < sizeLeftSide) && (pointerRightList < sizeRightSide))
     {
-        int valueFromLeftSide = preferences[pairs[leftList[pointerLeftList]].winner][pairs[leftList[pointerLeftList]].loser];
-        int valuseFromRightSide = preferences[pairs[rightList[pointerRightList]].winner][pairs[rightList[pointerRightList]].loser];
+        int valueFromLeftSide = preferences[leftList[pointerLeftList].winner][leftList[pointerLeftList].loser];
+        int valuseFromRightSide = preferences[rightList[pointerRightList].winner][rightList[pointerRightList].loser];
         if (valueFromLeftSide > valuseFromRightSide)
         {
             //definetely left side has bigger value
@@ -288,8 +288,3 @@ void print_winner(void)
     return;
 }
 
-int sizeofArr(pair array)
-{
-    int size = 0;
-    for ( int i = 0; i)
-}
