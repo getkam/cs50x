@@ -177,12 +177,9 @@ void sort_pairs(void)
 
     mergeSort(pairs, 0, pair_count - 1);
 printf("\nAfter sort \n");
-    for (int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < pair_count; i++)
     {
-        for (int j = 0; j < candidate_count; j++)
-        {
-            printf("winner %i, loser %i => value: %i\n", i, j, preferences[i][j]);
-        }
+            printf("winner %i, loser %i => value: %i\n", pairs[i].winner, pairs[i].loser, preferences[pairs[i].winner][pairs[i].loser]);
     }
 
     return;
