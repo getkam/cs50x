@@ -100,15 +100,15 @@ int main(int argc, string argv[])
 
         printf("\n");
     }
-    printf("preferences\n");                          ///         TO DELETE
-    for (int i = 0; i < candidate_count; i++)
-    {
-        for (int j = 0; j < candidate_count; j++)
-        {
-            printf("%i, ", preferences[i][j]);
-        }
-        printf("\n");
-    }
+    // printf("preferences\n");                          ///         TO DELETE
+    // for (int i = 0; i < candidate_count; i++)
+    // {
+    //     for (int j = 0; j < candidate_count; j++)
+    //     {
+    //         printf("%i, ", preferences[i][j]);
+    //     }
+    //     printf("\n");
+    // }
 
     add_pairs();
     sort_pairs();
@@ -146,7 +146,7 @@ void record_preferences(int ranks[])
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
-    printf("inside add pairs\n");
+   // printf("inside add pairs\n");
     pair_count = 0;
     pair pairToAdd;
     for (int i = 0; i < candidate_count; i++)
@@ -157,7 +157,7 @@ void add_pairs(void)
             {
                 if (preferences[i][j] > preferences[j][i])
                 {
-                    printf("winner %i, loser %i => value: %i\n", i, j, preferences[i][j]);
+                    ////printf("winner %i, loser %i => value: %i\n", i, j, preferences[i][j]);
                     pairToAdd.winner = i;
                     pairToAdd.loser = j;
                     pairs[pair_count] = pairToAdd;
@@ -175,29 +175,29 @@ void sort_pairs(void)
 
     mergeSort(pairs, 0, pair_count - 1);
 
-    printf("\nAfter sort \n");
-    for (int i = 0; i < pair_count; i++)
-    {
-            printf("winner %i, loser %i => value: %i\n", pairs[i].winner, pairs[i].loser, preferences[pairs[i].winner][pairs[i].loser]);
-    }
+    // printf("\nAfter sort \n");
+    // for (int i = 0; i < pair_count; i++)
+    // {
+    //         printf("winner %i, loser %i => value: %i\n", pairs[i].winner, pairs[i].loser, preferences[pairs[i].winner][pairs[i].loser]);
+    // }
 
     return;
 }
 
 void mergeSort(pair listToSort[], int leftIndex, int rightIndex)
 {
-    printf("merge Sort: leftIndex: %i, rightIndex: %i, ", leftIndex, rightIndex);
+   // printf("merge Sort: leftIndex: %i, rightIndex: %i, ", leftIndex, rightIndex);
     if (leftIndex < rightIndex)
     {
         int middle = (leftIndex + rightIndex )/2;
-        printf("middle: %i\n",middle);
+       // printf("middle: %i\n",middle);
 
         mergeSort(listToSort, leftIndex, middle);
         mergeSort(listToSort, middle + 1, rightIndex);
 
         merge(listToSort, leftIndex, middle, rightIndex);
     }
-    printf("\n");
+    //printf("\n");
 }
 
 void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
@@ -205,8 +205,8 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
 
     int sizeLeftSide = middle - leftIndex + 1;
     int sizeRightSide = rightIndex - middle;
-    printf("sizeLeftSide %i\n", sizeLeftSide);
-    printf("sizeRightSide %i\n", sizeRightSide);
+    // printf("sizeLeftSide %i\n", sizeLeftSide);
+    // printf("sizeRightSide %i\n", sizeRightSide);
 
     pair leftList[sizeLeftSide];
     pair rightList[sizeRightSide];
@@ -258,22 +258,22 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
             pointerRightList++;
             pointerToFinalList++;
         }
-    printf("I T E R A T I O N\n");
-    printf("LEFT\n");
-    for (int i = 0; i < sizeLeftSide; i++)
-    {
-            printf("winner %i, loser %i => value: %i\n", leftList[i].winner, leftList[i].loser, preferences[leftList[i].winner][leftList[i].loser]);
-    }
-    printf("RIGHT\n");
-    for (int i = 0 ; i < sizeRightSide; i++)
-    {
-            printf("winner %i, loser %i => value: %i\n", rightList[i].winner, rightList[i].loser, preferences[rightList[i].winner][rightList[i].loser]);
-    }
-    printf("RESULT\n");
-    for (int i = leftIndex; i <= rightIndex; i++)
-    {
-            printf("winner %i, loser %i => value: %i\n", pairs[i].winner, pairs[i].loser, preferences[pairs[i].winner][pairs[i].loser]);
-    }
+    // printf("I T E R A T I O N\n");
+    // printf("LEFT\n");
+    // for (int i = 0; i < sizeLeftSide; i++)
+    // {
+    //         printf("winner %i, loser %i => value: %i\n", leftList[i].winner, leftList[i].loser, preferences[leftList[i].winner][leftList[i].loser]);
+    // }
+    // printf("RIGHT\n");
+    // for (int i = 0 ; i < sizeRightSide; i++)
+    // {
+    //         printf("winner %i, loser %i => value: %i\n", rightList[i].winner, rightList[i].loser, preferences[rightList[i].winner][rightList[i].loser]);
+    // }
+    // printf("RESULT\n");
+    // for (int i = leftIndex; i <= rightIndex; i++)
+    // {
+    //         printf("winner %i, loser %i => value: %i\n", pairs[i].winner, pairs[i].loser, preferences[pairs[i].winner][pairs[i].loser]);
+    // }
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
@@ -293,22 +293,22 @@ void lock_pairs(void)
 
     }
 
-    printf("CIRCLE CHECK\n");
-    for (int i = 0; i < candidate_count; i++)
-    {
-        printf("%d ",circleCheck[i]);
-    }
-    printf("\n");
+    //printf("CIRCLE CHECK\n");
+    //for (int i = 0; i < candidate_count; i++)
+    //{
+    //    printf("%d ",circleCheck[i]);
+    // }
+    // printf("\n");
 
-    printf("LOCKED\n");
-    for (int j = 0; j < candidate_count; j++)
-    {
-        for (int i = 0; i < candidate_count; i++)
-        {
-            printf("%d ",locked[i][j]);
-        }
-        printf("\n");
-    }
+    // printf("LOCKED\n");
+    // for (int j = 0; j < candidate_count; j++)
+    // {
+    //     for (int i = 0; i < candidate_count; i++)
+    //     {
+    //         printf("%d ",locked[i][j]);
+    //     }
+    //     printf("\n");
+    // }
 
     return;
 }
@@ -340,7 +340,13 @@ bool checkIfNotCloseCircle(bool array[], int index)
 // Print the winner of the election
 void print_winner(void)
 {
-    // TODO
+    for (int c = 0; c < candidate_count; c++)
+    {
+        if (circleCheck[c] == false)
+        {
+            printf("%s\n", candidates[c]);
+        }
+    }
     return;
 }
 
