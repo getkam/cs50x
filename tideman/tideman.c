@@ -239,17 +239,6 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
             pointerToFinalList++;
             pointerRightList++;
         }
-       // else //they are equal - place them next to each other
-       // {
-       //     listToSort[pointerToFinalList] = leftList[pointerLeftList];
-       //     pointerLeftList++;
-       //     pointerToFinalList++;
-
-       //     listToSort[pointerToFinalList] = rightList[pointerRightList];
-       //     pointerRightList++;
-        //    pointerToFinalList++;
-
-        //}
 
         while (pointerLeftList < sizeLeftSide)
         {
