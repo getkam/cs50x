@@ -164,7 +164,7 @@ void add_pairs(void)
     //                                                            PRINTING TO DELETE
     for (int i = 0; i < pairIndex; i++)
     {
-        printf("Pair %i: %s > %s\n", i, pairs[i].winner, pairs[i].loser);
+        printf("Pair %i: %i > %i\n", i, pairs[i].winner, pairs[i].loser);
     }
     return;
 }
