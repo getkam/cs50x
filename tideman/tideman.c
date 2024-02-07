@@ -213,8 +213,12 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
     //pointers
     int pointerLeftList = 0;
     int pointerRightList = 0;
+    int pointerToFinalList = leftIndex;
 
-    
+    while ((pointerLeftList < sizeLeftSide) && (pointerRightList < sizeRightSide))
+    {
+
+    }
 
 
 
