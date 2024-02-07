@@ -219,8 +219,8 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
     while ((pointerLeftList < sizeLeftSide) && (pointerRightList < sizeRightSide))
     {
         int valueFromLeftSide = preferences[leftList[pointerLeftList].winner][leftList[pointerLeftList].loser];
-        int valuseFromRightSide = preferences[rightList[pointerRightList].winner][rightList[pointerRightList].loser];
-        if (valueFromLeftSide >= valuseFromRightSide)
+        int valueFromRightSide = preferences[rightList[pointerRightList].winner][rightList[pointerRightList].loser];
+        if (valueFromLeftSide >= valueFromRightSide)
         {
             //definetely left side has bigger value
             listToSort[pointerToFinalList] = leftList[pointerLeftList];
@@ -228,7 +228,7 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
             pointerToFinalList++;
             pointerLeftList++;
         }
-        else if (valueFromLeftSide < valuseFromRightSide)
+        else if (valueFromLeftSide < valueFromRightSide)
         {
             //definetely right side has bigger value
             listToSort[pointerToFinalList] = rightList[pointerRightList];
