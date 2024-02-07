@@ -221,7 +221,6 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
     int pointerLeftList = 0;
     int pointerRightList = 0;
     int pointerToFinalList = leftIndex;
-    printf("ADDING SORTED\n");
     while ((pointerLeftList < sizeLeftSide) && (pointerRightList < sizeRightSide))
     {
         int valueFromLeftSide = preferences[leftList[pointerLeftList].winner][leftList[pointerLeftList].loser];
@@ -230,6 +229,7 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
         {
             //definetely left side has bigger value
             listToSort[pointerToFinalList] = leftList[pointerLeftList];
+
             pointerToFinalList++;
             pointerLeftList++;
         }
