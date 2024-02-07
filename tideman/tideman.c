@@ -194,7 +194,30 @@ void mergeSort(pair listToSort[],int leftIndex, int rightIndex)
 
 void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
 {
-    int sizeLeftSide = middle - leftIndex + 1
+    int sizeLeftSide = middle - leftIndex + 1;
+    int sizeRightSide = rightIndex - middle;
+
+    pair leftList[sizeLeftSide];
+    pair rightList[sizeRightSide];
+
+    //fill temporary tables
+    for (int i; i < sizeLeftSide; i++)
+    {
+        leftList[i] = listToSort[leftIndex + i];
+    }
+    for (int i; i < sizeRightSide; i++)
+    {
+        rightList[i] = listToSort[rightIndex + i]
+    }
+
+    //pointers
+    int pointerLeftList = 0;
+    int pointerRightList = 0;
+
+    
+
+
+
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
