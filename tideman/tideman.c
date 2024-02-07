@@ -180,7 +180,7 @@ void sort_pairs(void)
     return;
 }
 
-pair mergeSort(pair listToSort[])
+pair mergeSort(pair listToSort[],int lb, int le, int rb, int re)
 {
     int leftSize;
     int rightSize;
