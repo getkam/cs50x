@@ -155,12 +155,12 @@ void add_pairs(void)
                     printf("winner %i, loser %i => value: %i\n", i, j, preferences[i][j]);
                     pairToAdd.winner = i;
                     pairToAdd.loser = j;
+                    pairs[pairIndex] = pairToAdd;
+                    pairIndex++;
                 }
             }
-            pairs[pairIndex] = pairToAdd;
-            pairIndex++;
         }
-        
+
     }
     //                                                            PRINTING TO DELETE
     for (int i = 0; i < pairIndex; i++)
