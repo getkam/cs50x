@@ -155,6 +155,7 @@ void add_pairs(void)
                     printf("winner %i, loser %i\n", i, j);
                     pairToAdd.winner = i;
                     pairToAdd.loser = j;
+                    pairIndex++;
                 }
             }
             pairs[pairIndex] = pairToAdd;
@@ -171,16 +172,8 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    
+
     return;
-}
-// Merge sort
-pair[] merge_sort(pair leftSide[], pair rightSide[]){
-
-    if(sizeof(leftSide) <=1)
-    {
-
-    }
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
