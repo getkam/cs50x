@@ -136,7 +136,8 @@ void record_preferences(int ranks[])
 {
     for (int w = 0; w < candidate_count - 1; w++)
     {
-        for (int l = w + 1; l < candidate_count; l++){
+        for (int l = w + 1; l < candidate_count; l++)
+        {
             preferences[ranks[w]][ranks[l]]++;
         }
     }
@@ -146,7 +147,7 @@ void record_preferences(int ranks[])
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
-   // printf("inside add pairs\n");
+    // printf("inside add pairs\n");
     pair_count = 0;
     pair pairToAdd;
     for (int i = 0; i < candidate_count; i++)
@@ -178,7 +179,8 @@ void sort_pairs(void)
     // printf("\nAfter sort \n");
     // for (int i = 0; i < pair_count; i++)
     // {
-    //         printf("winner %i, loser %i => value: %i\n", pairs[i].winner, pairs[i].loser, preferences[pairs[i].winner][pairs[i].loser]);
+    //         printf("winner %i, loser %i => value: %i\n", pairs[i].winner, pairs[i].loser,
+    //         preferences[pairs[i].winner][pairs[i].loser]);
     // }
 
     return;
@@ -186,18 +188,18 @@ void sort_pairs(void)
 
 void mergeSort(pair listToSort[], int leftIndex, int rightIndex)
 {
-   // printf("merge Sort: leftIndex: %i, rightIndex: %i, ", leftIndex, rightIndex);
+    // printf("merge Sort: leftIndex: %i, rightIndex: %i, ", leftIndex, rightIndex);
     if (leftIndex < rightIndex)
     {
-        int middle = (leftIndex + rightIndex )/2;
-       // printf("middle: %i\n",middle);
+        int middle = (leftIndex + rightIndex) / 2;
+        // printf("middle: %i\n",middle);
 
         mergeSort(listToSort, leftIndex, middle);
         mergeSort(listToSort, middle + 1, rightIndex);
 
         merge(listToSort, leftIndex, middle, rightIndex);
     }
-    //printf("\n");
+    // printf("\n");
 }
 
 void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
@@ -211,7 +213,7 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
     pair leftList[sizeLeftSide];
     pair rightList[sizeRightSide];
 
-    //fill temporary tables
+    // fill temporary tables
     for (int i = 0; i < sizeLeftSide; i++)
     {
         leftList[i] = listToSort[leftIndex + i];
@@ -221,7 +223,7 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
         rightList[i] = listToSort[middle + 1 + i];
     }
 
-    //pointers
+    // pointers
     int pointerLeftList = 0;
     int pointerRightList = 0;
     int pointerToFinalList = leftIndex;
@@ -231,7 +233,7 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
         int valueFromRightSide = preferences[rightList[pointerRightList].winner][rightList[pointerRightList].loser];
         if (valueFromLeftSide >= valueFromRightSide)
         {
-            //definetely left side has bigger value
+            // definetely left side has bigger value
             listToSort[pointerToFinalList] = leftList[pointerLeftList];
 
             pointerToFinalList++;
@@ -239,40 +241,43 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
         }
         else if (valueFromLeftSide < valueFromRightSide)
         {
-            //definetely right side has bigger value
+            // definetely right side has bigger value
             listToSort[pointerToFinalList] = rightList[pointerRightList];
             pointerToFinalList++;
             pointerRightList++;
         }
     }
-        while (pointerLeftList < sizeLeftSide)
-        {
-            listToSort[pointerToFinalList] = leftList[pointerLeftList];
-            pointerLeftList++;
-            pointerToFinalList++;
-        }
+    while (pointerLeftList < sizeLeftSide)
+    {
+        listToSort[pointerToFinalList] = leftList[pointerLeftList];
+        pointerLeftList++;
+        pointerToFinalList++;
+    }
 
-        while (pointerRightList < sizeRightSide)
-        {
-            listToSort[pointerToFinalList] = rightList[pointerRightList];
-            pointerRightList++;
-            pointerToFinalList++;
-        }
+    while (pointerRightList < sizeRightSide)
+    {
+        listToSort[pointerToFinalList] = rightList[pointerRightList];
+        pointerRightList++;
+        pointerToFinalList++;
+    }
     // printf("I T E R A T I O N\n");
     // printf("LEFT\n");
     // for (int i = 0; i < sizeLeftSide; i++)
     // {
-    //         printf("winner %i, loser %i => value: %i\n", leftList[i].winner, leftList[i].loser, preferences[leftList[i].winner][leftList[i].loser]);
+    //         printf("winner %i, loser %i => value: %i\n", leftList[i].winner, leftList[i].loser,
+    //         preferences[leftList[i].winner][leftList[i].loser]);
     // }
     // printf("RIGHT\n");
     // for (int i = 0 ; i < sizeRightSide; i++)
     // {
-    //         printf("winner %i, loser %i => value: %i\n", rightList[i].winner, rightList[i].loser, preferences[rightList[i].winner][rightList[i].loser]);
+    //         printf("winner %i, loser %i => value: %i\n", rightList[i].winner, rightList[i].loser,
+    //         preferences[rightList[i].winner][rightList[i].loser]);
     // }
     // printf("RESULT\n");
     // for (int i = leftIndex; i <= rightIndex; i++)
     // {
-    //         printf("winner %i, loser %i => value: %i\n", pairs[i].winner, pairs[i].loser, preferences[pairs[i].winner][pairs[i].loser]);
+    //         printf("winner %i, loser %i => value: %i\n", pairs[i].winner, pairs[i].loser,
+    //         preferences[pairs[i].winner][pairs[i].loser]);
     // }
 }
 
@@ -285,20 +290,19 @@ void lock_pairs(void)
     }
     for (int i = 0; i < candidate_count; i++)
     {
-        if(checkIfNotCloseCircle(circleCheck, pairs[i].loser) == false)
+        if (checkIfNotCloseCircle(circleCheck, pairs[i].loser) == false)
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
             circleCheck[pairs[i].loser] = true;
         }
-
     }
 
-    //printf("CIRCLE CHECK\n");
-    //for (int i = 0; i < candidate_count; i++)
+    // printf("CIRCLE CHECK\n");
+    // for (int i = 0; i < candidate_count; i++)
     //{
-    //    printf("%d ",circleCheck[i]);
-    // }
-    // printf("\n");
+    //     printf("%d ",circleCheck[i]);
+    //  }
+    //  printf("\n");
 
     // printf("LOCKED\n");
     // for (int j = 0; j < candidate_count; j++)
@@ -318,7 +322,7 @@ bool checkIfNotCloseCircle(bool array[], int index)
     int count = 0;
     for (int i = 0; i < candidate_count; i++)
     {
-        if (array[i]== false)
+        if (array[i] == false)
         {
             count++;
         }
@@ -349,4 +353,3 @@ void print_winner(void)
     }
     return;
 }
-
