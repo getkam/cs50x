@@ -194,6 +194,7 @@ void mergeSort(pair listToSort[], int leftIndex, int rightIndex)
 
         merge(listToSort, leftIndex, middle, rightIndex);
     }
+    printf("\n");
 }
 
 void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
