@@ -190,7 +190,7 @@ printf("\nAfter sort \n");
 
 void mergeSort(pair listToSort[],int leftIndex, int rightIndex)
 {
-    if (listToSort[leftIndex] < listToSort[rightIndex])
+    if (leftIndex < rightIndex)
     {
         int middle = (leftIndex + rightIndex )/2;
 
@@ -216,7 +216,7 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
     }
     for (int i; i < sizeRightSide; i++)
     {
-        rightList[i] = listToSort[rightIndex + i]
+        rightList[i] = listToSort[rightIndex + i];
     }
 
     //pointers
