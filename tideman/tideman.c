@@ -178,11 +178,16 @@ void sort_pairs(void)
     return;
 }
 
-pair mergeSort(pair listToSort[],int leftIndex, int rightIndex)
+void mergeSort(pair listToSort[],int leftIndex, int rightIndex)
 {
     if (listToSort[leftIndex] < listToSort[rightIndex])
     {
-        int mid = 
+        int middle = (leftIndex * (rightIndex -1)/2;
+
+        mergeSort(listToSort, leftIndex, middle);
+        mergeSort(listToSort, middle + 1, rightIndex);
+
+        merge()
     }
 }
 
