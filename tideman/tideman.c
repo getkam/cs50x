@@ -212,7 +212,7 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
     }
     for (int i = 0; i < sizeRightSide; i++)
     {
-        rightList[i] = listToSort[rightIndex + i];
+        rightList[i] = listToSort[middle + i];
     }
 
     //pointers
