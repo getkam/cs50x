@@ -32,7 +32,8 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
-pair mergeSort(pair listToSort[]);
+void mergeSort(pair listToSort[], int leftIndex, int rightIndex);
+void merge(pair listToSort[], int leftIndex, int middle, int rightIndex);
 
 int main(int argc, string argv[])
 {
@@ -187,7 +188,7 @@ void mergeSort(pair listToSort[],int leftIndex, int rightIndex)
         mergeSort(listToSort, leftIndex, middle);
         mergeSort(listToSort, middle + 1, rightIndex);
 
-        merge()
+        merge(listToSort, leftIndex, middle, rightIndex);
     }
 }
 
