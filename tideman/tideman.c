@@ -195,7 +195,7 @@ pair mergeSort(pair listToSort[])
     }
     pair sortedLeft[leftSize];
     pair sortedRight[rightSize];
-    
+
     if(leftSize >1)
     {
        for (int i = 0; i < leftSize; i++)
@@ -229,4 +229,10 @@ void print_winner(void)
 {
     // TODO
     return;
+}
+
+int sizeofArr(pair array)
+{
+    int size = 0;
+    for ( int i = 0; i)
 }
