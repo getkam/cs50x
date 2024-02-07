@@ -143,7 +143,7 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
     printf("inside add pairs\n");
-    int pairIndex = 0;
+    int pair_count = 0;
     pair pairToAdd;
     for (int i = 0; i < candidate_count; i++)
     {
@@ -156,14 +156,14 @@ void add_pairs(void)
                     printf("winner %i, loser %i => value: %i\n", i, j, preferences[i][j]);
                     pairToAdd.winner = i;
                     pairToAdd.loser = j;
-                    pairs[pairIndex] = pairToAdd;
-                    pairIndex++;
+                    pairs[pair_count] = pairToAdd;
+                    pair_count++;
                 }
             }
         }
     }
     //                                                            PRINTING TO DELETE
-    for (int i = 0; i < pairIndex; i++)
+    for (int i = 0; i < pair_count; i++)
     {
         printf("Pair %i: %i > %i\n", i, pairs[i].winner, pairs[i].loser);
     }
@@ -174,7 +174,7 @@ void add_pairs(void)
 void sort_pairs(void)
 {
 
-
+    mergeSort(pairs, 0, pair_count - 1);
     return;
 }
 
