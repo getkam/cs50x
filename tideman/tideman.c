@@ -290,7 +290,7 @@ void lock_pairs(void)
     printf("CIRCLE CHECK\n");
     for (int i = 0; i < pair_count; i++)
     {
-        printf("%i",circleCheck[i]);
+        printf("%d",circleCheck[i]);
     }
     printf("\n");
 
@@ -299,7 +299,7 @@ void lock_pairs(void)
     {
         for (int i = 0; i < pair_count; i++)
         {
-            printf("%s",locked[i][j]);
+            printf("%d",locked[i][j]);
         }
         printf("\n");
     }
