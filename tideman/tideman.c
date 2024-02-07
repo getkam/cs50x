@@ -297,22 +297,22 @@ void lock_pairs(void)
         }
     }
 
-    // printf("CIRCLE CHECK\n");
-    // for (int i = 0; i < candidate_count; i++)
-    //{
-    //     printf("%d ",circleCheck[i]);
-    //  }
-    //  printf("\n");
+    printf("CIRCLE CHECK\n");
+    for (int i = 0; i < candidate_count; i++)
+    {
+        printf("%d ",circleCheck[i]);
+     }
+     printf("\n");
 
-    // printf("LOCKED\n");
-    // for (int j = 0; j < candidate_count; j++)
-    // {
-    //     for (int i = 0; i < candidate_count; i++)
-    //     {
-    //         printf("%d ",locked[i][j]);
-    //     }
-    //     printf("\n");
-    // }
+    printf("LOCKED\n");
+    for (int j = 0; j < candidate_count; j++)
+    {
+        for (int i = 0; i < candidate_count; i++)
+        {
+            printf("%d ",locked[i][j]);
+        }
+        printf("\n");
+    }
 
     return;
 }
