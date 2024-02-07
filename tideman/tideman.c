@@ -196,7 +196,6 @@ void mergeSort(pair listToSort[], int leftIndex, int rightIndex)
 
 void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
 {
-    printf("I T E R A T I O N\n");
     int sizeLeftSide = middle - leftIndex + 1;
     int sizeRightSide = rightIndex - middle;
 
@@ -252,16 +251,18 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
         }
 
     }
-    
-    for (int i = 0; i < pair_count; i++)
+    printf("I T E R A T I O N\n");
+    printf("LEFT\n");
+    for (int i = leftIndex; i <= middle; i++)
     {
             printf("winner %i, loser %i => value: %i\n", pairs[i].winner, pairs[i].loser, preferences[pairs[i].winner][pairs[i].loser]);
     }
-    for (int i = 0; i < pair_count; i++)
+    printf("RIGHT\n")
+    for (int i = middle + 1 ; i < rightIndex; i++)
     {
             printf("winner %i, loser %i => value: %i\n", pairs[i].winner, pairs[i].loser, preferences[pairs[i].winner][pairs[i].loser]);
     }
-    for (int i = 0; i < pair_count; i++)
+    for (int i = leftIndex; i < pair_count; i++)
     {
             printf("winner %i, loser %i => value: %i\n", pairs[i].winner, pairs[i].loser, preferences[pairs[i].winner][pairs[i].loser]);
     }
