@@ -34,6 +34,7 @@ void lock_pairs(void);
 void print_winner(void);
 void mergeSort(pair listToSort[], int leftIndex, int rightIndex);
 void merge(pair listToSort[], int leftIndex, int middle, int rightIndex);
+bool checkIfNotCloseCircle(bool array, int index);
 
 int main(int argc, string argv[])
 {
@@ -308,7 +309,8 @@ void lock_pairs(void)
     return;
 }
 
-bool checkIfNotCloseCircle(bool array, int index){
+bool checkIfNotCloseCircle(bool array, int index)
+{
     int count = 0;
     for (int i = 0; i < candidate_count; i++){
         if (array[i]== false){
