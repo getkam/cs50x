@@ -284,7 +284,7 @@ void lock_pairs(void)
     for (int i = 0; i < candidate_count; i++)
     {
         locked[pairs[i].winner][pairs[i].loser] = true;
-        circleCheck[pairs[i].loser] = true;
+        circleCheck[pairs[i].winner] = true;
     }
 
     printf("CIRCLE CHECK\n");
