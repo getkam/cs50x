@@ -331,7 +331,7 @@ bool checkCircle(int vertex)
 
 void depthFirstSearch(int vertex, int parent)
 {
-    
+    vistited[vertex] = 
 }
 
 // Print the winner of the election
