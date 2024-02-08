@@ -288,7 +288,7 @@ void lock_pairs(void)
     {
         circleCheck[c] = false;
     }
-    for (int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < pair_count; i++)
     {
         if (checkIfNotCloseCircle(circleCheck, pairs[i].loser) == false)
         {
