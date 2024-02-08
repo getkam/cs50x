@@ -348,7 +348,7 @@ void print_winner(void)
     {
         if (circleCheck[c] == false)
         {
-            //check if this candidate is pointing to someone
+            //check if this candidate is pointing at someone
             for (int i = 0; i < candidate_count; i++)
             {
                 if(locked[c][i] == true)
