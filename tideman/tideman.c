@@ -25,7 +25,8 @@ pair pairs[MAX * (MAX - 1) / 2];
 int pair_count;
 int candidate_count;
 
-bool circleCheck[MAX];
+bool visited[candidate_count];
+bool recStock[candidate_count];
 
 // Function prototypes
 bool vote(int rank, string name, int ranks[]);
@@ -326,6 +327,11 @@ bool checkCircle(int vertex)
     {
         depthFirstSearch(vertex, -1);
     }
+}
+
+void depthFirstSearch(int vertex, int parent)
+{
+    
 }
 
 // Print the winner of the election
