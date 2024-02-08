@@ -284,9 +284,13 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    for (int c = 0; c < candidate_count; c++)
+    bool visited[candidate_count];
+    bool recStock[candidate_count];
+
+    for (int i = 0; i < candidate_count; i++)
     {
-        circleCheck[c] = false;
+        visited[i] = false;
+        recStock[i] = false;
     }
     for (int i = 0; i < pair_count; i++)
     {
