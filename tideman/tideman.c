@@ -26,7 +26,7 @@ int pair_count;
 int candidate_count;
 
 bool visited[MAX];
-bool recStock[MAX];
+bool currVistited[MAX];
 
 // Function prototypes
 bool vote(int rank, string name, int ranks[]);
@@ -292,7 +292,7 @@ void lock_pairs(void)
         for (int i = 0; i < candidate_count; i++)
         {
             visited[i] = false;
-            recStock[i] = false;
+            currVistited[i] = false;
         }
 
         if (checkCircle(pairs[p].winner) == false)
@@ -333,8 +333,8 @@ bool checkCircle(int vertex)
 
 bool depthFirstSearch(int vertex, int parent)
 {
-    vistited[vertex] = true;
-    recStock[vertex] = true;
+    visited[vertex] = true;
+    currVistited[vertex] = true;
 
     for (int i = 0; i < candidate_count; i++)
     {
@@ -344,12 +344,12 @@ bool depthFirstSearch(int vertex, int parent)
                 return true;
             }
         }
-        if (!recStock[i] && i != parent)
+        if (!currVistited[i] && i != parent)
         {
             return true; // cycle
         }
     }
-    recStack[vertex] = false;
+    currVistited[vertex] = false;
     return false;
 }
 
