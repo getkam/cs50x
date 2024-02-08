@@ -331,7 +331,15 @@ bool checkCircle(int vertex)
 
 void depthFirstSearch(int vertex, int parent)
 {
-    vistited[vertex] = 
+    vistited[vertex] = true;
+    recStock[vertex] = true;
+
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if(i != parent)
+        depthFirstSearch(i, vertex)
+    }
+
 }
 
 // Print the winner of the election
