@@ -292,12 +292,12 @@ void lock_pairs(void)
         visited[i] = false;
         recStock[i] = false;
     }
-    for (int i = 0; i < pair_count; i++)
+    for (int p = 0; p < pair_count; p++)
     {
-        if (checkIfNotCloseCircle(circleCheck, pairs[i].loser) == false)
+        if (checkCircle(circleCheck, pairs[p].loser) == false)
         {
-            locked[pairs[i].loser][pairs[i].winner] = true;
-            circleCheck[pairs[i].loser] = true;
+            locked[pairs[p].loser][pairs[p].winner] = true;
+            circleCheck[pairs[p].loser] = true;
         }
     }
 
