@@ -323,6 +323,9 @@ void lock_pairs(void)
 bool checkCircle(int verticle)
 {
     if (!visited[verticle])
+    {
+        DFS
+    }
 }
 
 // Print the winner of the election
