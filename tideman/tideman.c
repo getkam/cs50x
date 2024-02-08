@@ -329,14 +329,19 @@ bool checkCircle(int vertex)
     }
 }
 
-void depthFirstSearch(int vertex, int parent)
+bool depthFirstSearch(int vertex, int parent)
 {
     vistited[vertex] = true;
     recStock[vertex] = true;
 
     for (int i = 0; i < candidate_count; i++)
     {
-        if (locked[vertex][i])
+        if (!visited[i]){
+            if (depthFirstSearch())
+            {
+                
+            }
+        }
         if (i != parent)
         depthFirstSearch(i, vertex)
     }
