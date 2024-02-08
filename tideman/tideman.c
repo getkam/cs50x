@@ -302,7 +302,7 @@ void lock_pairs(void)
        // }
     }
 
-    printf("CIRCLE CHECK\n");
+    printf("VISITED\n");
     for (int i = 0; i < candidate_count; i++)
     {
         printf("%d ",visited[i]);
