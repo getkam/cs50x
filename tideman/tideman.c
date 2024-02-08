@@ -301,22 +301,22 @@ void lock_pairs(void)
         }
     }
 
-    // printf("CIRCLE CHECK\n");
-    // for (int i = 0; i < candidate_count; i++)
-    // {
-    //     printf("%d ",circleCheck[i]);
-    //  }
-    //  printf("\n");
+    printf("CIRCLE CHECK\n");
+    for (int i = 0; i < candidate_count; i++)
+    {
+        printf("%d ",visited[i]);
+     }
+     printf("\n");
 
-    // printf("LOCKED\n");
-    // for (int j = 0; j < candidate_count; j++)
-    // {
-    //     for (int i = 0; i < candidate_count; i++)
-    //     {
-    //         printf("%d ",locked[i][j]);
-    //     }
-    //     printf("\n");
-    // }
+    printf("LOCKED\n");
+    for (int j = 0; j < candidate_count; j++)
+    {
+        for (int i = 0; i < candidate_count; i++)
+        {
+            printf("%d ",locked[i][j]);
+        }
+        printf("\n");
+    }
 
     return;
 }
@@ -358,7 +358,7 @@ void print_winner(void)
 {
     for (int c = 0; c < candidate_count; c++)
     {
-        if (circleCheck[c] == false)
+        if (visited[c] == false)
         {
             //printf("c: %i\n", c);
             //check if this candidate is pointing at someone
