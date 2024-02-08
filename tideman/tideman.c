@@ -176,12 +176,12 @@ void sort_pairs(void)
 
     mergeSort(pairs, 0, pair_count - 1);
 
-    // printf("\nAfter sort \n");
-    // for (int i = 0; i < pair_count; i++)
-    // {
-    //         printf("winner %i, loser %i => value: %i\n", pairs[i].winner, pairs[i].loser,
-    //         preferences[pairs[i].winner][pairs[i].loser]);
-    // }
+    printf("\nAfter sort, pair count %i\n", pair_count);
+    for (int i = 0; i < pair_count; i++)
+    {
+            printf("winner %i, loser %i => value: %i\n", pairs[i].winner, pairs[i].loser,
+            preferences[pairs[i].winner][pairs[i].loser]);
+    }
 
     return;
 }
