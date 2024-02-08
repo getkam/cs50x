@@ -351,12 +351,14 @@ void print_winner(void)
             //check if this candidate is pointing at someone
             for (int i = 0; i < candidate_count; i++)
             {
+                printf("%d ", locked[c][i]);
                 if (locked[c][i] == true)
                 {
                     printf("%s\n", candidates[c]);
                     return;
                 }
             }
+            printf("\n");
         }
     }
     return;
