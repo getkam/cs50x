@@ -354,9 +354,9 @@ void print_winner(void)
                 if (locked[c][i] == true)
                 {
                     printf("%s\n", candidates[c]);
+                    return;
                 }
             }
-
         }
     }
     return;
