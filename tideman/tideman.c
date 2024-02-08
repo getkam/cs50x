@@ -297,7 +297,6 @@ void lock_pairs(void)
         if (checkCircle(pairs[p].winner) == false)
         {
             locked[pairs[p].winner][pairs[p].loser] = true;
-            visited[p]
         }
     }
 
@@ -321,28 +320,9 @@ void lock_pairs(void)
     return;
 }
 
-bool checkIfNotCloseCircle(bool array[], int index)
+bool checkCircle(int verticle)
 {
-    int count = 0;
-    for (int i = 0; i < candidate_count; i++)
-    {
-        if (array[i] == false)
-        {
-            count++;
-        }
-    }
-    if (count == 1)
-    {
-        return true;
-    }
-    else if (count > 1)
-    {
-        return false;
-    }
-    else
-    {
-        return true;
-    }
+    if (!visited[verticle])
 }
 
 // Print the winner of the election
