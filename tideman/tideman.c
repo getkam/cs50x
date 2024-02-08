@@ -296,10 +296,10 @@ void lock_pairs(void)
     {
 
 
-        if (checkCircle(pairs[p].winner))
-        {
+       // if (checkCircle(pairs[p].winner))
+        //{
             locked[pairs[p].winner][pairs[p].loser] = true;
-        }
+       // }
     }
 
     printf("CIRCLE CHECK\n");
