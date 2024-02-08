@@ -25,8 +25,8 @@ pair pairs[MAX * (MAX - 1) / 2];
 int pair_count;
 int candidate_count;
 
-bool visited[candidate_count];
-bool recStock[candidate_count];
+bool visited[MAX];
+bool recStock[MAX];
 
 // Function prototypes
 bool vote(int rank, string name, int ranks[]);
@@ -36,8 +36,9 @@ void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
 void mergeSort(pair listToSort[], int leftIndex, int rightIndex);
+bool checkCircle(int vertex);
 void merge(pair listToSort[], int leftIndex, int middle, int rightIndex);
-bool checkIfNotCloseCircle(bool array[], int index);
+bool depthFirstSearch(int vertex, int parent);
 
 int main(int argc, string argv[])
 {
@@ -293,7 +294,7 @@ void lock_pairs(void)
             visited[i] = false;
             recStock[i] = false;
         }
-        
+
         if (checkCircle(pairs[p].winner) == false)
         {
             locked[pairs[p].winner][pairs[p].loser] = true;
