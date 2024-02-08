@@ -295,7 +295,7 @@ void lock_pairs(void)
             currVistited[i] = false;
         }
 
-        if (checkCircle(pairs[p].winner) == false)
+        if (checkCircle(pairs[p].winner))
         {
             locked[pairs[p].winner][pairs[p].loser] = true;
         }
