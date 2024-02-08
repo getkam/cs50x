@@ -179,7 +179,7 @@ void sort_pairs(void)
     printf("\nAfter sort, pair count %i\n", pair_count);
     for (int i = 0; i < pair_count; i++)
     {
-            printf("winner %i, loser %i => value: %i\n", pairs[i].winner, pairs[i].loser,
+            //printf("winner %i, loser %i => value: %i\n", pairs[i].winner, pairs[i].loser,
             preferences[pairs[i].winner][pairs[i].loser]);
     }
 
@@ -297,22 +297,22 @@ void lock_pairs(void)
         }
     }
 
-    printf("CIRCLE CHECK\n");
-    for (int i = 0; i < candidate_count; i++)
-    {
-        printf("%d ",circleCheck[i]);
-     }
-     printf("\n");
+    // printf("CIRCLE CHECK\n");
+    // for (int i = 0; i < candidate_count; i++)
+    // {
+    //     printf("%d ",circleCheck[i]);
+    //  }
+    //  printf("\n");
 
-    printf("LOCKED\n");
-    for (int j = 0; j < candidate_count; j++)
-    {
-        for (int i = 0; i < candidate_count; i++)
-        {
-            printf("%d ",locked[i][j]);
-        }
-        printf("\n");
-    }
+    // printf("LOCKED\n");
+    // for (int j = 0; j < candidate_count; j++)
+    // {
+    //     for (int i = 0; i < candidate_count; i++)
+    //     {
+    //         printf("%d ",locked[i][j]);
+    //     }
+    //     printf("\n");
+    // }
 
     return;
 }
@@ -348,17 +348,18 @@ void print_winner(void)
     {
         if (circleCheck[c] == false)
         {
+            //printf("c: %i\n", c);
             //check if this candidate is pointing at someone
             for (int i = 0; i < candidate_count; i++)
             {
-                printf("%d ", locked[c][i]);
-                if (locked[c][i] == true)
+               // printf("%d ", locked[i][c]);
+                if (locked[i][c] == true)
                 {
                     printf("%s\n", candidates[c]);
                     return;
                 }
             }
-            printf("\n");
+            //printf("\n");
         }
     }
     return;
