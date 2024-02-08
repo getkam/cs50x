@@ -343,9 +343,12 @@ bool depthFirstSearch(int vertex, int parent)
             }
         }
         if (!recStock[i] && i != parent)
-        depthFirstSearch(i, vertex)
+        {
+            return true; // cycle
+        }
     }
- 
+    recStack[vertex] = false;
+    return false;
 }
 
 // Print the winner of the election
