@@ -336,7 +336,8 @@ void depthFirstSearch(int vertex, int parent)
 
     for (int i = 0; i < candidate_count; i++)
     {
-        if(i != parent)
+        if ()
+        if (i != parent)
         depthFirstSearch(i, vertex)
     }
 
