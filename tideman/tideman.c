@@ -348,8 +348,10 @@ void print_winner(void)
     {
         if (circleCheck[c] == false)
         {
+
             printf("%s\n", candidates[c]);
         }
     }
     return;
 }
+
