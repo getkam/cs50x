@@ -337,15 +337,15 @@ bool depthFirstSearch(int vertex, int parent)
     for (int i = 0; i < candidate_count; i++)
     {
         if (!visited[i]){
-            if (depthFirstSearch())
+            if (depthFirstSearch(i, vertex))
             {
-                
+                return true;
             }
         }
-        if (i != parent)
+        if (!recStock[i] && i != parent)
         depthFirstSearch(i, vertex)
     }
-
+ 
 }
 
 // Print the winner of the election
