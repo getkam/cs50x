@@ -324,7 +324,7 @@ bool checkCircle(int verticle)
 {
     if (!visited[verticle])
     {
-        DFS
+        depthFirstSearch()
     }
 }
 
