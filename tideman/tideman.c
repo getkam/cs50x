@@ -285,16 +285,15 @@ void merge(pair listToSort[], int leftIndex, int middle, int rightIndex)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    bool visited[candidate_count];
-    bool recStock[candidate_count];
 
-    for (int i = 0; i < candidate_count; i++)
-    {
-        visited[i] = false;
-        recStock[i] = false;
-    }
     for (int p = 0; p < pair_count; p++)
     {
+        for (int i = 0; i < candidate_count; i++)
+        {
+            visited[i] = false;
+            recStock[i] = false;
+        }
+        
         if (checkCircle(pairs[p].winner) == false)
         {
             locked[pairs[p].winner][pairs[p].loser] = true;
