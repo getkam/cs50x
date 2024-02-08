@@ -320,11 +320,11 @@ void lock_pairs(void)
     return;
 }
 
-bool checkCircle(int verticle)
+bool checkCircle(int vertex)
 {
-    if (!visited[verticle])
+    if (!visited[vertex])
     {
-        depthFirstSearch()
+        depthFirstSearch(vertex, -1);
     }
 }
 
