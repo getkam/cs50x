@@ -348,7 +348,11 @@ void print_winner(void)
     {
         if (circleCheck[c] == false)
         {
-
+            //check if this candidate is pointing to someone
+            for (int i = 0; i < candidate_count, i++)
+            {
+                locked[][]
+            }
             printf("%s\n", candidates[c]);
         }
     }
