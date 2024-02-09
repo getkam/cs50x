@@ -38,7 +38,7 @@ void print_winner(void);
 void mergeSort(pair listToSort[], int leftIndex, int rightIndex);
 bool checkCircle(int vertex);
 void merge(pair listToSort[], int leftIndex, int middle, int rightIndex);
-bool depthFirstSearch(int vertex, int parent);
+bool depthFirstSearch(int vertex);
 
 int main(int argc, string argv[])
 {
@@ -315,14 +315,13 @@ bool checkCircle(int vertex)
     for (int i = 0; i < candidate_count; i++)
     {
         visited[i] = false;
-        currVistited[i] = false;
     }
 
-    return depthFirstSearch(vertex, -1);
+    return depthFirstSearch(vertex);
 
 }
 
-bool depthFirstSearch(int vertex, int parent)
+bool depthFirstSearch(int vertex)
 {
     visited[vertex] = true;
 
@@ -332,7 +331,7 @@ bool depthFirstSearch(int vertex, int parent)
         {
             if(!visited[j])
             {
-                return depthFirstSearch(j, vertex);
+                return depthFirstSearch(j);
             }
             else
             {
