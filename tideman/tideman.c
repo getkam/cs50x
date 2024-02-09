@@ -25,7 +25,6 @@ pair pairs[MAX * (MAX - 1) / 2];
 int pair_count;
 int candidate_count;
 
-
 // Function prototypes
 bool vote(int rank, string name, int ranks[]);
 void record_preferences(int ranks[]);
@@ -158,7 +157,7 @@ void add_pairs(void)
             {
                 if (preferences[i][j] > preferences[j][i])
                 {
-                    //printf("winner %i, loser %i => value: %i\n", i, j, preferences[i][j]);
+                    // printf("winner %i, loser %i => value: %i\n", i, j, preferences[i][j]);
                     pairToAdd.winner = i;
                     pairToAdd.loser = j;
                     pairs[pair_count] = pairToAdd;
@@ -299,7 +298,6 @@ void lock_pairs(void)
         }
     }
 
-
     // printf("LOCKED\n");
     // for (int j = 0; j < candidate_count; j++)
     // {
@@ -322,13 +320,12 @@ bool checkCircle(int pairNo)
     }
 
     return depthFirstSearch(pairs[pairNo].winner, visited);
-
 }
 
 bool depthFirstSearch(int vertex, bool visited[])
 {
-   // printf("Wierzcholek  odwiedzony: %i \n", vertex);
-    if(visited[vertex])
+    // printf("Wierzcholek  odwiedzony: %i \n", vertex);
+    if (visited[vertex])
     {
         return true;
     }
@@ -336,10 +333,10 @@ bool depthFirstSearch(int vertex, bool visited[])
 
     for (int j = 0; j < candidate_count; j++)
     {
-       // printf("wartosc locked[vertex][j] :  %d \n", locked[vertex][j]);
-        if (locked[vertex][j] && depthFirstSearch(j, visited))// next vertex
+        // printf("wartosc locked[vertex][j] :  %d \n", locked[vertex][j]);
+        if (locked[vertex][j] && depthFirstSearch(j, visited)) // next vertex
         {
-                return true;
+            return true;
         }
     }
 
@@ -350,17 +347,15 @@ bool depthFirstSearch(int vertex, bool visited[])
 void print_winner(void)
 {
     bool winner = true;
-    int candidateNo = -1;
     for (int i = 0; i < candidate_count; i++)
     {
         winner = true;
-        for (int j = 0; j < candidate_count; j++) //looking for empty column
+        for (int j = 0; j < candidate_count; j++) // looking for empty column
         {
-                if (locked[j][i] == true)
-                {
-                    winner = false;
-                }
-            
+            if (locked[j][i] == true)
+            {
+                winner = false;
+            }
         }
         if (winner == true)
         {
