@@ -324,17 +324,17 @@ bool checkCircle(int vertex)
 
 bool depthFirstSearch(int vertex)
 {
-    printf("Wierzcholek  odwiedzony: %i ", vertex);
+    printf("Wierzcholek  odwiedzony: %i \n", vertex);
     visited[vertex] = true;
 
     for (int j = 0; j < candidate_count; j++)
     {
-        printf("wartosc locked[vertex][j] :  %d ", locked[vertex][j]);
+        printf("wartosc locked[vertex][j] :  %d \n", locked[vertex][j]);
         if (locked[vertex][j])// next vertex
         {
             if(!visited[j])
             {
-                
+
                 return depthFirstSearch(j);
             }
             else
