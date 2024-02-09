@@ -290,7 +290,7 @@ void lock_pairs(void)
     {
 
         locked[pairs[p].winner][pairs[p].loser] = true;
-        if (checkCircle(pairs[p].winner))
+        if (checkCircle(p))
         {
             printf("checkCircle: true\n");
             locked[pairs[p].winner][pairs[p].loser] = false;
