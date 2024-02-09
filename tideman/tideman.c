@@ -302,15 +302,15 @@ void lock_pairs(void)
     }
 
 
-    printf("LOCKED\n");
-    for (int j = 0; j < candidate_count; j++)
-    {
-        for (int i = 0; i < candidate_count; i++)
-        {
-            printf("%d ",locked[i][j]);
-        }
-        printf("\n");
-    }
+    // printf("LOCKED\n");
+    // for (int j = 0; j < candidate_count; j++)
+    // {
+    //     for (int i = 0; i < candidate_count; i++)
+    //     {
+    //         printf("%d ",locked[i][j]);
+    //     }
+    //     printf("\n");
+    // }
 
     return;
 }
@@ -328,7 +328,7 @@ bool checkCircle(int pairNo)
 
 bool depthFirstSearch(int vertex, bool visited[])
 {
-    printf("Wierzcholek  odwiedzony: %i \n", vertex);
+   // printf("Wierzcholek  odwiedzony: %i \n", vertex);
     if(visited[vertex])
     {
         return true;
@@ -337,7 +337,7 @@ bool depthFirstSearch(int vertex, bool visited[])
 
     for (int j = 0; j < candidate_count; j++)
     {
-        printf("wartosc locked[vertex][j] :  %d \n", locked[vertex][j]);
+       // printf("wartosc locked[vertex][j] :  %d \n", locked[vertex][j]);
         if (locked[vertex][j] && depthFirstSearch(j, visited))// next vertex
         {
                 return true;
