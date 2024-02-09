@@ -323,12 +323,9 @@ bool checkCircle(int vertex)
         visited[i] = false;
         currVistited[i] = false;
     }
-    if (!visited[vertex])
-    {
-        depthFirstSearch(vertex, -1);
-        return true;
-    }
-    return false;
+
+    return depthFirstSearch(vertex, -1);
+
 }
 
 bool depthFirstSearch(int vertex, int parent)
