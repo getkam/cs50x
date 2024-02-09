@@ -38,7 +38,7 @@ void print_winner(void);
 void mergeSort(pair listToSort[], int leftIndex, int rightIndex);
 bool checkCircle(int vertex);
 void merge(pair listToSort[], int leftIndex, int middle, int rightIndex);
-bool depthFirstSearch(int vertex);
+bool depthFirstSearch(int vertex, bool visited[]);
 
 int main(int argc, string argv[])
 {
@@ -315,18 +315,18 @@ void lock_pairs(void)
     return;
 }
 
-bool checkCircle(int vertex)
+bool checkCircle(int pairNo)
 {
     for (int i = 0; i < candidate_count; i++)
     {
         visited[i] = false;
     }
 
-    return depthFirstSearch(vertex);
+    return depthFirstSearch(pairs[pairNo].winner, visited);
 
 }
 
-bool depthFirstSearch(int vertex)
+bool depthFirstSearch(int vertex, bool visited[])
 {
     printf("Wierzcholek  odwiedzony: %i \n", vertex);
     visited[vertex] = true;
