@@ -331,11 +331,7 @@ bool depthFirstSearch(int vertex, int parent)
     {
         if (!locked[vertex][j])//true - not yet cycle
         {
-            visited[j] == true;
-            if (depthFirstSearch(j, vertex))
-            {
-                return true;
-            }
+            return depthFirstSearch(j, vertex);
         }
         else
         {
