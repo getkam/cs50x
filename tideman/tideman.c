@@ -350,24 +350,25 @@ bool depthFirstSearch(int vertex, bool visited[])
 // Print the winner of the election
 void print_winner(void)
 {
-    bool winner = true; 
-    for (int c = 0; c < candidate_count; c++)
+    bool winner = true;
+    int candidateNo = -1;
+    for (int i = 0; i < candidate_count; i++)
     {
-        if (visited[c] == false)
-        {
-            //printf("c: %i\n", c);
-            //check if this candidate is pointing at someone
-            for (int i = 0; i < candidate_count; i++)
+        winner = true;
+        for (int j = 0; j < candidate_count; j++) //looking for empty column
             {
-               // printf("%d ", locked[i][c]);
-                if (locked[i][c] == true)
+                if (locked[j][i] == true)
                 {
-                    printf("%s\n", candidates[c]);
-                    return;
+                    winner = false;
                 }
             }
-            //printf("\n");
+        }
+        if (winner == true)
+        {
+            printf("%s\n", candidates[c]);
+            return;
         }
     }
+
     return;
 }
