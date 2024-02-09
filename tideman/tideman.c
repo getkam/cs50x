@@ -325,7 +325,6 @@ bool checkCircle(int vertex)
 bool depthFirstSearch(int vertex, int parent)
 {
     visited[vertex] = true;
-    currVistited[vertex] = true;
 
     for (int j = 0; j < candidate_count; j++)
     {
