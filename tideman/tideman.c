@@ -334,10 +334,6 @@ bool depthFirstSearch(int vertex, int parent)
                 return depthFirstSearch(j, vertex);
             }
         }
-        else
-        {
-            return true;
-        }
     }
     visited[vertex] = false;
     return false;
