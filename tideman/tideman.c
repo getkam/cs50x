@@ -292,8 +292,12 @@ void lock_pairs(void)
         locked[pairs[p].winner][pairs[p].loser] = true;
         if (checkCircle(pairs[p].winner))
         {
-            printf("checkCircle: true");
+            printf("checkCircle: true\n");
             locked[pairs[p].winner][pairs[p].loser] = false;
+        }
+        else
+        {
+            printf("checkCircle: false\n");
         }
     }
 
