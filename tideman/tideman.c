@@ -330,8 +330,13 @@ bool depthFirstSearch(int vertex, int parent)
     {
         if (locked[vertex][j])// next vertex
         {
-            if(!visited[j]){
+            if(!visited[j])
+            {
                 return depthFirstSearch(j, vertex);
+            }
+            else
+            {
+                return true;
             }
         }
     }
