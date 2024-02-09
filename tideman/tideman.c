@@ -296,12 +296,6 @@ void lock_pairs(void)
         }
     }
 
-    printf("VISITED\n");
-    for (int i = 0; i < candidate_count; i++)
-    {
-        printf("%d ",visited[i]);
-     }
-     printf("\n");
 
     printf("LOCKED\n");
     for (int j = 0; j < candidate_count; j++)
