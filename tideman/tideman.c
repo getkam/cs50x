@@ -292,6 +292,7 @@ void lock_pairs(void)
         locked[pairs[p].winner][pairs[p].loser] = true;
         if (checkCircle(pairs[p].winner))
         {
+            printf("checkCircle: true");
             locked[pairs[p].winner][pairs[p].loser] = false;
         }
     }
@@ -323,14 +324,17 @@ bool checkCircle(int vertex)
 
 bool depthFirstSearch(int vertex)
 {
+    printf("Wierzcholek  odwiedzony: %i ", vertex);
     visited[vertex] = true;
 
     for (int j = 0; j < candidate_count; j++)
     {
+        printf("wartosc locked[vertex][j] :  %d ", locked[vertex][j]);
         if (locked[vertex][j])// next vertex
         {
             if(!visited[j])
             {
+                
                 return depthFirstSearch(j);
             }
             else
@@ -340,6 +344,7 @@ bool depthFirstSearch(int vertex)
         }
     }
     visited[vertex] = false;
+
     return false;
 }
 
