@@ -338,20 +338,11 @@ bool depthFirstSearch(int vertex, bool visited[])
     for (int j = 0; j < candidate_count; j++)
     {
         printf("wartosc locked[vertex][j] :  %d \n", locked[vertex][j]);
-        if (locked[vertex][j])// next vertex
+        if (locked[vertex][j] && depthFirstSearch(j, visited))// next vertex
         {
-            if(!visited[j])
-            {
-
-                return depthFirstSearch(j);
-            }
-            else
-            {
                 return true;
-            }
         }
     }
-    visited[vertex] = false;
 
     return false;
 }
