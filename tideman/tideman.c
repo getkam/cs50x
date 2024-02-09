@@ -327,20 +327,22 @@ bool depthFirstSearch(int vertex, int parent)
     visited[vertex] = true;
     currVistited[vertex] = true;
 
-    for (int i = 0; i < candidate_count; i++)
+    for (int j = 0; j < candidate_count; j++)
     {
-        if (!){
-            if (depthFirstSearch(i, vertex))
+        if (!locked[vertex][j])//true - not yet cycle
+        {
+            visited[j] == true;
+            if (depthFirstSearch(j, vertex))
             {
                 return true;
             }
         }
-        if (!currVistited[i] && i != parent)
+        else
         {
-            return true; // cycle
+            return true;
         }
     }
-    currVistited[vertex] = false;
+    visited[vertex] = false;
     return false;
 }
 
