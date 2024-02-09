@@ -329,7 +329,7 @@ bool depthFirstSearch(int vertex, int parent)
 
     for (int i = 0; i < candidate_count; i++)
     {
-        if (!visited[i]){
+        if (!){
             if (depthFirstSearch(i, vertex))
             {
                 return true;
