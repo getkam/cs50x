@@ -328,7 +328,7 @@ bool depthFirstSearch(int vertex, int parent)
 
     for (int j = 0; j < candidate_count; j++)
     {
-        if (!locked[vertex][j])//true - not yet cycle
+        if (locked[vertex][j])// next vertex
         {
             return depthFirstSearch(j, vertex);
         }
