@@ -350,6 +350,7 @@ bool depthFirstSearch(int vertex, bool visited[])
 // Print the winner of the election
 void print_winner(void)
 {
+    bool winner = true; 
     for (int c = 0; c < candidate_count; c++)
     {
         if (visited[c] == false)
