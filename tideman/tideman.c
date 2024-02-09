@@ -25,8 +25,6 @@ pair pairs[MAX * (MAX - 1) / 2];
 int pair_count;
 int candidate_count;
 
-bool visited[MAX];
-bool currVistited[MAX];
 
 // Function prototypes
 bool vote(int rank, string name, int ranks[]);
@@ -317,6 +315,7 @@ void lock_pairs(void)
 
 bool checkCircle(int pairNo)
 {
+    bool visited[candidate_count];
     for (int i = 0; i < candidate_count; i++)
     {
         visited[i] = false;
@@ -356,12 +355,12 @@ void print_winner(void)
     {
         winner = true;
         for (int j = 0; j < candidate_count; j++) //looking for empty column
-            {
+        {
                 if (locked[j][i] == true)
                 {
                     winner = false;
                 }
-            }
+            
         }
         if (winner == true)
         {
