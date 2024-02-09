@@ -295,10 +295,10 @@ void lock_pairs(void)
     for (int p = 0; p < pair_count; p++)
     {
 
-
+    locked[pairs[p].winner][pairs[p].loser] = true;
         if (checkCircle(pairs[p].winner))
         {
-            locked[pairs[p].winner][pairs[p].loser] = true;
+            locked[pairs[p].winner][pairs[p].loser] = false;
         }
     }
 
