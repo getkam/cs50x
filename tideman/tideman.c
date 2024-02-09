@@ -329,6 +329,10 @@ bool checkCircle(int pairNo)
 bool depthFirstSearch(int vertex, bool visited[])
 {
     printf("Wierzcholek  odwiedzony: %i \n", vertex);
+    if(visited[vertex])
+    {
+        return true;
+    }
     visited[vertex] = true;
 
     for (int j = 0; j < candidate_count; j++)
