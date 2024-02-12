@@ -10,7 +10,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         {
             double avg = (image[i][j].rgbtRed * image[i][j].rgbtGreen * image[i][j].rgbtBlue) / 3.0;
             int tmp = round(avg);
-            image[i][j].rgbtRed = (BYTE)round(tmp);
+            image[i][j].rgbtRed = image[i][j].rgbtGreen = image[i][j].rgbtBlue = (BYTE)round(tmp);
         }
     }
     return;
