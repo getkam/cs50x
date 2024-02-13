@@ -142,13 +142,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
 
-            double tempRed = gXRed * gXRed + gYRed * gYRed;
+            double tempRed = sqrt(gXRed * gXRed + gYRed * gYRed);
             edged[h][w].rgbtRed = tempRed > 255 ? (BYTE)255 : (BYTE)round(tempRed);
 
-            double tempGreen = gXGreen * gXGreen + gYGreen * gYGreen;
+            double tempGreen = sqrt(gXGreen * gXGreen + gYGreen * gYGreen);
             edged[h][w].rgbtGreen = tempGreen > 255 ? (BYTE)255 : (BYTE)round(tempGreen);
 
-            double tempBlue = gXBlue * gXBlue + gYBlue * gYBlue;
+            double tempBlue = sqrt(gXBlue * gXBlue + gYBlue * gYBlue);
             edged[h][w].rgbtBlue = tempBlue > 255 ? (BYTE)255 : (BYTE)round(tempBlue);
 
         }
