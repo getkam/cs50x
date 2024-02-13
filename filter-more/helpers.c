@@ -36,6 +36,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
+    RGBTRIPLE blured[height][width];
     double red;
     double green;
     double blue;
@@ -65,19 +66,26 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            printf("index: %i\n", index);
+            //printf("index: %i\n", index);
 
             //printf("sum red: %f, rounded avg: %f\n", red, round(red / 9.0));
             //printf("sum green: %f, rounded avg: %f\n", green, round(green / 9.0));
             //printf("sum blue: %f, rounded avg: %f\n", blue, round(blue / 9.0));
 
-            image[i][j].rgbtRed = (BYTE)round(red / index);
-            image[i][j].rgbtGreen = (BYTE)round(green / index);
-            image[i][j].rgbtBlue = (BYTE)round(blue / index);
+            blured[i][j].rgbtRed = (BYTE)round(red / index);
+            blured[i][j].rgbtGreen = (BYTE)round(green / index);
+            blured[i][j].rgbtBlue = (BYTE)round(blue / index);
         }
 
     }
 
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            image[i][j] = blured[i][j];
+        }
+    }
     return;
 }
 
