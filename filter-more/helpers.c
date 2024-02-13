@@ -54,7 +54,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int k = j - 1; k < j + 2; k++)
                 {
-                    if ((i > 0 && (i < (height - 1))) && (j > 0 && (j < (width - 1))))
+                    if ((n > 0 && (n < (height - 1))) && (k > 0 && (k < (width - 1))))
                     {
                         //printf("I'm in inside loop .......................\n");
                         //printf("index: %i\n", index);
