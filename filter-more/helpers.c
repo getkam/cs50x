@@ -36,14 +36,17 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    double red = 0;
-    double green = 0;
-    double blue = 0;
+    double red;
+    double green;
+    double blue;
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
 
+        red = 0;
+        green = 0;
+        blue = 0;
             if ((i > 0) && (i < (height - 1)) && (j > 0) && (j < (width - 1)))
             {
                 printf("I'm in.................................\n");
@@ -52,6 +55,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 {
                     for (int k = j - 1; k < 2; k++)
                     {
+                        printf("I'm in inside loop .......................\n");
                         printf("index: %i\n", index);
                         red += image[n][k].rgbtRed;
                         green += image[n][k].rgbtGreen;
