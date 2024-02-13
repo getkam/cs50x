@@ -43,14 +43,16 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
+            if ((i > 0) && (i < (height - 1)) && (j > 0) && (j < (width - 1)))
 
-            if (i > 0 && i < (height - 1) && j > 0 && j < (width - 1))
+            if ((i > 0) && (i < (height - 1)) && (j > 0) && (j < (width - 1)))
             {
                 int index = 0;
                 for (int n = i - 1; n < 2; n++)
                 {
                     for (int k = j - 1; k < 2; k++)
                     {
+                        printf("index: %i\n", index);
                         red += image[n][k].rgbtRed;
                         green += image[n][k].rgbtGreen;
                         blue += image[n][k].rgbtBlue;
@@ -58,7 +60,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
 
-                printf("index: %i\n", index);
+
                 printf("sum red: %f, rounded avg: %f\n", red, round(red / 9.0));
                 printf("sum green: %f, rounded avg: %f\n", green, round(green / 9.0));
                 printf("sum blue: %f, rounded avg: %f\n", blue, round(blue / 9.0));
