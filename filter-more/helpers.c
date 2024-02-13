@@ -92,8 +92,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    int Gx[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
-    int Gy[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
+    int gXArr[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
+    int gYArr[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
+
+    int gXRed, gXGreen, gXBlue;
+    int gYRed, gYGreen, gYBlue;
 
     // for ( int i = 0; i < 3; i++)
     // {
@@ -109,8 +112,12 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int w = 0; w < width; w++) // for every pixel of the image
         {
+            gXRed = gXGreen = gXBlue = 0;
+            gYRed = gYGreen = gYBlue = 0; // new pixel
             if (h > 0 && h < (height - 1) && w > 0 && w < (width - 1)) // check if not border
             {
+                    for ()
+
                 // printf("I'm in inside loop .......................\n");
                 // printf("index: %i\n", index);
                 red += image[n][k].rgbtRed;
@@ -118,8 +125,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 blue += image[n][k].rgbtBlue;
                 index ++;
             }
-            else
-            
+
+
+
         }
     }
 
