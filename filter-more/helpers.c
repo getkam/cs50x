@@ -124,7 +124,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         //printf("I'm in inside loop .......................\n");
                         //printf("index: %i\n", index);
                             gXRed += image[n][k].rgbtRed * gXArr[gh][gw];
-                            gXGreen += image[n][k].rgbtGreen * gXArr[gh][gXw];
+                            gXGreen += image[n][k].rgbtGreen * gXArr[gh][gw];
                             gXRed += image[n][k].rgbtBlue * gXArr[gh][gw];
 
                             gYRed += image[n][k].rgbtRed * gYArr[gh][gw];
