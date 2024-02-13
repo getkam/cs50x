@@ -104,6 +104,22 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     //     printf("\n");
     // }
 
-    
+    RGBTRIPLE edged[height][width];
+    for (int h = 0; h < height; h++)
+    {
+        for (int w = 0; w < width; w++) // for every pixel of the image
+        {
+            if (h > 0 && h < (height - 1) && w > 0 && w < (width - 1)) // check if not border
+            {
+                // printf("I'm in inside loop .......................\n");
+                // printf("index: %i\n", index);
+                red += image[n][k].rgbtRed;
+                green += image[n][k].rgbtGreen;
+                blue += image[n][k].rgbtBlue;
+                index ++;
+            }
+        }
+    }
+
     return;
 }
