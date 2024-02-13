@@ -116,7 +116,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             gYRed = gYGreen = gYBlue = 0; // new pixel
             if (h > 0 && h < (height - 1) && w > 0 && w < (width - 1)) // check if not border
             {
-                    for ()
+                    for (int gXh = 0; gXh < 3; gXh++)
+                    {
+                        for (int gXw = 0; gXw < 3; gXw++)
+                        {
+                            
+                        }
+                    }
 
                 // printf("I'm in inside loop .......................\n");
                 // printf("index: %i\n", index);
