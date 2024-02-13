@@ -114,31 +114,48 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         {
             gXRed = gXGreen = gXBlue = 0;
             gYRed = gYGreen = gYBlue = 0; // new pixel
-            if (h > 0 && h < (height - 1) && w > 0 && w < (width - 1)) // check if not border
+
+            for (int n = i - 1, gh = -1; n < i + 2; n++)
             {
-                for (int gXh = -1; gXh < 2; gXh++)
+                for (int k = j - 1; k < j + 2; k++)
                 {
-                    for (int gXw = -1; gXw < 2; gXw++)
+                    if ((n >= 0 && (n <= (height - 1))) && (k >= 0 && (k <= (width - 1))))
                     {
-                            gXRed += image[h + gXh][w + gXw].rgbtRed * gXArr[gXh][gXw];
-                            gXGreen += image[h + gXh][w + gXw].rgbtGreen * gXArr[gXh][gXw];
-                            gXRed += image[h + gXh][w + gXw].rgbtBlue * gXArr[gXh][gXw];
+                        //printf("I'm in inside loop .......................\n");
+                        //printf("index: %i\n", index);
+                        red += image[n][k].rgbtRed;
+                        green += image[n][k].rgbtGreen;
+                        blue += image[n][k].rgbtBlue;
+                        index ++;
                     }
                 }
-
-                for (int gYh = -1; gYh < 2; gYh++)
-                {
-                    for (int gYw = -1; gYw < 2; gYw++)
-                    {
-                            gYRed += image[h + gYh][w + gYw].rgbtRed * gYArr[gYh][gYw];
-                            gYGreen += image[h + gYh][w + gYw].rgbtGreen * gYArr[gYh][gYw];
-                            gYBlue += image[h + gYh][w + gYw].rgbtBlue * gYArr[gYh][gYw];
-                    }
-                }
-
-                // printf("I'm in inside loop .......................\n");
-                // printf("index: %i\n", index);
             }
+
+            // if (h > 0 && h < (height - 1) && w > 0 && w < (width - 1)) // check if not border
+            // {
+            //     for (int gXh = -1; gXh < 2; gXh++)
+            //     {
+            //         for (int gXw = -1; gXw < 2; gXw++)
+            //         {
+            //                 gXRed += image[h + gXh][w + gXw].rgbtRed * gXArr[gXh][gXw];
+            //                 gXGreen += image[h + gXh][w + gXw].rgbtGreen * gXArr[gXh][gXw];
+            //                 gXRed += image[h + gXh][w + gXw].rgbtBlue * gXArr[gXh][gXw];
+            //         }
+            //     }
+
+            //     for (int gYh = -1; gYh < 2; gYh++)
+            //     {
+            //         for (int gYw = -1; gYw < 2; gYw++)
+            //         {
+            //                 gYRed += image[h + gYh][w + gYw].rgbtRed * gYArr[gYh][gYw];
+            //                 gYGreen += image[h + gYh][w + gYw].rgbtGreen * gYArr[gYh][gYw];
+            //                 gYBlue += image[h + gYh][w + gYw].rgbtBlue * gYArr[gYh][gYw];
+            //         }
+            //     }
+
+            //     // printf("I'm in inside loop .......................\n");
+            //     // printf("index: %i\n", index);
+            // }
 
             double tempRed = gXRed * gXRed + gYRed * gYRed;
             edged[h][w].rgbtRed = tempRed > 255 ? (BYTE)255 : (BYTE)round(tempRed);
