@@ -140,13 +140,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 // printf("index: %i\n", index);
             }
             double tempRed = gXRed * gXRed + gYRed * gYRed;
-            edged[h][w].rgbtRed = tempRed > 255 ? (BYTE)0 : (BYTE)round(tempRed);
+            edged[h][w].rgbtRed = tempRed > 255 ? (BYTE)255 : (BYTE)round(tempRed);
 
             double tempGreen = gXGreen * gXGreen + gYGreen * gYGreen;
-            edged[h][w].rgbtGreen = tempGreen > 255 ? (BYTE)0 : (BYTE)round(tempGreen);
+            edged[h][w].rgbtGreen = tempGreen > 255 ? (BYTE)255 : (BYTE)round(tempGreen);
 
             double tempBlue = gXBlue * gXBlue + gYBlue * gYBlue;
-            edged[h][w].rgbtBlue = tempBlue > 255 ? (BYTE)0 : (BYTE)round(tempBlue);
+            edged[h][w].rgbtBlue = tempBlue > 255 ? (BYTE)255 : (BYTE)round(tempBlue);
 
         }
     }
