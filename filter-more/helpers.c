@@ -112,12 +112,18 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int w = 0; w < width; w++) // for every pixel of the image
         {
-            gXRed = image[h][w].rgbtRed;
-            gXGreen = image[h][w].rgbtGreen;
-            gXBlue = image[h][w].rgbtBlue;
-            gYRed = image[h][w].rgbtRed;
-            gYGreen = image[h][w].rgbtGreen;
-            gYBlue = image[h][w].rgbtBlue; // new pixel
+            // gXRed = image[h][w].rgbtRed;
+            // gXGreen = image[h][w].rgbtGreen;
+            // gXBlue = image[h][w].rgbtBlue;
+            // gYRed = image[h][w].rgbtRed;
+            // gYGreen = image[h][w].rgbtGreen;
+            // gYBlue = image[h][w].rgbtBlue; // new pixel
+            gXRed = 0;
+            gXGreen = 0;
+            gXBlue = 0;
+            gYRed = 0;
+            gYGreen = 0;
+            gYBlue = 0;
 
             for (int n = h - 1, gh = 0; n < h + 2; n++, gh++)
             {
