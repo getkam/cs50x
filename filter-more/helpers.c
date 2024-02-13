@@ -61,12 +61,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                         red += image[n][k].rgbtRed;
                         green += image[n][k].rgbtGreen;
                         blue += image[n][k].rgbtBlue;
-                    }
-                    else
-                    {
-                        red += image[i][j].rgbtRed;
-                        green += image[i][j].rgbtGreen;
-                        blue += image[i][j].rgbtBlue;
+                        index ++;
                     }
                 }
             }
@@ -76,9 +71,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             //printf("sum green: %f, rounded avg: %f\n", green, round(green / 9.0));
             //printf("sum blue: %f, rounded avg: %f\n", blue, round(blue / 9.0));
 
-            image[i][j].rgbtRed = (BYTE)round(red / 9.0);
-            image[i][j].rgbtGreen = (BYTE)round(green / 9.0);
-            image[i][j].rgbtBlue = (BYTE)round(blue / 9.0);
+            image[i][j].rgbtRed = (BYTE)round(red / index);
+            image[i][j].rgbtGreen = (BYTE)round(green / index);
+            image[i][j].rgbtBlue = (BYTE)round(blue / index);
         }
 
     }
