@@ -49,34 +49,34 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             //printf("I'm in.................................\n");
             //printf("n = i-1: %i\n", i - 1);
             //printf("k = j-1: %i\n", j - 1);
-            int index = 0;
+            int index = 1;
             for (int n = i - 1; n < i + 2; n++)
+            {
+                for (int k = j - 1; k < j + 2; k++)
                 {
-                    for (int k = j - 1; k < j + 2; k++)
+                    if ((i > 0 && (i < (height - 1))) && (j > 0 && (j < (width - 1))))
                     {
-                        if ((i > 0 && (i < (height - 1)))  (j > 0 && (j < (width - 1))))
-                        {
-                            //printf("I'm in inside loop .......................\n");
-                            //printf("index: %i\n", index);
-                            red += image[n][k].rgbtRed;
-                            green += image[n][k].rgbtGreen;
-                            blue += image[n][k].rgbtBlue;
-                            index++;
-                        }
+                        printf("I'm in inside loop .......................\n");
+                        printf("index: %i\n", index);
+                        red += image[n][k].rgbtRed;
+                        green += image[n][k].rgbtGreen;
+                        blue += image[n][k].rgbtBlue;
+                        index++;
                     }
                 }
-                //printf("index: %i\n", index);
-
-                //printf("sum red: %f, rounded avg: %f\n", red, round(red / 9.0));
-                //printf("sum green: %f, rounded avg: %f\n", green, round(green / 9.0));
-                //printf("sum blue: %f, rounded avg: %f\n", blue, round(blue / 9.0));
-
-                image[i][j].rgbtRed = (BYTE)round(red / index);
-                image[i][j].rgbtGreen = (BYTE)round(green / index);
-                image[i][j].rgbtBlue = (BYTE)round(blue / index);
             }
+            //printf("index: %i\n", index);
 
+            //printf("sum red: %f, rounded avg: %f\n", red, round(red / 9.0));
+            //printf("sum green: %f, rounded avg: %f\n", green, round(green / 9.0));
+            //printf("sum blue: %f, rounded avg: %f\n", blue, round(blue / 9.0));
+
+            image[i][j].rgbtRed = (BYTE)round(red / index);
+            image[i][j].rgbtGreen = (BYTE)round(green / index);
+            image[i][j].rgbtBlue = (BYTE)round(blue / index);
         }
+
+    }
 
     return;
 }
