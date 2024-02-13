@@ -141,10 +141,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                             gYGreen += image[n][k].rgbtGreen * gYArr[gh][gw];
                             gYBlue += image[n][k].rgbtBlue * gYArr[gh][gw];
                     }
-                    else
-                    {
-
-                    }
                 }
             }
 
