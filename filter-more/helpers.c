@@ -139,12 +139,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 // printf("I'm in inside loop .......................\n");
                 // printf("index: %i\n", index);
             }
-            else
-            {
-                gYRed += 255;
-                gYGreen += 255;
-                gYBlue += 255;
-            }
 
             double tempRed = gXRed * gXRed + gYRed * gYRed;
             edged[h][w].rgbtRed = tempRed > 255 ? (BYTE)255 : (BYTE)round(tempRed);
