@@ -115,9 +115,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             gXRed = gXGreen = gXBlue = 0;
             gYRed = gYGreen = gYBlue = 0; // new pixel
 
-            for (int n = h - 1, int gh = 0; n < h + 2; n++, gh++)
+            for (int n = h - 1, gh = 0; n < h + 2; n++, gh++)
             {
-                for (int k = w - 1, int gw = 0; k < w + 2; k++, gw++)
+                for (int k = w - 1, gw = 0; k < w + 2; k++, gw++)
                 {
                     if ((n >= 0 && (n <= (height - 1))) && (k >= 0 && (k <= (width - 1))))
                     {
