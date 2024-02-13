@@ -46,6 +46,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
             if ((i > 0) && (i < (height - 1)) && (j > 0) && (j < (width - 1)))
             {
+                printf("I'm in.................................\n");
                 int index = 0;
                 for (int n = i - 1; n < 2; n++)
                 {
