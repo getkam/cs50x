@@ -120,9 +120,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 {
                     for (int gXw = -1; gXw < 2; gXw++)
                     {
-                            gXRed += image[h + gXh][w + gXw].rgbtRed * gXArr[gXh][gXw].rgbtRed;
-                            gXGreen += image[h + gXh][w + gXw].rgbtGreen * gXArr[gXh][gXw].rgbtGreen;
-                            gXRed += image[h + gXh][w + gXw].rgbtBlue * gXArr[gXh][gXw].rgbtBlue;
+                            gXRed += image[h + gXh][w + gXw].rgbtRed * gXArr[gXh][gXw];
+                            gXGreen += image[h + gXh][w + gXw].rgbtGreen * gXArr[gXh][gXw];
+                            gXRed += image[h + gXh][w + gXw].rgbtBlue * gXArr[gXh][gXw];
                     }
                 }
 
@@ -130,9 +130,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 {
                     for (int gYw = -1; gYw < 2; gYw++)
                     {
-                            gYRed += image[h + gYh][w + gYw].rgbtRed * gYArr[gYh][gYw].rgbtRed;
-                            gYGreen += image[h + gYh][w + gYw].rgbtGreen * gYArr[gYh][gYw].rgbtGreen;
-                            gYBlue += image[h + gYh][w + gYw].rgbtBlue * gYArr[gYh][gYw].rgbtBlue;
+                            gYRed += image[h + gYh][w + gYw].rgbtRed * gYArr[gYh][gYw];
+                            gYGreen += image[h + gYh][w + gYw].rgbtGreen * gYArr[gYh][gYw];
+                            gYBlue += image[h + gYh][w + gYw].rgbtBlue * gYArr[gYh][gYw];
                     }
                 }
 
