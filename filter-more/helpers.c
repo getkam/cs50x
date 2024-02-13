@@ -95,8 +95,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     int gXArr[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
     int gYArr[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
 
-    int gXRed, gXGreen, gXBlue;
-    int gYRed, gYGreen, gYBlue;
+    double gXRed, gXGreen, gXBlue;
+    double gYRed, gYGreen, gYBlue;
 
     // for ( int i = 0; i < 3; i++)
     // {
