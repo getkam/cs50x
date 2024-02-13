@@ -126,13 +126,21 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
 
+                for (int gYh = -1; gYh < 2; gYh++)
+                {
+                    for (int gYw = -1; gYw < 2; gYw++)
+                    {
+                            gYRed += image[h + gYh][w + gYw].rgbtRed * gYArr[gYh][gYw].rgbtRed;
+                            gYGreen += image[h + gYh][w + gYw].rgbtGreen * gYArr[gYh][gYw].rgbtGreen;
+                            gYBlue += image[h + gYh][w + gYw].rgbtBlue * gYArr[gYh][gYw].rgbtBlue;
+                    }
+                }
+
                 // printf("I'm in inside loop .......................\n");
                 // printf("index: %i\n", index);
-                red += image[n][k].rgbtRed;
-                green += image[n][k].rgbtGreen;
-                blue += image[n][k].rgbtBlue;
-                index ++;
             }
+            double tempRed = gXRed * gXRed + gYRed * gYRed;
+            edged[h][w].rgbtRed = gXRed * gXRed + gYRed * gYRed
 
 
 
