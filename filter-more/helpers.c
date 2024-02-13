@@ -68,7 +68,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                         }
                     }
                 }
-                printf("index: %i\n", index);
+                //printf("index: %i\n", index);
 
                 //printf("sum red: %f, rounded avg: %f\n", red, round(red / 9.0));
                 //printf("sum green: %f, rounded avg: %f\n", green, round(green / 9.0));
