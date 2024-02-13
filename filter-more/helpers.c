@@ -115,18 +115,21 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             gXRed = gXGreen = gXBlue = 0;
             gYRed = gYGreen = gYBlue = 0; // new pixel
 
-            for (int n = i - 1, gh = -1; n < i + 2; n++)
+            for (int n = i - 1, int gh = 0; n < i + 2; n++, gh++)
             {
-                for (int k = j - 1; k < j + 2; k++)
+                for (int k = j - 1, int gw = 0; k < j + 2; k++, gw++)
                 {
                     if ((n >= 0 && (n <= (height - 1))) && (k >= 0 && (k <= (width - 1))))
                     {
                         //printf("I'm in inside loop .......................\n");
                         //printf("index: %i\n", index);
-                        red += image[n][k].rgbtRed;
-                        green += image[n][k].rgbtGreen;
-                        blue += image[n][k].rgbtBlue;
-                        index ++;
+                            gXRed += image[n][k].rgbtRed * gXArr[gh][gw];
+                            gXGreen += image[n][k].rgbtGreen * gXArr[gh][gXw];
+                            gXRed += image[n][k].rgbtBlue * gXArr[gh][gw];
+
+                            gYRed += image[n][k].rgbtRed * gYArr[gh][gw];
+                            gYGreen += image[n][k].rgbtGreen * gYArr[gh][gw];
+                            gYBlue += image[n][k].rgbtBlue * gYArr[gh][gw];
                     }
                 }
             }
