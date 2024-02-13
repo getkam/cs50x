@@ -118,6 +118,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 blue += image[n][k].rgbtBlue;
                 index ++;
             }
+            else
+            
         }
     }
 
