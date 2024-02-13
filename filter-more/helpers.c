@@ -141,7 +141,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
             else
             {
-                gXRed = gXGreen = gXBlue = 255;
+                gYRed += 255;
+                gYGreen += 255;
+                gYBlue += 255;
             }
 
             double tempRed = gXRed * gXRed + gYRed * gYRed;
