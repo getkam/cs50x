@@ -54,17 +54,19 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 int index = 0;
                 for (int n = i - 1; n < i + 2; n++)
                 {
-                    if (i == 0 || (i == (height - 1)))
+                    if (i > 0 && (i < (height - 1)))
                     {
                         for (int k = j - 1; k < j + 2; k++)
                         {
-                            if
-                            //printf("I'm in inside loop .......................\n");
-                            //printf("index: %i\n", index);
-                            red += image[n][k].rgbtRed;
-                            green += image[n][k].rgbtGreen;
-                            blue += image[n][k].rgbtBlue;
-                            index++;
+                            if (j > 0 && (j == (width - 1)))
+                            {
+                                //printf("I'm in inside loop .......................\n");
+                                //printf("index: %i\n", index);
+                                red += image[n][k].rgbtRed;
+                                green += image[n][k].rgbtGreen;
+                                blue += image[n][k].rgbtBlue;
+                                index++;
+                            }
                         }
                     }
                 }
@@ -74,9 +76,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 //printf("sum green: %f, rounded avg: %f\n", green, round(green / 9.0));
                 //printf("sum blue: %f, rounded avg: %f\n", blue, round(blue / 9.0));
 
-                image[i][j].rgbtRed = (BYTE)round(red / 9.0);
-                image[i][j].rgbtGreen = (BYTE)round(green / 9.0);
-                image[i][j].rgbtBlue = (BYTE)round(blue / 9.0);
+                image[i][j].rgbtRed = (BYTE)round(red / index);
+                image[i][j].rgbtGreen = (BYTE)round(green / index);
+                image[i][j].rgbtBlue = (BYTE)round(blue / index);
             }
 
         }
