@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <string.h>
 
 int main(int argc, char *argv[])
 {
@@ -27,11 +26,12 @@ int main(int argc, char *argv[])
   int fileNo = 0;
   bool isFileOpened = false;
   FILE *fileJPG;
+  char *fileName;
     while(fread(buffer, 1, 512, card) == 512 && fileNo < 4)
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            string fileName = malloc(8, sizeof(int));
+            fileName = malloc(8);
             sprintf(fileName, "%03d.jpg", fileNo);
             if(isFileOpened) //previous file is still open - close it and open new one
             {
@@ -73,8 +73,8 @@ int main(int argc, char *argv[])
         {
             fclose(fileJPG);
         }
-free(fileName);
-    //create a new file .jpeg
 
+    //create a new file .jpeg
+    free(fileName);
     fclose(card);
 }
