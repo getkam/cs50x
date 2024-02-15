@@ -48,13 +48,13 @@ int main(int argc, char *argv[])
             {
                 fclose(fileJPG);
                // printf("-------------file closed\n");
-                fileJPG = fopen(fileName, "w");
+                fileJPG = fopen(fileName, "wb");
                 //printf("-------------file opened------%s\n", fileName);
                 fileNo++;
             }
             else // no file is opened - first finding
             {
-                fileJPG = fopen(fileName, "w");
+                fileJPG = fopen(fileName, "wb");
                 //printf("-------------file opened------%s\n", fileName);
                 isFileOpened = true;
                 fileNo++;
