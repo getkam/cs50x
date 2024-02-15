@@ -52,8 +52,6 @@ int main(int argc, char *argv[])
             fileJPG = fopen(fileName, "wb");
             isFileOpened = true;
             fileNo++;
-            // write to the file
-            fwrite(buffer, sizeof(uint8_t), 512, fileJPG);
         }
 
         if (isFileOpened)
