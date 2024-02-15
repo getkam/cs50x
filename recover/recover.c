@@ -4,7 +4,7 @@
 
 int main(int argc, char *argv[])
 {
-    
+
     //Acccept command line
     if (argc != 2)
     {
@@ -22,13 +22,11 @@ int main(int argc, char *argv[])
     uint8_t buffer[512];
 
     //while there are still signs to read
-    for(int s = 0; s<300 ; s++)
-    {
-       fread(buffer, 1, 512, card);
 
+    while(fread(buffer, 1, 512, card) == 512);
+    {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-
             //printf("-----------------------------------------------New file. S = %i\n",s);
             FILE *jpgFile = fopen
             for (int i = 0; i < 512; i++) // print buffer
