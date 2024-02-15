@@ -22,24 +22,25 @@ int main(int argc, char *argv[])
     uint8_t buffer[512];
 
     //while there are still signs to read
-    for(int s = 0; s<4 ; s++)
+    for(int s = 0; s<16 ; s++)
     {
        fread(buffer, 1, 512, card);
 
-        if (buffer[0] == )
-
-        for (int i = 0; i < 512; i++) // print buffer
+        if (buffer[0] == 0xff && buffer[1]==0xd8)
         {
-            printf("%02x ", buffer[i]);
-            if ((i + 1) % 16 == 0) {
-                printf("\n");
+            for (int i = 0; i < 512; i++) // print buffer
+            {
+                printf("%02x ", buffer[i]);
+                if ((i + 1) % 16 == 0) {
+                    printf("\n");
+                }
             }
-        }
 
         printf("\n");
         printf("\n");
         printf("\n");
         printf("\n");
+        }
     }
 
 
