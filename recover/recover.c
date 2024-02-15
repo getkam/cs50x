@@ -1,3 +1,4 @@
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -17,14 +18,15 @@ int main(int argc, char *argv[])
         printf("Could not open %s.\n", argv[1]);
         return 1;
     }
-    
+
     uint8_t buffer[512];
 
     //while there are still signs to read
-    while (fread(buffer,1,512, card) == 512)
-    {
-        printf("%s", buffer);
-    }
+    fread(buffer, 1, 512, card);
+
+
+        printf("%i", buffer);
+
     //create a new file .jpeg
 
     fclose(card);
