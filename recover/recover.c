@@ -56,6 +56,7 @@ int main(int argc, char *argv[])
             {
                 fileJPG = fopen(fileName, "w");
                 printf("-------------file opened------%s\n", fileName);
+                isFileOpened = true;
                 fileNo++;
             }
 
