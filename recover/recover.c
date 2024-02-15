@@ -4,7 +4,7 @@
 
 int main(int argc, char *argv[])
 {
-
+    
     //Acccept command line
     if (argc != 2)
     {
@@ -28,8 +28,9 @@ int main(int argc, char *argv[])
 
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
+
             //printf("-----------------------------------------------New file. S = %i\n",s);
-            
+            FILE *jpgFile = fopen
             for (int i = 0; i < 512; i++) // print buffer
             {
                 printf("%02x ", buffer[i]);
