@@ -30,14 +30,14 @@ int main(int argc, char *argv[])
         {
             if(isFileOpened) //previous file is still open - close it and open new one
             {
-                
+
             }
             else // no file is opened - first finding
             {
 
             }
             //printf("-----------------------------------------------New file. S = %i\n",s);
-            FILE *jpgFile = fopen
+           
             for (int i = 0; i < 512; i++) // print buffer
             {
                 printf("%02x ", buffer[i]);
