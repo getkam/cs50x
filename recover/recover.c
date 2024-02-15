@@ -23,11 +23,19 @@ int main(int argc, char *argv[])
 
     //while there are still signs to read
   int fileNo = 0;
-  bool 
+  bool isFileOpened = false
     while(fread(buffer, 1, 512, card) == 512)
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
+            if(isFileOpened) //previous file is still open - close it and open new one
+            {
+                
+            }
+            else // no file is opened - first finding
+            {
+
+            }
             //printf("-----------------------------------------------New file. S = %i\n",s);
             FILE *jpgFile = fopen
             for (int i = 0; i < 512; i++) // print buffer
