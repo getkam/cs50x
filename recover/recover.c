@@ -22,9 +22,9 @@ int main(int argc, char *argv[])
     //while there are still signs to read
     while (fread(buffer,1,512, card) == 512)
     {
-
+        printf("%s", buffer);
     }
     //create a new file .jpeg
 
-
+    fclose(card);
 }
