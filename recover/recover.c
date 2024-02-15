@@ -42,24 +42,16 @@ int main(int argc, char *argv[])
         /////////////////////////////////////////////////////////////////////////////////////////////////////
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            fileName = malloc(8);
-            sprintf(fileName, "%03d.jpg", fileNo);
+
             if (isFileOpened) // previous file is still open - close it and open new one
             {
                 fclose(fileJPG);
-                printf("-------------file closed\n");
-                fileJPG = fopen(fileName, "wb");
-                printf("-------------file opened------%s\n", fileName);
-                fileNo++;
             }
-            else // no file is opened - first finding
-            {
-                fileJPG = fopen(fileName, "wb");
-                printf("-------------file opened------%s\n", fileName);
-                isFileOpened = true;
-                fileNo++;
-            }
-
+            fileName = malloc(8);
+            sprintf(fileName, "%03d.jpg", fileNo);
+            fileJPG = fopen(fileName, "wb");
+            isFileOpened = true;
+            fileNo++;
             // write to the file
             fwrite(buffer, sizeof(uint8_t), 512, fileJPG);
         }
@@ -68,14 +60,11 @@ int main(int argc, char *argv[])
         {
             // write to the file
             fwrite(buffer, sizeof(uint8_t), 512, fileJPG);
-             printf("-------------next bite\n");
         }
     }
     if (isFileOpened)
     {
         fclose(fileJPG);
-        printf("-------------file closed\n");
-
     }
 
     // create a new file .jpeg
