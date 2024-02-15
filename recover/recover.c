@@ -29,14 +29,15 @@ int main(int argc, char *argv[])
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
+            string fileName = malloc(8, sizeof(int));
             if(isFileOpened) //previous file is still open - close it and open new one
             {
                 fclose(fileJPG);
-                fileJPG = fopen()
+                fileJPG = fopen(fileName, "w");
             }
             else // no file is opened - first finding
             {
-
+                fileJPG = fopen(fileName, "w");
             }
             //printf("-----------------------------------------------New file. S = %i\n",s);
 
