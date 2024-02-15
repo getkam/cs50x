@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     int fileNo = 0;
     bool isFileOpened = false;
     FILE *fileJPG;
-    char *fileName;
+    char *fileName = malloc(8);
 
     int testIndex = 0;
     while (fread(buffer, 1, 512, card) == 512)
@@ -47,7 +47,6 @@ int main(int argc, char *argv[])
             {
                 fclose(fileJPG);
             }
-            fileName = malloc(8);
             sprintf(fileName, "%03d.jpg", fileNo);
             fileJPG = fopen(fileName, "wb");
             isFileOpened = true;
