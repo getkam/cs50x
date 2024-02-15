@@ -22,28 +22,16 @@ int main(int argc, char *argv[])
 
     uint8_t buffer[512];
 
-    // while there are still signs to read
     int fileNo = 0;
     bool isFileOpened = false;
     FILE *fileJPG;
     char *fileName = malloc(8);
 
-    int testIndex = 0;
     while (fread(buffer, 1, 512, card) == 512)
     {
-        // printf("%i\n", testIndex);
-        // // printf("-----------------------------------------------New file. S = %i\n",s);
-        // for (int i = 0; i < 4; i++) // print buffer
-        //     {
-        //         printf("%02x ", buffer[i]);
-        //     }
-        //      printf("\n");
-        // testIndex++;
-        /////////////////////////////////////////////////////////////////////////////////////////////////////
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-
-            if (isFileOpened) // previous file is still open - close it and open new one
+            if (isFileOpened)
             {
                 fclose(fileJPG);
             }
@@ -55,7 +43,6 @@ int main(int argc, char *argv[])
 
         if (isFileOpened)
         {
-            // write to the file
             fwrite(buffer, sizeof(uint8_t), 512, fileJPG);
         }
     }
@@ -64,7 +51,6 @@ int main(int argc, char *argv[])
         fclose(fileJPG);
     }
 
-    // create a new file .jpeg
     free(fileName);
     fclose(card);
 }
