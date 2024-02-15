@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
         {
             if(isFileOpened) //previous file is still open - close it and open new one
             {
-                
+                fclose(fileJPG);
             }
             else // no file is opened - first finding
             {
