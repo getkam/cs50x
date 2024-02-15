@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
                 printf("%02x ", buffer[i]);
             }
              printf("\n");
-        testIndex++
+        testIndex++;
         /////////////////////////////////////////////////////////////////////////////////////////////////////
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
@@ -47,13 +47,15 @@ int main(int argc, char *argv[])
             if (isFileOpened) // previous file is still open - close it and open new one
             {
                 fclose(fileJPG);
-                
+                printf("-------------file closed\n");
                 fileJPG = fopen(fileName, "w");
+                printf("-------------file opened------%s\n", fileName);
                 fileNo++;
             }
             else // no file is opened - first finding
             {
                 fileJPG = fopen(fileName, "w");
+                printf("-------------file opened------%s\n", fileName);
                 fileNo++;
             }
 
@@ -71,6 +73,8 @@ int main(int argc, char *argv[])
     if (isFileOpened)
     {
         fclose(fileJPG);
+         printf("-------------file closed\n");
+
     }
 
     // create a new file .jpeg
