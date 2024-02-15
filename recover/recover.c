@@ -20,7 +20,10 @@ int main(int argc, char *argv[])
     uint8_t buffer[512];
 
     //while there are still signs to read
-    while (fread())
+    while (fread(buffer,1,512, card)== 0)
+    {
+
+    }
     //create a new file .jpeg
 
 
