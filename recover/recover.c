@@ -47,15 +47,15 @@ int main(int argc, char *argv[])
             if (isFileOpened) // previous file is still open - close it and open new one
             {
                 fclose(fileJPG);
-               // printf("-------------file closed\n");
+                printf("-------------file closed\n");
                 fileJPG = fopen(fileName, "wb");
-                //printf("-------------file opened------%s\n", fileName);
+                printf("-------------file opened------%s\n", fileName);
                 fileNo++;
             }
             else // no file is opened - first finding
             {
                 fileJPG = fopen(fileName, "wb");
-                //printf("-------------file opened------%s\n", fileName);
+                printf("-------------file opened------%s\n", fileName);
                 isFileOpened = true;
                 fileNo++;
             }
@@ -68,12 +68,13 @@ int main(int argc, char *argv[])
         {
             // write to the file
             fwrite(buffer, sizeof(uint8_t), 512, fileJPG);
+             printf("-------------next bite\n");
         }
     }
     if (isFileOpened)
     {
         fclose(fileJPG);
-        // printf("-------------file closed\n");
+        printf("-------------file closed\n");
 
     }
 
