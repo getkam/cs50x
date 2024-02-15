@@ -29,16 +29,16 @@ int main(int argc, char *argv[])
     char *fileName;
 
     int testIndex = 0;
-    while (fread(buffer, 1, 512, card) == 512 && fileNo < 4)
+    while (fread(buffer, 1, 512, card) == 512)
     {
-        printf("%i\n", testIndex);
-        // printf("-----------------------------------------------New file. S = %i\n",s);
-        for (int i = 0; i < 4; i++) // print buffer
-            {
-                printf("%02x ", buffer[i]);
-            }
-             printf("\n");
-        testIndex++;
+        // printf("%i\n", testIndex);
+        // // printf("-----------------------------------------------New file. S = %i\n",s);
+        // for (int i = 0; i < 4; i++) // print buffer
+        //     {
+        //         printf("%02x ", buffer[i]);
+        //     }
+        //      printf("\n");
+        // testIndex++;
         /////////////////////////////////////////////////////////////////////////////////////////////////////
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
@@ -47,15 +47,15 @@ int main(int argc, char *argv[])
             if (isFileOpened) // previous file is still open - close it and open new one
             {
                 fclose(fileJPG);
-                printf("-------------file closed\n");
+               // printf("-------------file closed\n");
                 fileJPG = fopen(fileName, "w");
-                printf("-------------file opened------%s\n", fileName);
+                //printf("-------------file opened------%s\n", fileName);
                 fileNo++;
             }
             else // no file is opened - first finding
             {
                 fileJPG = fopen(fileName, "w");
-                printf("-------------file opened------%s\n", fileName);
+                //printf("-------------file opened------%s\n", fileName);
                 isFileOpened = true;
                 fileNo++;
             }
@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
     if (isFileOpened)
     {
         fclose(fileJPG);
-         printf("-------------file closed\n");
+        // printf("-------------file closed\n");
 
     }
 
