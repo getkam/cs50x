@@ -22,15 +22,25 @@ int main(int argc, char *argv[])
     uint8_t buffer[512];
 
     //while there are still signs to read
-    fread(buffer, 1, 512, card);
+    for(int s = 0; s<4 ; s++)
+    {
+       fread(buffer, 1, 512, card);
 
 
-        for (int i = 0; i < 512; i++) {
-        printf("%02x ", buffer[i]);
-        if ((i + 1) % 16 == 0) { // Dla czytelności, przejdź do nowej linii co 16 bajtów
-            printf("\n");
+        for (int i = 0; i < 512; i++)
+        {
+            printf("%02x ", buffer[i]);
+            if ((i + 1) % 16 == 0) { // Dla czytelności, przejdź do nowej linii co 16 bajtów
+                printf("\n");
+            }
         }
+
+        printf("\n");
+        printf("\n");
+        printf("\n");
+        printf("\n");
     }
+
 
     //create a new file .jpeg
 
