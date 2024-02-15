@@ -25,7 +25,12 @@ int main(int argc, char *argv[])
     fread(buffer, 1, 512, card);
 
 
-        printf("%i", buffer);
+        for (int i = 0; i < 512; i++) {
+        printf("%02x ", buffer[i]);
+        if ((i + 1) % 16 == 0) { // Dla czytelności, przejdź do nowej linii co 16 bajtów
+            printf("\n");
+        }
+    }
 
     //create a new file .jpeg
 
