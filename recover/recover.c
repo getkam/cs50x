@@ -62,7 +62,6 @@ int main(int argc, char *argv[])
 
             // write to the file
             fwrite(buffer, sizeof(uint8_t), 512, fileJPG);
-
         }
 
         if (isFileOpened)
