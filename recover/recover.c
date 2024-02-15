@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     uint8_t buffer[512];
 
     //while there are still signs to read
-    while ()
+    while (fread())
     //create a new file .jpeg
 
 
