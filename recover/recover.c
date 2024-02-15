@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
             }
 
             //write to the file
-            fwrite()
+            fwrite(buffer, sizeof(uint8_t), 512, fileJPG)
 
             //printf("-----------------------------------------------New file. S = %i\n",s);
             for (int i = 0; i < 512; i++) // print buffer
