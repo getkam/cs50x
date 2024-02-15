@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     uint8_t buffer[512];
 
     //while there are still signs to read
-    for(int s = 0; s<16 ; s++)
+    for(int s = 0; s<30 ; s++)
     {
        fread(buffer, 1, 512, card);
 
