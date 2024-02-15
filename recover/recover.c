@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
   int fileNo = 0;
   bool isFileOpened = false;
   FILE *fileJPG;
-    while(fread(buffer, 1, 512, card) == 512)
+    while(fread(buffer, 1, 512, card) == 512 && fileNo < 4)
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
@@ -42,8 +42,11 @@ int main(int argc, char *argv[])
                 fileJPG = fopen(fileName, "w");
                 fileNo++;
             }
-            //printf("-----------------------------------------------New file. S = %i\n",s);
 
+            //write to the file
+            fwrite()
+
+            //printf("-----------------------------------------------New file. S = %i\n",s);
             for (int i = 0; i < 512; i++) // print buffer
             {
                 printf("%02x ", buffer[i]);
