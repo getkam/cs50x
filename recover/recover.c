@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
             }
 
             //write to the file
-            fwrite(buffer, sizeof(uint8_t), 512, fileJPG)
+            fwrite(buffer, sizeof(uint8_t), 512, fileJPG);
 
             //printf("-----------------------------------------------New file. S = %i\n",s);
             for (int i = 0; i < 512; i++) // print buffer
@@ -60,9 +60,18 @@ int main(int argc, char *argv[])
         printf("\n");
         printf("\n");
         }
+
+        if(isFileOpened)
+        {
+            //write to the file
+            fwrite(buffer, sizeof(uint8_t), 512, fileJPG);
+        }
     }
-
-
+        if(isFileOpened)
+        {
+            fclose(fileJPG);
+        }
+free(fileName);
     //create a new file .jpeg
 
     fclose(card);
