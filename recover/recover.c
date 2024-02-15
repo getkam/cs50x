@@ -26,11 +26,12 @@ int main(int argc, char *argv[])
     {
        fread(buffer, 1, 512, card);
 
+        if (buffer[0] == )
 
-        for (int i = 0; i < 512; i++)
+        for (int i = 0; i < 512; i++) // print buffer
         {
             printf("%02x ", buffer[i]);
-            if ((i + 1) % 16 == 0) { // Dla czytelności, przejdź do nowej linii co 16 bajtów
+            if ((i + 1) % 16 == 0) {
                 printf("\n");
             }
         }
