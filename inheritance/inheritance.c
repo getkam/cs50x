@@ -97,7 +97,7 @@ void print_family(person *p, int generation)
     // Handle base case
     if (p == NULL)
     {
-        printf("NULL");
+        //printf("NULL");
         return;
     }
 
