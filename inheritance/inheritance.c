@@ -38,6 +38,7 @@ int main(void)
 // Create a new individual with `generations`
 person *create_family(int generations)
 {
+
     // TODO: Allocate memory for new person
     person *current = malloc(1 * sizeof(person));
     // If there are still generations left to create
@@ -69,6 +70,7 @@ person *create_family(int generations)
         current->alleles[1] = random_allele();
     }
 
+
     // TODO: Return newly created person
     return current;
 }
@@ -77,7 +79,7 @@ person *create_family(int generations)
 void free_family(person *p)
 {
     // TODO: Handle base case
-
+    if(p->)
     // TODO: Free parents recursively
 
     // TODO: Free child
