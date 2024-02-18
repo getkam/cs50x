@@ -70,7 +70,6 @@ person *create_family(int generations)
         current->alleles[1] = random_allele();
     }
 
-
     // TODO: Return newly created person
     return current;
 }
@@ -79,7 +78,7 @@ person *create_family(int generations)
 void free_family(person *p)
 {
     // TODO: Handle base case
-    if(p == NULL)
+    if (p == NULL)
     {
         return;
     }
@@ -97,7 +96,6 @@ void print_family(person *p, int generation)
     // Handle base case
     if (p == NULL)
     {
-        //printf("NULL");
         return;
     }
 
