@@ -39,6 +39,10 @@ bool load(const char *dictionary)
     //Open the dictionary file
     FILE *source = fopen(dictionary, "r");
 
+    // Read each word in the file
+
+        // Add each word to the hash table
+
     //close the dictionary
     fclose(dictionary);
     return false;
