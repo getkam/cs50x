@@ -6,6 +6,10 @@
 
 #include "dictionary.h"
 
+unsigned int dikiSize = 0;
+// TODO: Choose number of buckets in hash table
+const unsigned int N = 26;
+
 // Represents a node in a hash table
 typedef struct node
 {
@@ -19,8 +23,6 @@ typedef struct trienode
     bool end;
 } trienode;
 
-// TODO: Choose number of buckets in hash table
-const unsigned int N = 26;
 
 // Hash table
 trienode *table[N];
@@ -42,6 +44,7 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
+    size = 0;
     //Open the dictionary file
     FILE *source = fopen(dictionary, "r");
     if ( source == NULL)
@@ -49,23 +52,26 @@ bool load(const char *dictionary)
         printf("Error during opening dictionary!");
     }
 
-    char *word[45];
+    char word[45];
     while (fscanf(source, "%s", word) != EOF)
     {
         int index = hash(word);
         if (table[index] == NULL)
         {
             table[index] = malloc(sizeof(node));
-            table[index].word = word;
-            table[index].next = NULL;
+            table[index]->word = word;
+            table[index]->next = NULL;
+            dikiSize++;
         }
         else
         {
-            node *temp = table[index].next;
-          
+            node *temp = table[index]->next;
+
             node *new = malloc(sizeof(node));
-            new.word = word;
-            new.next = NULL;
+            new->word = word;
+            new->next = temp;
+            table[index]->next = new;
+            dikiSize++;
         }
     }
 
@@ -78,12 +84,22 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    return 0;
+    return dikiSize;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    // TODO
+    for (int i = 0; i<sizeof(table); i++)
+    {
+        node *ptrNext = table[i]->next;
+        node *temp;
+        while (ptrNext != NULL)
+        {
+            temp = ptrNext->next;
+            free(ptrNext);
+            ptrNext = temp;
+        }
+    }
     return false;
 }
