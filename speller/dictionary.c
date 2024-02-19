@@ -7,14 +7,14 @@
 #include "dictionary.h"
 
 // Represents a node in a hash table
-typedef struct node
+typedef struct TreeNode
 {
     char word[LENGTH + 1];
     struct node *next;
 } node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 26; 
+const unsigned int N = 26;
 
 // Hash table
 node *table[N];
