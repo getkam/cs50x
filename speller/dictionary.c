@@ -66,6 +66,7 @@ bool load(const char *dictionary)
         if (table[index] == NULL)
         {
             table[index] = malloc(sizeof(node));
+
             strcpy(table[index]->word, word);
             table[index]->next = NULL;
             dikiSize++;
@@ -75,6 +76,9 @@ bool load(const char *dictionary)
             node *temp = table[index]->next;
 
             node *new = malloc(sizeof(node));
+            if ( new == NULL){
+                return false;
+            }
             strcpy(new->word, word);
             new->next = temp;
             table[index]->next = new;
@@ -84,7 +88,7 @@ bool load(const char *dictionary)
 
     //close the dictionary
     fclose(source);
-    return false;
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
