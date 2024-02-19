@@ -7,17 +7,23 @@
 #include "dictionary.h"
 
 // Represents a node in a hash table
-typedef struct TreeNode
+typedef struct node
 {
     char word[LENGTH + 1];
     struct node *next;
 } node;
 
+typedef struct trienode
+{
+    struct trienode *children[N];
+    bool end;
+} trienode;
+
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 26;
 
 // Hash table
-node *table[N];
+trienode *table[N];
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
