@@ -44,10 +44,15 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
+    for( int i = 0; i < N; i++)
+    {
+        table[i] = NULL;
+    }
     dikiSize = 0;
+
     //Open the dictionary file
     FILE *source = fopen(dictionary, "r");
-    if ( source == NULL)
+    if (source == NULL)
     {
         printf("Error during opening dictionary!");
     }
@@ -58,8 +63,8 @@ bool load(const char *dictionary)
         int index = hash(word);
         if (table[index] == NULL)
         {
-            table[index] = (node *)malloc(sizeof(node));
-            table[index]->word = &word;
+            table[index] = malloc(1 * sizeof(node));
+            table[index]->word = word;
             table[index]->next = NULL;
             dikiSize++;
         }
