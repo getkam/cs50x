@@ -55,7 +55,18 @@ bool load(const char *dictionary)
         int index = hash(word);
         if (table[index] == NULL)
         {
-            table[index] = 
+            table[index] = malloc(sizeof(node));
+            table[index].word = word;
+            table[index].next = NULL;
+        }
+        else
+        {
+            node *temp = table[index].next;
+            while (temp != NULL)
+            {
+                temp = temp->next;
+            }
+            
         }
     }
 
