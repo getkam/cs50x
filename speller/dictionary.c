@@ -6,21 +6,21 @@
 
 #include "dictionary.h"
 
-// Represents a node in a hash table
-typedef struct node
-{
-    char firstLetter;
-    struct node *next;
-} node;
-
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 26;
 
 typedef struct trieNode
 {
-    struct trienode *children[N];
+    struct trieNode *children[N];
     bool isEnd;
 } trieNode;
+
+// Represents a node in a hash table
+typedef struct hashNode
+{
+    char firstLetter;
+    struct trieNode *next;
+} hashNode;
 
 // Hash table
 trieNode *table[N];
