@@ -13,14 +13,14 @@ typedef struct node
     struct node *next;
 } node;
 
+// TODO: Choose number of buckets in hash table
+const unsigned int N = 26;
+
 typedef struct trienode
 {
     struct trienode *children[N];
-    bool end;
+    bool isEnd;
 } trienode;
-
-// TODO: Choose number of buckets in hash table
-const unsigned int N = 26;
 
 // Hash table
 trienode *table[N];
@@ -50,14 +50,14 @@ bool load(const char *dictionary)
         return 1;
     }
 
+    // Read each word in the file
     char word[45];
     while (fscanf(source, "%s", word) != EOF)
     {
+        // Add each word to the hash table
         hash(word);
     }
-    // Read each word in the file
 
-        // Add each word to the hash table
 
     //close the dictionary
     fclose(dictionary);
