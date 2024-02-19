@@ -14,7 +14,7 @@ typedef struct node
 } node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 26;
+const unsigned int N = 45; // maximum length of word
 
 // Hash table
 node *table[N];
