@@ -2,6 +2,7 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 #include "dictionary.h"
 
@@ -38,7 +39,8 @@ bool load(const char *dictionary)
     //Open the dictionary file
     FILE *source = fopen(dictionary, "r");
 
-    
+    //close the dictionary
+    fclose(dictionary);
     return false;
 }
 
