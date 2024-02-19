@@ -80,7 +80,11 @@ bool unload(void)
 
 void insert(char *word)
 {
-   table
+    int index = hash(word);
+   if(table[index] == NULL)
+   {
+    table[index] = malloc
+   }
 }
 
 trieNode *createNewNode()
