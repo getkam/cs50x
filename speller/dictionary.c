@@ -60,7 +60,7 @@ bool load(const char *dictionary)
     char word[45];
     while (fscanf(source, "%s", word) != EOF)
     {
-        int index = hash(word);
+         unsigned int index = hash(word);
         if (table[index] == NULL)
         {
             node *new = malloc(sizeof(node));
