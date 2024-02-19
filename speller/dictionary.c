@@ -9,7 +9,7 @@
 // Represents a node in a hash table
 typedef struct node
 {
-    char word[LENGTH + 1];
+    char firstLetter;
     struct node *next;
 } node;
 
