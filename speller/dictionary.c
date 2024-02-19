@@ -49,6 +49,12 @@ bool load(const char *dictionary)
         printf("Error during opening dictionary!");
     }
 
+    char *word[45];
+    while (fscanf(source, "%s", word))
+    {
+        
+    }
+
     //close the dictionary
     fclose(dictionary);
     return false;
