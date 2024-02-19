@@ -25,7 +25,7 @@ typedef struct trienode
 
 
 // Hash table
-trienode *table[N];
+node *table[N];
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
