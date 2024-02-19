@@ -50,9 +50,13 @@ bool load(const char *dictionary)
     }
 
     char *word[45];
-    while (fscanf(source, "%s", word))
+    while (fscanf(source, "%s", word) != EOF)
     {
-        
+        int index = hash(word);
+        if (table[index] == NULL)
+        {
+            table[index] = 
+        }
     }
 
     //close the dictionary
