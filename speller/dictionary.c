@@ -44,7 +44,7 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    size = 0;
+    dikiSize = 0;
     //Open the dictionary file
     FILE *source = fopen(dictionary, "r");
     if ( source == NULL)
@@ -58,8 +58,8 @@ bool load(const char *dictionary)
         int index = hash(word);
         if (table[index] == NULL)
         {
-            table[index] = malloc(sizeof(node));
-            table[index]->word = word;
+            table[index] = (node *)malloc(sizeof(node));
+            table[index]->word = &word;
             table[index]->next = NULL;
             dikiSize++;
         }
@@ -68,7 +68,7 @@ bool load(const char *dictionary)
             node *temp = table[index]->next;
 
             node *new = malloc(sizeof(node));
-            new->word = word;
+            new->word = &word;
             new->next = temp;
             table[index]->next = new;
             dikiSize++;
@@ -76,7 +76,7 @@ bool load(const char *dictionary)
     }
 
     //close the dictionary
-    fclose(dictionary);
+    fclose(&dictionary);
     return false;
 }
 
