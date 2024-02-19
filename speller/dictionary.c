@@ -75,7 +75,7 @@ bool load(const char *dictionary)
             node *temp = table[index]->next;
 
             node *new = malloc(sizeof(node));
-            new->word = &word;
+            strcpy(new->word, word);
             new->next = temp;
             table[index]->next = new;
             dikiSize++;
