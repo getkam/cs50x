@@ -16,14 +16,14 @@ typedef struct node
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 26;
 
-typedef struct trienode
+typedef struct trieNode
 {
     struct trienode *children[N];
     bool isEnd;
-} trienode;
+} trieNode;
 
 // Hash table
-trienode *table[N];
+trieNode *table[N];
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
