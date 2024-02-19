@@ -81,10 +81,19 @@ bool unload(void)
 void insert(char *word)
 {
     int index = hash(word);
-   if(table[index] == NULL)
-   {
-    table[index] = malloc
-   }
+    if(table[index] == NULL)
+    {
+        table[index] = malloc(sizeof(hashNode));
+        table[index].firstLetter = word[0];
+        table[index].next == NULL
+    }
+
+    // Add word to Trie from second letter
+    for (int i = 1; i < sizeof(word); i++){
+        
+    }
+
+
 }
 
 trieNode *createNewNode()
