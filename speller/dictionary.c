@@ -104,13 +104,13 @@ bool unload(void)
     for (int i = 0; i<sizeof(table); i++)
     {
         node *ptrNext = table[i]->next;
-        node *temp;
+
         while (ptrNext != NULL)
         {
-            temp = ptrNext->next;
+            node *temp = ptrNext->next;
             free(ptrNext);
             ptrNext = temp;
         }
     }
-    return false;
+    return true;
 }
