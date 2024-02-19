@@ -6,24 +6,24 @@
 
 #include "dictionary.h"
 
+// Represents a node in a hash table
+typedef struct node
+{
+    char word[LENGTH + 1];
+    struct node *next;
+} node;
+
+typedef struct trienode
+{
+    struct trienode *children[N];
+    bool end;
+} trienode;
+
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 26;
 
-typedef struct trieNode
-{
-    struct trieNode *children[N];
-    bool isEnd;
-} trieNode;
-
-// Represents a node in a hash table
-// typedef struct hashNode
-// {
-//     char *root;
-//     struct trieNode *next;
-// } hashNode;
-
 // Hash table
-trieNode *table[N];
+trienode *table[N];
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -44,20 +44,10 @@ bool load(const char *dictionary)
 {
     //Open the dictionary file
     FILE *source = fopen(dictionary, "r");
-    if ( source == NULL )
+    if ( source == NULL)
     {
-        printf("Error during opening dictionary");
-        return 1;
+        printf("Error during opening dictionary!");
     }
-
-    // Read each word in the file
-    char word[45];
-    while (fscanf(source, "%s", word) != EOF)
-    {
-        // Add each word to the hash table
-        insert(word);
-    }
-
 
     //close the dictionary
     fclose(dictionary);
@@ -76,27 +66,4 @@ bool unload(void)
 {
     // TODO
     return false;
-}
-
-void insert(char *word)
-{
-    int index = hash(word);
-    if(table[index] == NULL)
-    {
-        table[index] = malloc(sizeof(hashNode));
-        table[index].firstLetter = word[0];
-        table[index].next == NULL
-    }
-
-    // Add word to Trie from second letter
-    for (int i = 1; i < sizeof(word); i++){
-
-    }
-
-
-}
-
-trieNode *createNewNode()
-{
-
 }
