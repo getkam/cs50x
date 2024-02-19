@@ -16,11 +16,11 @@ typedef struct trieNode
 } trieNode;
 
 // Represents a node in a hash table
-typedef struct hashNode
-{
-    char firstLetter;
-    struct trieNode *next;
-} hashNode;
+// typedef struct hashNode
+// {
+//     char *root;
+//     struct trieNode *next;
+// } hashNode;
 
 // Hash table
 trieNode *table[N];
@@ -90,7 +90,7 @@ void insert(char *word)
 
     // Add word to Trie from second letter
     for (int i = 1; i < sizeof(word); i++){
-        
+
     }
 
 
