@@ -55,7 +55,7 @@ bool load(const char *dictionary)
     while (fscanf(source, "%s", word) != EOF)
     {
         // Add each word to the hash table
-        hash(word);
+        insert(word);
     }
 
 
@@ -76,4 +76,14 @@ bool unload(void)
 {
     // TODO
     return false;
+}
+
+void insert(char *word)
+{
+   table
+}
+
+trieNode *createNewNode()
+{
+
 }
