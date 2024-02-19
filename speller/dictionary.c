@@ -76,7 +76,7 @@ bool load(const char *dictionary)
     }
 
     //close the dictionary
-    fclose(&dictionary);
+    fclose(source);
     return false;
 }
 
