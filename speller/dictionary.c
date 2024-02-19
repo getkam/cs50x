@@ -63,9 +63,10 @@ bool load(const char *dictionary)
         int index = hash(word);
         if (table[index] == NULL)
         {
-            table[index] = malloc(1 * sizeof(node));
-            table[index]->word = word;
-            table[index]->next = NULL;
+            node *new = malloc(sizeof(node));
+            new->word = word;
+            new->next = NULL;
+            table[index] = new;
             dikiSize++;
         }
         else
