@@ -44,12 +44,13 @@ bool load(const char *dictionary)
 {
     //Open the dictionary file
     FILE *source = fopen(dictionary, "r");
-    if ( source == NULL)
+    if ( source == NULL )
     {
         printf("Error during opening dictionary");
         return 1;
     }
 
+    while ( )
     // Read each word in the file
 
         // Add each word to the hash table
