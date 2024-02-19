@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -64,10 +65,9 @@ bool load(const char *dictionary)
          unsigned int index = hash(word);
         if (table[index] == NULL)
         {
-            node *new = malloc(sizeof(node));
-            new->word = word;
-            new->next = NULL;
-            table[index] = new;
+            table[index] = malloc(sizeof(node));
+            strcpy(table[index]->word, word);
+            table[index]->next = NULL;
             dikiSize++;
         }
         else
