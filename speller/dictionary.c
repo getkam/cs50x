@@ -62,11 +62,10 @@ bool load(const char *dictionary)
         else
         {
             node *temp = table[index].next;
-            while (temp != NULL)
-            {
-                temp = temp->next;
-            }
-            
+          
+            node *new = malloc(sizeof(node));
+            new.word = word;
+            new.next = NULL;
         }
     }
 
