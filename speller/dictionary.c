@@ -11,7 +11,7 @@
 
 unsigned int dikiSize = 0;
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 26*26;
+const unsigned int N = LENGTH * 26;
 
 // Represents a node in a hash table
 typedef struct node
@@ -43,6 +43,7 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
+    
     // TODO: Improve this hash function
     return toupper(word[0]) - 'A';
 }
