@@ -44,6 +44,11 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
+int ASCIIsum = 0;
+ for (int i = 0; i < strlen(word); i++)
+ {
+    
+ }
 
     int i = ((strlen(word) - 1) * ABC) + (toupper(word[0]) - 'A');
    // printf("word: %s, has size: %lu\n ", word, strlen(word));
