@@ -47,11 +47,11 @@ unsigned int hash(const char *word)
 int ASCIIsum = 0;
  for (int i = 0; i < strlen(word); i++)
  {
-    
+    ASCIIsum += toupper(word[i]);
  }
 
     int i = ((strlen(word) - 1) * ABC) + (toupper(word[0]) - 'A');
-   // printf("word: %s, has size: %lu\n ", word, strlen(word));
+   printf("word: %s, has ascii sum: %i\n ", word, ASCIIsum);
    // printf("hash index: %i\n ", i);
     // TODO: Improve this hash function
     return ((strlen(word) - 1) * ABC) + (toupper(word[0]) - 'A');
