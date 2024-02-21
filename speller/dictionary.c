@@ -50,7 +50,7 @@ int ASCIIsum = 0;
     ASCIIsum += toupper(word[i]);
  }
 
-    int i = ((strlen(word) - 1) * ABC) + (toupper(word[0]) - 'A');
+    //int i = ((strlen(word) - 1) * ABC) + (toupper(word[0]) - 'A');
    //printf("word: %s, has ascii sum: %i\n ", word, ASCIIsum);
    // printf("hash index: %i\n ", i);
     // TODO: Improve this hash function
