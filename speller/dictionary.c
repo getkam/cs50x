@@ -51,12 +51,14 @@ bool load(const char *dictionary)
         printf("Error during opening dictionary!");
     }
 
-    char word[45];
-    while (fscanf(source, "%s", word) != EOF)
+    char dikiWord[LENGTH + 1];
+    while (fscanf(source, "%s", dikiWord) != EOF)
     {
         node *new = malloc(sizeof(node));
+        strcpy(new->word, dikiWord);
 
-    
+        
+
     }
 
     //close the dictionary
