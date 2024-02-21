@@ -33,6 +33,7 @@ bool check(const char *word)
         {
             if(strcasecmp(table[index]->word, word) == 0)
             {
+                printf("found %s", word);
                 return true;
             }
             ptr = ptr->next;
