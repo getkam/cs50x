@@ -54,8 +54,9 @@ bool load(const char *dictionary)
     char dikiWord[LENGTH + 1];
     while (fscanf(source, "%s", dikiWord) != EOF)
     {
-        node *new = malloc(sizeof(node));
         int index = hash(dikiWord);
+
+        node *new = malloc(sizeof(node));
         strcpy(new->word, dikiWord);
 
         if(table[index] == NULL)
@@ -66,8 +67,8 @@ bool load(const char *dictionary)
         {
             new->next = table[index];
         }
-        
-
+        table[index] = new;
+        dikiSize++;
     }
 
     //close the dictionary
@@ -87,7 +88,7 @@ bool unload(void)
 {
     for (int i = 0; i<sizeof(table); i++)
     {
-        node *ptrNext = table[i]->next;
+        node *ptrNext = table[i];
 
         while (ptrNext != NULL)
         {
