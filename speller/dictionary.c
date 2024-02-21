@@ -55,9 +55,13 @@ bool load(const char *dictionary)
     while (fscanf(source, "%s", dikiWord) != EOF)
     {
         node *new = malloc(sizeof(node));
+        int index = hash(dikiWord);
         strcpy(new->word, dikiWord);
 
-        
+        if(table[index] == NULL)
+        {
+            
+        }
 
     }
 
