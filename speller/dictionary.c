@@ -54,28 +54,9 @@ bool load(const char *dictionary)
     char word[45];
     while (fscanf(source, "%s", word) != EOF)
     {
-         unsigned int index = hash(word);
-        if (table[index] == NULL)
-        {
-            table[index] = malloc(sizeof(node));
+        node *new = malloc(sizeof(node));
 
-            strcpy(table[index]->word, word);
-            table[index]->next = NULL;
-            dikiSize++;
-        }
-        else
-        {
-            node *temp = table[index]->next;
-
-            node *new = malloc(sizeof(node));
-            if ( new == NULL){
-                return false;
-            }
-            strcpy(new->word, word);
-            new->next = temp;
-            table[index]->next = new;
-            dikiSize++;
-        }
+    
     }
 
     //close the dictionary
