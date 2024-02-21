@@ -19,13 +19,6 @@ typedef struct node
     struct node *next;
 } node;
 
-typedef struct trienode
-{
-    struct trienode *children[N];
-    bool end;
-} trienode;
-
-
 // Hash table
 node *table[N];
 
@@ -50,7 +43,6 @@ bool load(const char *dictionary)
     {
         table[i] = NULL;
     }
-    dikiSize = 0;
 
     //Open the dictionary file
     FILE *source = fopen(dictionary, "r");
