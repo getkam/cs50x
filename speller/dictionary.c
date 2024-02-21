@@ -31,10 +31,8 @@ bool check(const char *word)
         node *ptr = table[index];
         while (ptr != NULL)
         {
-            printf("%i: comparing %s - %s\n",index, table[index]->word, word);
-            if(strcasecmp(table[index]->word, word) == 0)
+            if(strcasecmp(ptr->word, word) == 0)
             {
-                printf("found %s\n\n", word);
                 return true;
             }
             ptr = ptr->next;
