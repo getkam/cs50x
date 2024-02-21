@@ -81,7 +81,6 @@ bool load(const char *dictionary)
             new->next = table[index];
         }
         table[index] = new;
-        printf("added to the hash table %s", table[index]);
         dikiSize++;
     }
 
