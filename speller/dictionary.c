@@ -12,7 +12,7 @@
 unsigned int dikiSize = 0;
 // TODO: Choose number of buckets in hash table
 const unsigned int ABC = 26;
-const unsigned int N = 4050; //LENGTH * ABC;
+const unsigned int N = 4050;
 
 // Represents a node in a hash table
 typedef struct node
@@ -29,43 +29,39 @@ bool check(const char *word)
 {
     int index = hash(word);
 
-        node *ptr = table[index];
-        while (ptr != NULL)
+    node *ptr = table[index];
+    while (ptr != NULL)
+    {
+        if (strcasecmp(ptr->word, word) == 0)
         {
-            if(strcasecmp(ptr->word, word) == 0)
-            {
-                return true;
-            }
-            ptr = ptr->next;
+            return true;
         }
+        ptr = ptr->next;
+    }
     return false;
 }
 
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-int ASCIIsum = 0;
- for (int i = 0; i < strlen(word); i++)
- {
-    ASCIIsum += toupper(word[i]);
- }
+    int ASCIIsum = 0;
+    for (int i = 0; i < strlen(word); i++)
+    {
+        ASCIIsum += toupper(word[i]);
+    }
 
-    //int i = ((strlen(word) - 1) * ABC) + (toupper(word[0]) - 'A');
-   //printf("word: %s, has ascii sum: %i\n ", word, ASCIIsum);
-   // printf("hash index: %i\n ", i);
-    // TODO: Improve this hash function
     return ASCIIsum;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    for( int i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
         table[i] = NULL;
     }
 
-    //Open the dictionary file
+    // Open the dictionary file
     FILE *source = fopen(dictionary, "r");
     if (source == NULL)
     {
@@ -80,7 +76,7 @@ bool load(const char *dictionary)
         node *new = malloc(sizeof(node));
         strcpy(new->word, dikiWord);
 
-        if(table[index] == NULL)
+        if (table[index] == NULL)
         {
             new->next = NULL;
         }
@@ -92,7 +88,7 @@ bool load(const char *dictionary)
         dikiSize++;
     }
 
-    //close the dictionary
+    // close the dictionary
     fclose(source);
     return true;
 }
@@ -107,9 +103,10 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    for (int i = 0; i< N; i++)
+    for (int i = 0; i < N; i++)
     {
-        if(table[i] != NULL){
+        if (table[i] != NULL)
+        {
             node *ptrNext = table[i];
 
             while (ptrNext->next != NULL)
@@ -120,7 +117,6 @@ bool unload(void)
             }
             free(ptrNext);
         }
-
     }
     return true;
 }
