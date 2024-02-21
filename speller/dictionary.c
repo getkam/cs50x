@@ -25,7 +25,8 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // TODO
+    int index = hash(word);
+    while (table[index])
     return false;
 }
 
@@ -97,8 +98,7 @@ bool unload(void)
                 free(ptrNext);
                 ptrNext = temp;
             }
-
-
+            free(ptrNext);
         }
 
     }
