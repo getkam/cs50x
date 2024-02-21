@@ -88,14 +88,19 @@ bool unload(void)
 {
     for (int i = 0; i<sizeof(table); i++)
     {
-        node *ptrNext = table[i];
+        if(table[i] != NULL){
+            node *ptrNext = table[i];
 
-        while (ptrNext != NULL)
-        {
-            node *temp = ptrNext->next;
-            free(ptrNext);
-            ptrNext = temp;
+            while (ptrNext->next != NULL)
+            {
+                node *temp = ptrNext->next;
+                free(ptrNext);
+                ptrNext = temp;
+            }
+
+
         }
+
     }
     return true;
 }
