@@ -12,7 +12,7 @@
 unsigned int dikiSize = 0;
 // TODO: Choose number of buckets in hash table
 const unsigned int ABC = 26;
-const unsigned int N = LENGTH * ABC;
+const unsigned int N = 4050; //LENGTH * ABC;
 
 // Represents a node in a hash table
 typedef struct node
@@ -51,10 +51,10 @@ int ASCIIsum = 0;
  }
 
     int i = ((strlen(word) - 1) * ABC) + (toupper(word[0]) - 'A');
-   printf("word: %s, has ascii sum: %i\n ", word, ASCIIsum);
+   //printf("word: %s, has ascii sum: %i\n ", word, ASCIIsum);
    // printf("hash index: %i\n ", i);
     // TODO: Improve this hash function
-    return ((strlen(word) - 1) * ABC) + (toupper(word[0]) - 'A');
+    return ASCIIsum;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
