@@ -44,10 +44,10 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
 
-    int i = ((sizeof(word) - 1) * N) + (toupper(word[0]) - 'A');
-    printf("hash index: %i", i);
+    int i = ((sizeof(*word) - 1) * N) + (toupper(word[0]) - 'A');
+    printf("hash index: %i\n ", i);
     // TODO: Improve this hash function
-    return i;
+    return toupper(word[0]) - 'A';
 }
 
 // Loads dictionary into memory, returning true if successful, else false
