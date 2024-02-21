@@ -11,7 +11,7 @@
 
 unsigned int dikiSize = 0;
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 26;
+const unsigned int N = LENGTH * 26;
 
 // Represents a node in a hash table
 typedef struct node
@@ -44,11 +44,11 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
 
-    int i = ((sizeof(*word) - 1) * N) + (toupper(word[0]) - 'A');
+    int i = ((strlen(word) - 1) * N) + (toupper(word[0]) - 'A');
     printf("word: %s, has size: %lu\n ", word, strlen(word));
     printf("hash index: %i\n ", i);
     // TODO: Improve this hash function
-    return toupper(word[0]) - 'A';
+    return ((strlen(word) - 1) * N) + (toupper(word[0]) - 'A');
 }
 
 // Loads dictionary into memory, returning true if successful, else false
