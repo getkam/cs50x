@@ -46,8 +46,8 @@ unsigned int hash(const char *word)
 {
 
     int i = ((strlen(word) - 1) * ABC) + (toupper(word[0]) - 'A');
-    printf("word: %s, has size: %lu\n ", word, strlen(word));
-    printf("hash index: %i\n ", i);
+   // printf("word: %s, has size: %lu\n ", word, strlen(word));
+   // printf("hash index: %i\n ", i);
     // TODO: Improve this hash function
     return ((strlen(word) - 1) * ABC) + (toupper(word[0]) - 'A');
 }
@@ -102,7 +102,7 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    for (int i = 0; i<sizeof(table); i++)
+    for (int i = 0; i< N; i++)
     {
         if(table[i] != NULL){
             node *ptrNext = table[i];
