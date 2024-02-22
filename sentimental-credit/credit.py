@@ -25,8 +25,8 @@ def checkSum(number):
         else:
             multiplied = digit * 2
             if multiplied > 10:
-                multiplied = round(multiplied / 10) + multiplied % 10
-            sumOfMultiipled += multiplied
+                sum = round(multiplied / 10) + multiplied % 10
+            sumOfMultiipled += sum
 
     total = sumNotMultiplied + sumOfMultiipled
     print("total:", total)
