@@ -21,6 +21,7 @@ def checkSum(number):
         digit  = int(number[len(number) - 1 - index])
         if index % 2 != 0:
             sumNotMultiplied += digit
+            print("sumNotMultiplied:", sumNotMultiplied)
         else:
             multiplied = digit * 2
             sum = 0
