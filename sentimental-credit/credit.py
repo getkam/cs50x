@@ -12,12 +12,16 @@ def main():
 
 
 def checkSum(number):
-    digit = number % 10
-    remainingNo = number / 10
+    digit = 0
+    remainingNo = number
 
     for index in range(len(number)):
+        digit  = remainingNo % 10
+
         if index % 2 == 0:
-            #
+            dd
+
+        remainingNo = remainingNo / 10
 
     return True
 
