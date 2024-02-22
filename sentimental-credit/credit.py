@@ -1,10 +1,10 @@
-from cs50 import get_int
+from cs50 import get_string
 import re
 
 def main():
     ccnumber = 0
     while ccnumber < 1:
-        ccnumber = get_int("Number: ")
+        ccnumber = get_string("Number: ")
 
     if checkSum(ccnumber) == True:
         printCardProvider(ccnumber)
