@@ -1,4 +1,4 @@
-from cs50 import get_s
+from cs50 import get_int
 import re
 
 def main():
@@ -23,10 +23,10 @@ def checkSum(number):
 
         if index % 2 == 0:
             sumNotMultiplied += digit
-        elif:
+        else:
             multiplied = digit * 2
-                if multiplied > 10
-                    multiplied = round(multiplied / 10) + multiplied % 10
+            if multiplied > 10:
+                multiplied = round(multiplied / 10) + multiplied % 10
             sumOfMultiipled += multiplied
         remainingNo = round(remainingNo / 10)
 
@@ -35,7 +35,7 @@ def checkSum(number):
 
     if total % 10 == 0:
         return True
-    elif:
+    else:
         return False
 
 def printCardProvider(number):
