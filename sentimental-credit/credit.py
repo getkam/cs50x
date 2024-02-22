@@ -16,7 +16,7 @@ def checkSum(number):
     sumNotMultiplied = 0
     sumOfMultiipled = 0
 
-    for index in range(len(number)):
+    for index in range(len(str(number))):
         digit  = remainingNo % 10
 
         if index % 2 == 0:
