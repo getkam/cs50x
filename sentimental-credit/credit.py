@@ -40,6 +40,7 @@ def checkSum(number):
 
 def printCardProvider(number):
     pattern = r'^\d{13,16}$'
+    begining2digits = int(str(number)[:2])
     if re.match(pattern, number):
 
 
