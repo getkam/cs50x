@@ -32,7 +32,7 @@ def checkSum(number):
                 multiplied = int(multiplied / 10)
                 print("multiplied", multiplied)
             sum += multiplied
-            sumOfMultiipled += sum
+            sumOfMultiplied += sum
             print("sumOfMultiplied:", sumOfMultiplied)
 
     total = sumNotMultiplied + sumOfMultiplied
