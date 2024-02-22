@@ -40,8 +40,10 @@ def checkSum(number):
 
 def printCardProvider(number):
     pattern = r'^\d{13,16}$'
-    begining2digits = int(str(number)[:2])
-    if re.match(pattern, number):
+    begining2digits = str(number)[:2]
+    if re.match(r'^\d{15}$', number) and (begining2digits == 34 or begining2digits == 37):
+        print("AMEX")
+    elif: re.match(r'^\d{15}$', number) and (begining2digits == 34 or begining2digits == 37)
 
 
 main()
