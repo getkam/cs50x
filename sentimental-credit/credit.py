@@ -6,9 +6,10 @@ def main():
     while ccnumber > 0:
         ccnumber = get_int("Number: ")
 
-    isValid = checkSum(ccnumber)
+    if checkSum(ccnumber) == True:
+        printCardProvider(ccnumber)
 
-    re.match(ccnumber, [0-9]{13,15}
+
 
 
 def checkSum(number):
@@ -24,13 +25,21 @@ def checkSum(number):
             sumNotMultiplied += digit
         elif:
             multiplied = digit * 2
-            sum = 0
-                while multiplied > 0
-                    sum += mutopl
-
+                if multiplied > 10
+                    multiplied = round(multiplied / 10) + multiplied % 10
+            sumOfMultiipled += multiplied
         remainingNo = round(remainingNo / 10)
 
-    return True
 
+    total = sumNotMultiplied + sumOfMultiipled
+
+    if total % 10 == 0:
+        return True
+    elif:
+        return False
+
+def printCardProvider(number):
+    if re.match(number, [0-9]{13,15}) != 0:
+        
 
 main()
