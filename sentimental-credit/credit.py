@@ -14,7 +14,7 @@ def main():
 
 def checkSum(number):
     sumNotMultiplied = 0
-    sumOfMultiipled = 0
+    sumOfMultiplied = 0
 
     for index in range(len(number)):
         print("#" * 20)
@@ -33,9 +33,9 @@ def checkSum(number):
                 print("multiplied", multiplied)
             sum += multiplied
             sumOfMultiipled += sum
-            print("sumOfMultiipled:", sumOfMultiipled)
+            print("sumOfMultiplied:", sumOfMultiplied)
 
-    total = sumNotMultiplied + sumOfMultiipled
+    total = sumNotMultiplied + sumOfMultiplied
     print("total:", total)
     if total % 10 == 0:
         return True
