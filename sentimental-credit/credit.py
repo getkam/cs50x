@@ -25,7 +25,7 @@ def checkSum(number):
             sum = 0
             while multiplied > 10:
                 sum += multiplied % 10
-                multiplied = multiplied / 10
+                multiplied = int(multiplied / 10)
             sum += multiplied
             sumOfMultiipled += sum
 
