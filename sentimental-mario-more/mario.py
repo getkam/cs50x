@@ -1,0 +1,1 @@
+height = int(input("Height: "))
