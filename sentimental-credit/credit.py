@@ -17,26 +17,19 @@ def checkSum(number):
     sumOfMultiplied = 0
 
     for index in range(len(number)):
-        print("#" * 20)
         digit  = int(number[len(number) - 1 - index])
         if index % 2 == 0:
             sumNotMultiplied += digit
-            print("sumNotMultiplied:", sumNotMultiplied)
         else:
             multiplied = digit * 2
             sum = 0
             while multiplied >= 10:
-                print("multiplied > 10:", multiplied)
                 sum += multiplied % 10
-                print("sum:", sum)
                 multiplied = int(multiplied / 10)
-                print("multiplied", multiplied)
             sum += multiplied
             sumOfMultiplied += sum
-            print("sumOfMultiplied:", sumOfMultiplied)
 
     total = sumNotMultiplied + sumOfMultiplied
-    print("total:", total)
     if total % 10 == 0:
         return True
     else:
@@ -49,7 +42,7 @@ def printCardProvider(number):
         print("AMEX")
     elif (re.match(r'^\d{13}$', number) or re.match(r'^\d{16}$', number)) and number[0] == '4':
         print("VISA")
-    elif re.match(r'^\d{16}$', number) and (begining2digits >=51 and begining2digits <=55):
+    elif re.match(r'^\d{16}$', number) and begining2digits in ['51','52', '53', '54', '55']:
         print("MASTERCARD")
     else:
         print("INVALID")
