@@ -3,7 +3,7 @@ import re
 
 def main():
     ccnumber = ""
-    while re.match(r'^\d$', ccnumber) is None:
+    while re.match(r'^\d+$', ccnumber) is None:
         ccnumber = get_string("Number: ")
 
     if checkSum(ccnumber) == True:
@@ -36,13 +36,12 @@ def checkSum(number):
         return False
 
 def printCardProvider(number):
-    pattern = r'^\d{13,16}$'
-    begining2digits = number[:2]
-    if re.match(r'^\d{15}$', number) and (begining2digits == '34' or begining2digits == '37'):
+    
+    if re.match(r'^\d{15}$', number) and number[:2] in ['34','37']:
         print("AMEX")
     elif (re.match(r'^\d{13}$', number) or re.match(r'^\d{16}$', number)) and number[0] == '4':
         print("VISA")
-    elif re.match(r'^\d{16}$', number) and begining2digits in ['51','52', '53', '54', '55']:
+    elif re.match(r'^\d{16}$', number) and number[:2] in ['51','52', '53', '54', '55']:
         print("MASTERCARD")
     else:
         print("INVALID")
