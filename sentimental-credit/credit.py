@@ -3,7 +3,7 @@ import re
 
 def main():
     ccnumber = 0
-    while ccnumber > 0:
+    while ccnumber < 0:
         ccnumber = get_int("Number: ")
 
     if checkSum(ccnumber) == True:
