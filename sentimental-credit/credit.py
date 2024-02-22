@@ -18,11 +18,11 @@ def checkSum(number):
 
     for index in range(len(number)):
         digit  = int(number[len(number) - 1 - index])
-        print("digit:", digit, "index:", index)
-        if index % 2 == 0:
+        if index % 2 != 0:
             sumNotMultiplied += digit
         else:
             multiplied = digit * 2
+            sum = 0
             if multiplied > 10:
                 sum = round(multiplied / 10) + multiplied % 10
             sumOfMultiipled += sum
