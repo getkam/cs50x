@@ -24,8 +24,9 @@ def checkSum(number):
             sumNotMultiplied += digit
         elif:
             multiplied = digit * 2
-            
-                while multiplied > 10
+            sum = 0
+                while multiplied > 0
+                    sum += mutopl
 
         remainingNo = round(remainingNo / 10)
 
