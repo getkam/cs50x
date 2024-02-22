@@ -24,10 +24,14 @@ def checkSum(number):
             multiplied = digit * 2
             sum = 0
             while multiplied > 10:
+                print("multiplied > 10:", multiplied)
                 sum += multiplied % 10
+                print("sum:", sum)
                 multiplied = int(multiplied / 10)
+                print("multiplied", multiplied)
             sum += multiplied
             sumOfMultiipled += sum
+            print("sumOfMultiipled:", sumOfMultiipled)
 
     total = sumNotMultiplied + sumOfMultiipled
     print("total:", total)
