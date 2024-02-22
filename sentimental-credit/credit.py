@@ -14,12 +14,17 @@ def main():
 def checkSum(number):
     digit = 0
     remainingNo = number
+    sumNotMultiplied = 0
+    sumOfMultiipled = 0
 
     for index in range(len(number)):
         digit  = remainingNo % 10
 
         if index % 2 == 0:
-            dd
+            sumNotMultiplied += digit
+        elif:
+            multiplied = digit * 2
+                while multiplied > 10
 
         remainingNo = remainingNo / 10
 
