@@ -13,7 +13,6 @@ def main():
 
 
 def checkSum(number):
-    digit = 0
     sumNotMultiplied = 0
     sumOfMultiipled = 0
 
