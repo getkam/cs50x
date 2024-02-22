@@ -19,7 +19,7 @@ def checkSum(number):
     for index in range(len(number)):
         print("#" * 20)
         digit  = int(number[len(number) - 1 - index])
-        if index % 2 != 0:
+        if index % 2 == 0:
             sumNotMultiplied += digit
             print("sumNotMultiplied:", sumNotMultiplied)
         else:
