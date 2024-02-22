@@ -29,7 +29,7 @@ def checkSum(number):
             sumOfMultiipled += multiplied
 
     total = sumNotMultiplied + sumOfMultiipled
-
+    print("total:", total)
     if total % 10 == 0:
         return True
     else:
