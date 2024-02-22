@@ -14,13 +14,12 @@ def main():
 
 def checkSum(number):
     digit = 0
-    remainingNo = number
     sumNotMultiplied = 0
     sumOfMultiipled = 0
 
     for index in range(len(number)):
         digit  = int(number[len(number) - 1 - index])
-
+        print("digit:", digit, "index:", index)
         if index % 2 == 0:
             sumNotMultiplied += digit
         else:
@@ -28,8 +27,6 @@ def checkSum(number):
             if multiplied > 10:
                 multiplied = round(multiplied / 10) + multiplied % 10
             sumOfMultiipled += multiplied
-        remainingNo = round(remainingNo / 10)
-
 
     total = sumNotMultiplied + sumOfMultiipled
 
