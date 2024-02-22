@@ -36,10 +36,9 @@ def checkSum(number):
         return False
 
 def printCardProvider(number):
-
     if re.match(r'^\d{15}$', number) and number[:2] in ['34','37']:
         print("AMEX")
-    elif (re.match(r'^(\d{13}|\d{16})$', number) and number[0] == '4':
+    elif re.match(r'^(\d{13}|\d{16})$', number) and number[0] == '4':
         print("VISA")
     elif re.match(r'^\d{16}$', number) and number[:2] in ['51','52', '53', '54', '55']:
         print("MASTERCARD")
