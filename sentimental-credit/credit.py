@@ -10,8 +10,6 @@ def main():
         printCardProvider(ccnumber)
 
 
-
-
 def checkSum(number):
     digit = 0
     remainingNo = number
