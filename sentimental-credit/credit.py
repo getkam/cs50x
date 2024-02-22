@@ -3,7 +3,7 @@ import re
 
 def main():
     ccnumber = ""
-    while re.match(r'^\d{13,16}$', ccnumber) is None:
+    while re.match(r'^\d$', ccnumber) is None:
         ccnumber = get_string("Number: ")
 
     if checkSum(ccnumber) == True:
