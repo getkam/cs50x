@@ -25,7 +25,7 @@ def checkSum(number):
         else:
             multiplied = digit * 2
             sum = 0
-            while multiplied > 10:
+            while multiplied >= 10:
                 print("multiplied > 10:", multiplied)
                 sum += multiplied % 10
                 print("sum:", sum)
