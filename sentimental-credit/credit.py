@@ -8,6 +8,8 @@ def main():
 
     if checkSum(ccnumber) == True:
         printCardProvider(ccnumber)
+    else:
+        print("INVALID")
 
 
 def checkSum(number):
