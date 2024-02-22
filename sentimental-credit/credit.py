@@ -16,7 +16,8 @@ def checkSum(number):
     remainingNo = number / 10
 
     for index in range(len(number)):
-        
+        if index % 2 == 0:
+            #
 
     return True
 
