@@ -5,8 +5,8 @@ import sys
 def main():
 
     # TODO: Check for command-line usage
-    if (sys.argv != 2)
-        printf("Usage: ./dna dictionary")
+    if (sys.argv != 2):
+        print("Usage: ./dna database sequence")
 
     # TODO: Read database file into a variable
 
