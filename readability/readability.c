@@ -32,7 +32,7 @@ int countLetters(string s)
     for (int i = 0, l = strlen(s); i < l; i++)
     {
         if (isalpha(s[i]))
-        {
+        { 
             counter++;
         }
     }
