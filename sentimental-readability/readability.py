@@ -1,25 +1,13 @@
 from cs50 import get_string
 
 def main()
+    text = get_string("Text: ")
 
+    letters = sum(c.isalpha() for c in text)
+    words = text.count(" ") + 1
+    sentences = text.count(".") + text.count("?") + text.count("!")
 
-
-
-def calculateLetters(text):
-    count = 0
-    for char in text:
-        if char.isalpha():
-            count += 1
-    return count
-
-def calculateWords(text):
-    return text.count(" ") + 1
-
-
-def calculateSentences(text):
-    return text.count(".") + text.count("?") + text.count("!")
-
-
-
+    
+    index = 0.0588 * L - 0.296 * S - 15.8
 
 main()
