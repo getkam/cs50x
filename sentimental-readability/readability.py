@@ -22,7 +22,7 @@ def calculateWords(text):
 
 def calculateSentences(text):
     count = 0
-    for char in strlen(text):
+    
 
 
 main()
