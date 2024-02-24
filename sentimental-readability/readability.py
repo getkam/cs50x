@@ -13,16 +13,13 @@ def calculateLetters(text):
     return count
 
 def calculateWords(text):
-    count = 0
-    for char in text:
-        if char.isspace():
-            count += 1
-    count += 1 # for last word
-    return count
+    return text.count(" ") + 1
+
 
 def calculateSentences(text):
-    count = 0
-    
+    return text.count(".") + text.count("?") + text.count("!")
+
+
 
 
 main()
