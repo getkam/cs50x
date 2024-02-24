@@ -17,7 +17,7 @@ def calculateWords(text):
     for char in text:
         if char.isspace():
             count += 1
-    count += 1 #for last word
+    count += 1 # for last word
     return count
 
 def calculateSentences(text):
