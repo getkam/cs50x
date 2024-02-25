@@ -4,7 +4,7 @@ import sys
 
 def main():
 
-    
+    database = []
 
     # TODO: Check for command-line usage
     if (len(sys.argv) != 3):
@@ -16,9 +16,11 @@ def main():
         reader = csv.DictReader(file)
         print(reader.fieldnames)
         for row in reader:
-            print(row)
+            database.append(row)
 
     # TODO: Read DNA sequence file into a variable
+    with open(sys.arg[2]) as file:
+        reader = cvs.reader(file)
 
     # TODO: Find longest match of each STR in DNA sequence
 
