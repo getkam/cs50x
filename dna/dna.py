@@ -25,9 +25,8 @@ def main():
     matches = {}
     for str in reader.fieldnames[1:4]:
         matches[str] = longest_match(sequence, str)
-        for m in matches:
-            print(m)
 
+    print(matches)
     # TODO: Check database for matching profiles
 
     return
