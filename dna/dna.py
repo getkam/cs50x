@@ -27,6 +27,8 @@ def main():
         matches[str] = longest_match(sequence, str)
 
     # TODO: Check database for matching profiles
+    for entry in database
+        
 
     return
 
