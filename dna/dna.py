@@ -30,7 +30,7 @@ def main():
     # TODO: Check database for matching profiles
     for entry in database:
         print(entry)
-        if all(entry[k] == v for k, v in matches.items()):
+        if all(int(entry[k]) == v for k, v in matches.items()):
             print(entry['name'])
             return
 
