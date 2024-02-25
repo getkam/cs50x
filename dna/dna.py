@@ -27,8 +27,12 @@ def main():
         matches[str] = longest_match(sequence, str)
 
     # TODO: Check database for matching profiles
-    for entry in database
-        
+    for entry in database:
+        if all(entry[k] == v for k, v in matches.items()):
+            print(entry['name'])
+            return
+
+    print("No matches")
 
     return
 
