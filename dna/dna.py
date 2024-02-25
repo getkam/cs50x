@@ -32,7 +32,7 @@ def main():
             print(entry['name'])
             return
 
-    print("No matches")
+    print("No match")
 
     return
 
