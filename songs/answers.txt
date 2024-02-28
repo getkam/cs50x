@@ -1,9 +1,12 @@
-Provided list of songs has relatively high value for average danceabilty 0.71.
-The same time  energy and valence are on the moderate level around half of the scale:
-a bit more energy ( avg 0.65) than valence (avg.48). To translate numbers to colors we need to know a bit color meaning in cultre.
-Purple is majestic, blue is blue and yeallow brings to mind sunny time and happyness.
-Base on provided data I could assume that listener like happy music without any pathetic mood so it could be yellow and pink.
+The provided list of songs has a relatively high average danceability of 0.71.
+At the same time, both energy and valence are at moderate levels, around the midpoint of the scale:
+a bit more energy (average 0.65) than valence (average 0.48). To translate these numbers into colors,
+we need to understand a bit about the meaning of colors in culture. Purple is often seen as majestic,
+blue as serene, and yellow brings to mind sunny times and happiness. Based on the provided data,
+I could assume that the listener enjoys happy music without any overly dramatic mood,
+so the colors could be yellow and pink.
 
-To be more precise I would create two equasions (together with Mysctic Michaela)
-requireing thiese three factors as variables that provide us some grades which we could match to some color representatives
+To be more precise, I would create two equations (in collaboration with Mystic Michaela)
+that require these three factors as variables.
+ These equations would provide us with some grades that we could match to specific color representations.
 
