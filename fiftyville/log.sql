@@ -26,6 +26,7 @@ WHERE
    AND month = 7
    AND day = 28;
 
+---ATM records - might be usefull later account_number, amount
 SELECT
   *
 FROM
