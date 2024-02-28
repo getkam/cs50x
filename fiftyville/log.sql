@@ -37,3 +37,9 @@ WHERE
    AND day = 28
    AND atm_location = "Leggett Street"
    AND transaction_type = "withdraw";
+
+
+
+
+
+WHERE year = 2023 AND month = 7 AND day = 28
