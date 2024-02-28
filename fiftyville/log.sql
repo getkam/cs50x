@@ -53,7 +53,7 @@ WHERE
 
    -----------------------------------------------list of people having this bank account
 SELECT
-  *
+  person_id
 FROM
   bank_accounts
 WHERE
@@ -68,7 +68,7 @@ WHERE
           AND day = 28
           AND atm_location = "Leggett Street"
           AND transaction_type = "withdraw"
-    )
+    );
 
 -- PHONE CALLS ------------------> caller and reciever numbers
 SELECT
