@@ -233,14 +233,34 @@ WHERE
   );
 
   ----------------------------------------------------- ACCOMPLICE
+
 SELECT
-  *
+  phone_number
 FROM
   people
 WHERE
-  phone_number IN (
+  id IN (
+SELECT
+  person_id
+FROM
+  bank_accounts
+WHERE
+  account_number IN (
     SELECT
-      receiver
+      account_number
+        FROM
+          atm_transactions
+        WHERE
+          year = 2023
+          AND month = 7
+          AND day = 28
+          AND atm_location = "Leggett Street"
+          AND transaction_type = "withdraw"
+    )
+  )
+  AND phone_number IN (
+    SELECT
+      caller
     FROM
       phone_calls
     WHERE
@@ -275,4 +295,17 @@ WHERE
         LIMIT
             1
     )
-  );
+  )
+  AND license_plate IN (
+    SELECT
+      license_plate
+    FROM
+      bakery_security_logs
+    WHERE
+      activity = "exit"
+      AND year = 2023
+      AND month = 7
+      AND day = 28
+      AND hour = 10
+      AND minute BETWEEN 15 AND 26
+  )
