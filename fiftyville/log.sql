@@ -82,7 +82,7 @@ WHERE
    LIMIT
      1;
 
---- DESTINATION CITY of out thiefs
+--- DESTINATION CITY of out thiefs.  --------------- New York City
 SELECT
   city
 FROM
