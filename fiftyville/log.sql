@@ -9,3 +9,19 @@ WHERE
   AND month = 7
   AND day = 28
   AND street = "Humphrey Street";
+
+
+  --Interviews - valid informations are from
+    --> Ruth: car left parking up to 10 min after theft)
+    --> Eugene: she saw thief before 10:15 by ATM on Leggett Street withdrawing money
+    --> Raymond: thief call to someone right after 10:15, call lasted less than 1 min,
+        --other person suppose to buy a ticket on the erliers flight 29th July
+  SELECT
+    name,
+    transcript
+  FROM
+    interviews
+  WHERE
+   year = 2023
+   AND month = 7
+   AND day = 28;
