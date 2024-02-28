@@ -62,6 +62,6 @@ WHERE
  AND day = 28
  and duration < 60;
 
-
+SELECT id FROM airports WHERE city = "Fiftyville"
 
 WHERE year = 2023 AND month = 7 AND day = 28
