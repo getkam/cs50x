@@ -131,7 +131,7 @@ WHERE
 ------------------------------- list of passport numbers
 
 SELECT
-  *
+  passport_number
 FROM
   passengers
 WHERE
@@ -162,13 +162,45 @@ FROM
   people
 WHERE
   phone_number IN (
-
+    SELECT
+      caller
+    FROM
+      phone_calls
+    WHERE
+    year = 2023
+    AND month = 7
+    AND day = 28
+    and duration < 60
   )
   AND passport_number IN (
-
+    SELECT
+      passport_number
+    FROM
+      passengers
+    WHERE
+      flight_id IN (
+        SELECT
+        id
+        FROM
+        flights
+        WHERE
+        year = 2023
+        AND month = 7
+        AND day = 29
+        AND origin_airport_id IN (
+            SELECT id
+            FROM airports
+            WHERE city = "Fiftyville"
+        )
+        ORDER BY
+            hour,
+            minute
+        LIMIT
+            1
+    )
   )
   and licence_plate IN (
-    
+
   )
 
 
