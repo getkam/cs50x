@@ -38,7 +38,16 @@ WHERE
    AND atm_location = "Leggett Street"
    AND transaction_type = "withdraw";
 
-
+-- PHONE CALLS -- posiible caller and reciever numbers
+SELECT
+  *
+FROM
+  phone_calls
+WHERE
+ year = 2023
+ AND month = 7
+ AND day = 28
+ and duration < 60;
 
 
 
