@@ -1,6 +1,6 @@
 -- Keep a log of any SQL queries you execute as you solve the mystery.
 
--- Kick off query
+-- Kick off query - 3 witness , bakery, 10:15
 SELECT *
 FROM
   crime_scene_reports
