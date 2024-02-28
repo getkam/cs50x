@@ -128,4 +128,7 @@ WHERE
      1
 );
 
+--- list of people on the plane
+
+
 WHERE year = 2023 AND month = 7 AND day = 28
