@@ -82,6 +82,31 @@ WHERE
    LIMIT
      1;
 
-
+--- DESTINATION CITY of out thiefs
+SELECT
+  city
+FROM
+  airports
+WHERE
+ id is (
+    SELECT
+   destination_airport_id
+ FROM
+   flights
+ WHERE
+   year = 2023
+   AND month = 7
+   AND day = 29
+   AND origin_airport_id IN (
+     SELECT id
+     FROM airports
+     WHERE city = "Fiftyville"
+   )
+   ORDER BY
+     hour,
+     minute
+   LIMIT
+     1;
+ )
 
 WHERE year = 2023 AND month = 7 AND day = 28
