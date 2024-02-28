@@ -28,7 +28,7 @@ WHERE
 
 -- backery security logs ------------> licence plates
 SELECT
-  *
+  license_plate
 FROM
   bakery_security_logs
 WHERE
@@ -199,8 +199,18 @@ WHERE
             1
     )
   )
-  and licence_plate IN (
-
+  AND licence_plate IN (
+    SELECT
+      license_plate
+    FROM
+      bakery_security_logs
+    WHERE
+      activity = "exit"
+      AND year = 2023
+      AND month = 7
+      AND day = 28
+      AND hour = 10
+      AND minute BETWEEN 15 AND 26
   )
 
 
