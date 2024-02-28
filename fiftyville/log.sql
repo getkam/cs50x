@@ -88,8 +88,8 @@ SELECT
 FROM
   airports
 WHERE
- id is (
-    SELECT
+ id IN (
+  SELECT
    destination_airport_id
  FROM
    flights
@@ -106,7 +106,7 @@ WHERE
      hour,
      minute
    LIMIT
-     1;
- )
+     1
+);
 
 WHERE year = 2023 AND month = 7 AND day = 28
