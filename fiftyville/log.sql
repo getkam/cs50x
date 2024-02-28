@@ -128,7 +128,7 @@ WHERE
      1
 );
 
---- list of people on the plane
+------------------------------- list of passport numbers
 
 SELECT
   *
@@ -139,7 +139,7 @@ WHERE
     SELECT
       id
     FROM
-    flights
+      flights
     WHERE
     year = 2023
     AND month = 7
@@ -155,6 +155,12 @@ WHERE
     LIMIT
         1
   )
+--------------------------------------- Thief
+SELECT
+  *
+FROM
+  people 
+WHERE
 
 
 
