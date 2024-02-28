@@ -199,7 +199,7 @@ WHERE
             1
     )
   )
-  AND licence_plate IN (
+  AND license_plate IN (
     SELECT
       license_plate
     FROM
