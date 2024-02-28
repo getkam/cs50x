@@ -26,7 +26,20 @@ WHERE
    AND month = 7
    AND day = 28;
 
----ATM records - might be usefull later account_number, amount
+-- backery security logs ------------> licence plates
+SELECT
+  *
+FROM
+  bakery_security_logs
+WHERE
+  activity = "exit"
+  AND year = 2023
+  AND month = 7
+  AND day = 28
+  AND hour = 10
+  AND minute BETWEEN 15 AND 26;
+
+---ATM records ----------------------> account_number, amount
 SELECT
   *
 FROM
@@ -38,7 +51,7 @@ WHERE
    AND atm_location = "Leggett Street"
    AND transaction_type = "withdraw";
 
--- PHONE CALLS -- posiible caller and reciever numbers
+-- PHONE CALLS ------------------> caller and reciever numbers
 SELECT
   *
 FROM
