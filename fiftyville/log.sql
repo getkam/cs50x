@@ -235,7 +235,98 @@ WHERE
   ----------------------------------------------------- ACCOMPLICE
 
 SELECT
-  phone_number
+  name
+FROM
+ people pp
+ JOIN phone_calls pc ON pp.phone_number = pc.receiver
+WHERE
+  year = 2023
+  AND month = 7
+  AND day = 28
+  AND duration < 60
+  AND pc.caller IN (
+    SELECT
+    phone_number --phone number of a thief
+    FROM
+    people
+    WHERE
+    id IN (
+    SELECT
+    person_id
+    FROM
+    bank_accounts
+    WHERE
+    account_number IN (
+        SELECT
+        account_number
+            FROM
+            atm_transactions
+            WHERE
+            year = 2023
+            AND month = 7
+            AND day = 28
+            AND atm_location = "Leggett Street"
+            AND transaction_type = "withdraw"
+        )
+    )
+    AND phone_number IN (
+        SELECT
+        caller
+        FROM
+        phone_calls
+        WHERE
+        year = 2023
+        AND month = 7
+        AND day = 28
+        and duration < 60
+    )
+    AND passport_number IN (
+        SELECT
+        passport_number
+        FROM
+        passengers
+        WHERE
+        flight_id IN (
+            SELECT
+            id
+            FROM
+            flights
+            WHERE
+            year = 2023
+            AND month = 7
+            AND day = 29
+            AND origin_airport_id IN (
+                SELECT id
+                FROM airports
+                WHERE city = "Fiftyville"
+            )
+            ORDER BY
+                hour,
+                minute
+            LIMIT
+                1
+        )
+    )
+    AND license_plate IN (
+        SELECT
+        license_plate
+        FROM
+        bakery_security_logs
+        WHERE
+        activity = "exit"
+        AND year = 2023
+        AND month = 7
+        AND day = 28
+        AND hour = 10
+        AND minute BETWEEN 15 AND 26
+    )
+
+
+ )
+
+
+SELECT
+  phone_number --phone number of a thief
 FROM
   people
 WHERE
