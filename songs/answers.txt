@@ -1,1 +1,1 @@
-Audio Aura might be somehow calculated RGB values from assesd dancability, valence and enegry. 
+Provided list of songs has relatively high value for danceabilty and energy (average values are closer to its maximum) so 
