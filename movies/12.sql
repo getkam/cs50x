@@ -1,1 +1,1 @@
-Select s.* from stars s join people p ON s.person_id = p.id WHERE p.name 
+SELECT p.id FROM people p WHERE p.name = "Bradley Cooper";
