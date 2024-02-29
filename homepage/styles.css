@@ -1,5 +1,8 @@
 body {
-    text-align: center
+    text-align: center;
+    width:70%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 footer {
@@ -9,17 +12,14 @@ footer {
     padding: 10px 0;
 }
 .picture-description {
-    width: 70%;
     margin: auto;
 }
 .picture{
-    max-width:70%;
     height: auto;
 }
 table {
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
 }
 td{
     border: solid black;
