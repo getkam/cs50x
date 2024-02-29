@@ -8,7 +8,7 @@ HTML tags
 7. <p>
 8. <input>
 9. <button>
-10. <
+10. <h1>
 
 CSS properties
 1. text-align: center;
@@ -17,4 +17,5 @@ CSS properties
 4. background-color: lightgrey;
 5. font-weight: bold;
 
-
+Java Script function is activated by clicking on the button Send and displaying confirmaion that provided by the user place has been added to the whishlist.
+From bootstrap I user .text-center which is centralizing text on the page. 
