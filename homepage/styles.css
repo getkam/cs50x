@@ -3,9 +3,11 @@ body {
 }
 .tour-link {
     text-decoration: none;
-    font-size: 23px
+    font-size: 23px;
 }
 
-.footer {
-    align:bottom;
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
