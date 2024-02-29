@@ -29,6 +29,6 @@ table {
 td{
     border: solid black;
 }
-th{
-    background-color: light-grey;
+.table-header{
+    background-color: lightgrey;
 }
