@@ -1,8 +1,8 @@
 HTML tags
-1.
-2.
-3.
-4.
+1. <table> -section containing table
+2. <tr> - table row
+3. <td> - values of particular cell
+4. <div> - do distingush particular section
 5.
 6.
 7.
@@ -11,9 +11,10 @@ HTML tags
 10
 
 CSS properties
-1.
-2.
-3.
-4.
-5.
+1. text-align: center; - align text to the center of the page
+2. width: 70%; - setting the width of elelement to fill only 70% of the page
+3. border: solid black; - making borders in table visible
+4. background-color: lightgrey; - setting background colour to light grey ( here: table header)
+5. font-weight: bold; - making text bolded
+
 
