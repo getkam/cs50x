@@ -12,7 +12,12 @@ footer {
     width: 100%;
     padding: 10px 0;
 }
-.picture-description .text-description {
+.picture-description {
+    text-align: center;
+    width: 70%;
+    margin: auto;
+}
+.text-description {
     text-align: center;
     width: 70%;
     margin: auto;
