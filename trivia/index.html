@@ -9,13 +9,13 @@
             function checkMultiChoice(event){
                 let button = event.target
 
-                if(button.innetText == 'Arnold'){
+                if(button.innerText == "Arnold"){
                     button.style.backgroundColor = 'Green'
-                    button.parenElement.querySelector('.feedback').innetText = 'Correct';
+                    button.parentElement.querySelector('.feedback').innerText = 'Correct';
                 }
                 else{
                     button.style.backgroundColor = 'Red'
-                    button.parenElement.querySelector('.feedback').innetText = 'Incorrect'
+                    button.parentElement.querySelector('.feedback').innerText = 'Incorrect'
                 }
             }
             function checkFreeResponse(event){
