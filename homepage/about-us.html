@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
-<html lan ="en">
-    <header>
+<html lang ="en">
+    <head>
         <meta name="viewport" content="initial-scale=1, width=device-width">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -10,14 +10,13 @@
             function showConfirmation(event){
                 let button = event.target;
                 let input = button.parentElement.querySelector('input');
-
                 button.parentElement.querySelector('#confirmation').innerText = "Thank you for voting! " + input.value + " has been added to out wishlist.";
 
             }
         </script>
         <link href="styles.css" rel="stylesheet">.
         <title> About Us</title>
-    </header>
+    </head>
     <body>
         <h1>About Us</h1>
         <hr>
