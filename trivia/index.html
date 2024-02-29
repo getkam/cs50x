@@ -11,8 +11,15 @@
 
                 if(button.innetText == 'Arnold'){
                     button.style.backgroundColor = 'Green'
-                    button.parenElement.querySelector('.feedback').innetText = 'Correct'
+                    button.parenElement.querySelector('.feedback').innetText = 'Correct';
                 }
+                else{
+                    button.style.backgroundColor = 'Red'
+                    button.parenElement.querySelector('.feedback').innetText = 'Incorrect'
+                }
+            }
+            function checkFreeResponse(event){
+                
             }
             // TODO: Add code to check answers to questions
         </script>
