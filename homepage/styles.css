@@ -23,6 +23,7 @@ footer {
 }
 table {
     align: center;
+    width: 70%;
 }
 td{
     border: solid black;
