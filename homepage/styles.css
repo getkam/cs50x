@@ -17,5 +17,6 @@ footer {
     margin: auto;
 }
 .picture{
-    
+    max-width:70%;
+    height: auto;
 }
