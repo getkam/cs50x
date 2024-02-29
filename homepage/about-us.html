@@ -11,7 +11,7 @@
                 let button = event.target;
                 let input = button.parentElement.querySelector('input');
 
-                button.parentSelector.querySelector('#confirmation').innerText = "Thank you for voting! " + input.innerText + " has been added to out wishlist";
+                button.parentElement.querySelector('#confirmation').innerText = "Thank you for voting! " + input.value + " has been added to out wishlist";
 
             }
         </script>
@@ -48,7 +48,7 @@
         <h3>Where we should go next time?</h3>
         <div>
             <input type="text">
-            <button onclick ="showConfirmation(event)">Send</button>
+            <button onclick = "showConfirmation(event)">Send</button>
             <p id="confirmation"></p>
         </div>
 
