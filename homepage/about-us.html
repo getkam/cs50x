@@ -9,7 +9,10 @@
         <script>
             function showConfirmation(event){
                 let button = event.target;
-                let input =
+                let input = button.parentElement.querySelector('input');
+
+                button.parentSelector.querySelector('#confirmation').innerText = "Thank you for voting! " + input.innerText + " has been added to out wishlist";
+
             }
         </script>
         <link href="styles.css" rel="stylesheet">
