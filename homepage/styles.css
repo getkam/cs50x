@@ -11,3 +11,8 @@ footer {
     bottom: 0;
     width: 100%;
 }
+.picture-description {
+    text-align: center;
+    width: 70%;
+    margin: auto;
+}
