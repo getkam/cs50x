@@ -5,19 +5,6 @@ body {
     margin-right: auto;
     font-family: Verdana;
 }
-
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-}
-.picture-description {
-    margin: auto;
-}
-.picture{
-    height: auto;
-}
 table {
     width: 100%
 }
