@@ -1,10 +1,6 @@
 body {
     text-align: center
 }
-.tour-link {
-    text-decoration: none;
-    font-size: 23px;
-}
 
 footer {
     position: absolute;
@@ -13,12 +9,6 @@ footer {
     padding: 10px 0;
 }
 .picture-description {
-    text-align: center;
-    width: 70%;
-    margin: auto;
-}
-.text-description {
-    text-align: center;
     width: 70%;
     margin: auto;
 }
