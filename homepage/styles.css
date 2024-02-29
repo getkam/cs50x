@@ -7,8 +7,7 @@ body {
     background-color:#f6f7f7
 }
 .homepage{
-
-    background-image: url('path-to-your-image.jpg');
+    background-image: url('https://media.istockphoto.com/id/1454567244/pl/zdj%C4%99cie/widok-z-lotu-ptaka-na-ma%C5%82%C4%85-ukryt%C4%85-pla%C5%BC%C4%99-otoczon%C4%85-zieleni%C4%85.jpg?s=1024x1024&w=is&k=20&c=yC6RLDzoaRMjBjEiaCPK62BMpRRtgytfEBtT8Tg0KcM=');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
