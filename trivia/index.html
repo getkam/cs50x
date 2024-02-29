@@ -11,6 +11,7 @@
 
                 if(button.innetText == 'Arnold'){
                     button.style.backgroundColor = 'Green'
+                    button.parenElement.querySelector(".feedback").innetText = "Correct"
                 }
             }
             // TODO: Add code to check answers to questions
@@ -31,6 +32,7 @@
                 <button onclick = "checkMultiChoice(event)">Arnold</button>
                 <button onclick = "checkMultiChoice(event)">Charlie</button>
                 <button onclick = "checkMultiChoice(event)">Molly</button>
+                <p class = "feedback"></p>
                 <!-- TODO: Add multiple choice question here -->
             </div>
 
@@ -40,8 +42,10 @@
                 <h3>How was called Weasley's house</h3>
                 <input type = "text"></input>
                 <button>Check</button>
+                <p class = "feedback"></p>
                 <!-- TODO: Add free response question here -->
             </div>
+
         </div>
     </body>
 </html>
