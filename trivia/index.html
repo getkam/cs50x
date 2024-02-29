@@ -22,7 +22,14 @@
                 let button = event.target
                 let input = button.parentElement.querySelector('input')
 
-                
+                if(input.value === 'The Burrow'){
+                    input.style.backgroundColor = 'Green'
+                    input.parentElement.querySelector('.feedback').innerText = 'Correct'
+                }
+                else {
+                    input.style.backgroundColor = 'Red'
+                    input.parentElement.querySelector('.feedback').innerText = 'Incorrect'
+                }
 
             }
             // TODO: Add code to check answers to questions
