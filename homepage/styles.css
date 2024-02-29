@@ -5,6 +5,12 @@ body {
     margin-right: auto;
     font-family: Verdana;
 }
+h1{
+    color:navy;
+}
+h2 {
+    color: navy;
+}
 table {
     width: 100%
 }
