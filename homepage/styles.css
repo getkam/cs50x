@@ -9,6 +9,7 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
+    text-align: center;
 }
 .picture-description {
     margin: auto;
