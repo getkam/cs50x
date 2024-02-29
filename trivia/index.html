@@ -19,6 +19,8 @@
                 }
             }
             function checkFreeResponse(event){
+                let button = event.target
+                let input = button.parentElement.querySelector('input').
 
             }
             // TODO: Add code to check answers to questions
@@ -46,9 +48,9 @@
             <div class="section">
                 <h2>Part 2: Free Response</h2>
                 <hr>
-                <h3>How was called Weasley's house</h3>
-                <input type = "text"></input>
-                <button>Check</button>
+                <h3>How was called Weasley's house?</h3>
+                <input type = "text" placeholder ="The Name"></input>
+                <button onclick = "checkFreeResponse(event)">Check</button>
                 <p class = "feedback"></p>
                 <!-- TODO: Add free response question here -->
             </div>
