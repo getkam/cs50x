@@ -4,12 +4,13 @@ body {
     margin-left: auto;
     margin-right: auto;
     font-family: Verdana;
+    background-color:#f6f7f7
 }
 h1{
-    color:navy;
+    color:#00131c;
 }
 h2 {
-    color: navy;
+    color:#1d2327;
 }
 table {
     width: 100%
