@@ -1,7 +1,11 @@
 body {
     text-align: center
 }
-.tour-link{
+.tour-link {
     text-decoration: none;
     font-size: 23px
+}
+
+.footer {
+    align:bottom;
 }
