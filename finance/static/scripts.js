@@ -19,5 +19,5 @@ function checkIfPasswordsAreMatching(){
 
 }
 function validateAmountOfShares(){
-    
+    let amount = document.getELementById("")
 }
