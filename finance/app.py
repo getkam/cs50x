@@ -54,6 +54,7 @@ def buy():
             return apology("Amount must be a number", 400)
         if amount < 0:
             return apology("Amount cannot be less than 0", 400)
+        
     else:
         return render_template("buy.html")
 

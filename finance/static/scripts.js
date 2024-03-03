@@ -19,6 +19,13 @@ function checkIfPasswordsAreMatching(){
 
 }
 function validateAmountOfShares(){
-    let amount = document.getELementById("amount").value
-    
+    let amount = parseInt(document.getELementById("amount").value)
+
+    if (amount==NaN){
+        alert("Amount must be a number")
+    }
+    else if ( amount < 0 ){
+        alert("Amount must be greater than 0")
+    }
+    document.getELementById("amount").innerText ==""
 }
