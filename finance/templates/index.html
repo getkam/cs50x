@@ -5,5 +5,22 @@
 {% endblock %}
 
 {% block main %}
-    <div>HISTORY</div>
+    <h1> Portfolio</h1>
+
+    <table>
+        <tr>
+            <th>SYMBOL</th>
+            <th>AMOUNT</th>
+            <th>BUYING PRICE</th>
+            <th>CURRENT PRICE</th>
+        </tr>
+        {% for entry in portfolio %}
+            <tr>
+                <td>{{ entry['symbol'] }}</td>
+                <td>{{ entry['amount'] }}</td>
+                <td>{{ entry['quote'] }}</td>
+                <td>{{ entry['current_value'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 {% endblock %}
