@@ -46,14 +46,14 @@ def buy():
     if request.method == "POST":
         symbol = lookup(request.form.get("symbol"))
         if not symbol:
-            return apology("Invalid symbol")
+            return apology("Invalid symbol", 400)
         amount = request.form.get("amount")
         try:
             amount = int(amount)
         except ValueError:
-            return apology("Amount must be a number")
+            return apology("Amount must be a number", 400)
         if amount < 0:
-            return apology("Amount cannot be less than 0")
+            return apology("Amount cannot be less than 0", 400)
     else:
         return render_template("buy.html")
 
@@ -124,7 +124,7 @@ def quote():
         quotes = lookup(symbol)
         print(quotes)
         if quotes == None:
-            return apology("Invalid Symbol", 403)
+            return apology("Invalid Symbol", 400)
         if not isinstance(quotes, list):
             quotes = [quotes]
         return render_template("quoted.html", quotes=quotes)
@@ -137,16 +137,15 @@ def register():
     if request.method == "POST":
         username = request.form.get("username")
         if not username:
-            return apology("must provide username", 403)
+            return apology("must provide username", 400)
 
         password = request.form.get("password")
         if len(password) < 5 or not re.search(r"[a-z]",password) or not re.search(r"[\d]",password):
-            return apology("password must contain 5 characters including a letter and a digit", 403)
+            return apology("password must contain 5 characters including a letter and a digit", 400)
 
         confirmpassword = request.form.get("confirmpassword")
         if password !=confirmpassword :
-            return apology("passwords are not the same", 403)
-
+            return apology("passwords are not the same", 400)
 
         db.execute("INSERT INTO users (username, hash) VALUES (?,?)", username, generate_password_hash(password))
 
