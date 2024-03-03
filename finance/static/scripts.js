@@ -18,3 +18,6 @@ function checkIfPasswordsAreMatching(){
     }
 
 }
+function validateAmountOfShares(){
+    
+}
