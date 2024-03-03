@@ -202,12 +202,13 @@ def sell():
         quote = lookup(selected)
         if not quote:
             return apology("Something went wrong", 500)
-        user_cash = db.execute("SELECT cash FROM users WHERE id= ?",session.get("user_id"))
-        if len(user_cash):
-            
-        amount_possesion = db.execute("SELECT SUM(amount) as amount FROM transactions WHERE user_id =? AND symbol = ?", session.get("user_id"), selected)
 
-        db.execute("UPDATE users SET cash = ? WHERE id = ?",,session.get("user_id"))
+        user_cash = db.execute("SELECT cash FROM users WHERE id= ?",session.get("user_id"))
+        if len(user_cash) != 1:
+            return apology("Something went wrong", 500)
+        amount_possesion = db.execute("SELECT SUM(amount) as amount FROM transactions WHERE user_id =? AND symbol = ?", session.get("user_id"), selected)
+        new_saldo = int(user_cash)+int(amount_possesion)*quote['price']
+        db.execute("UPDATE users SET cash = ? WHERE id = ?",new_saldo,session.get("user_id"))
 
         return apology("TODO", 400)
     else:
