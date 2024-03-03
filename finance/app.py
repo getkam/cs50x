@@ -127,12 +127,11 @@ def register():
             return apology("passwords are not the same", 403)
 
 
-        db.execute("INSERT INTO users (username, hash) VALUES (?,?)",username, generate_password_hash(password))
+        db.execute("INSERT INTO users (username, hash) VALUES (?,?)", username, generate_password_hash(password))
 
-        return render_template("index.html")
+        return redirect("/")
     if request.method == "GET":
         return render_template("register.html")
-    return render_template("register.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
