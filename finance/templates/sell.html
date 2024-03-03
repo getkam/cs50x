@@ -9,7 +9,7 @@
     <h1>Sell your shares</h1>
     <div class="mb-3">
         <select name="shares"class="form-control mx-auto w-auto">
-            <option value ="" disabled selected>--wybierz symbol--</option>
+            <option value ="" disabled selected>--SELECT--</option>
             {% for row in rows %}
                 <option>{{ row['symbol'] }}</option>
             {% endfor %}
