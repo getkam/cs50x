@@ -12,10 +12,12 @@
                 <td>Symbol</td>
                 <td>Price</td>
             </th>
+            {% for quote in quotes %}
             <tr>
                 <td>{{ quotes['symbol'] }}</td>
                 <td>{{ quotes['price'] }}</td>
             </tr>
+            {% endfor %}
         </table>
         {% endif %}
     </form>
