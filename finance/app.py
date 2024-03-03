@@ -107,7 +107,11 @@ def logout():
 @login_required
 def quote():
     """Get stock quote."""
-    let symbol = 
+    if request.medhod == "POST"
+        let symbol = request.form.get("symbol")
+        quote = lookup(symbol)
+        if not quote:
+            return apology("Invalid Symbol", 403)
     return render_template("quote.html")
 
 
