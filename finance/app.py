@@ -64,9 +64,13 @@ def buy():
         if amount * quote['price'] > userEntry[0]['cash']:
             return apology("Not enough money", 400)
 
-        db.execute("INSERT INTO transactions (user_id, symbol, amount, quote) VALUES (?, ?, ?, ?)", userId, quote['symbol'], amount, quote['price'])
-        db.execute("UPDATE users SET cash = ? WHERE id = ?", userEntry[0]['cash'] - (amount * quote['price']), userId )
-        return 
+        db.execute(
+            "INSERT INTO transactions (user_id, symbol, amount, quote)VALUES (?, ?, ?, ?)", userId, quote['symbol'], amount, quote['price']
+            )
+        db.execute(
+            "UPDATE users SET cash = ? WHERE id = ?", userEntry[0]['cash'] - (amount * quote['price']), userId
+            )
+        return render_template("history.html")
     else:
         return render_template("buy.html")
 
