@@ -200,7 +200,9 @@ def sell():
     if request.method == "POST":
         selected = request.form.get('shares')
         quote = lookup(selected)
-        amount_possesion = db.execute("SEL")
+        if not quote:
+            return apology("Something went wrong", 500)
+        amount_possesion = db.execute("SELECT SUM(amount) FROM transactions WHERE user_id =? AND symbol = ?", session.get("user_id"), selected)
 
         db.execute("UPDATE ")
 
