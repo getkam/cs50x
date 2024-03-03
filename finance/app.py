@@ -116,6 +116,11 @@ def quote():
     else:
         return render_template("quote.html")
 
+@app.route("/quoted")
+@login_required
+def quoted():
+    """ Display quates """"
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
