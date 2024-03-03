@@ -42,13 +42,13 @@ def index():
     portfolio = []
     sum = 0
     for row in rows:
-        portfolioEntry = dict(rows)
+        portfolioEntry = dict(row)
         currentPrice = lookup(row['symbol'])
         if not currentPrice:
             portfolioEntry['current_quote'] = "Unavailable"
         portfolioEntry['current_quote']=currentPrice['price']
         portfolio.append(portfolioEntry)
-        sum = sum + row['sum']*['quote']
+        sum = sum + row['amount'] * row['quote']
 
 
     userEntry = db.execute("SELECT cash FROM users WHERE id = ?", session.get("user_id"))
