@@ -13,10 +13,10 @@
                 <td>Price</td>
             </th>
             {% for quote in quotes %}
-            <tr>
-                <td>{{ quotes['symbol'] }}</td>
-                <td>{{ quotes['price'] }}</td>
-            </tr>
+                <tr>
+                    <td>{{ quote['symbol'] }}</td>
+                    <td>{{ quote['price'] }}</td>
+                </tr>
             {% endfor %}
         </table>
         {% endif %}
