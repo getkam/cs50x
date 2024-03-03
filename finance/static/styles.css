@@ -21,3 +21,31 @@ nav .navbar-brand .green
 {
     color: #2e944b;
 }
+.quotes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.quotes-table th, .quotes-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.quotes-table th {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+.quotes-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.quotes-table tr:hover {
+    background-color: #ddd;
+}
+
+.quotes-table td {
+    color: #333;
+}
