@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    {% if quote %}
+    <table>
+        <th>
+            <td>Symbol</td>
+            <td>Price</td>
+        </th>
+        {% for quote in quotes %}
+        <tr>
+            <td>{{ quote["symbol"] }}</td>
+            <td>{{ quote["price"] }}</td>
+        </tr>
+     {% endfor%}
+    </table>
+    {% endif %}
+{% endblock %}
