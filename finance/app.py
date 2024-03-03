@@ -198,8 +198,8 @@ def sell():
     if len(rows) < 1:
         return apology("Nothing to sell", 400)
     if request.method=="POST":
-        shares = request.form.get['shares']
-        print(shares)
+        selected = request.form.get('shares')
+        
         return apology("TODO", 400)
     else:
         return render_template("sell.html", rows=rows)
