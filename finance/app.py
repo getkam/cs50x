@@ -44,9 +44,10 @@ def index():
 def buy():
     """Buy shares of stock"""
     if request.method == "POST":
-        symbol = lookup(request.form.get("symbol"))
-        if not symbol:
+        quote = lookup(request.form.get("symbol"))
+        if not quote:
             return apology("Invalid symbol", 400)
+
         amount = request.form.get("amount")
         try:
             amount = int(amount)
@@ -54,7 +55,9 @@ def buy():
             return apology("Amount must be a number", 400)
         if amount < 0:
             return apology("Amount cannot be less than 0", 400)
-        
+        user = session.get("user_id")
+        userEntry = db.execute("SELECT * FROM users WHERE id")
+
     else:
         return render_template("buy.html")
 
