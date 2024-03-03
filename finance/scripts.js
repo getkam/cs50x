@@ -1,3 +1,4 @@
-function validatePassword(event){
-
+function validatePassword(){
+    pass = document.get
+    e
 }
