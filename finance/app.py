@@ -36,9 +36,11 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    rows = db.execute("SELECT symbol, SUM(amount), quote FROM transactions WHERE user_id = 2 GROUP BY symbol, quote")
+    rows = db.execute("SELECT symbol, SUM(amount) as amount, quote FROM transactions WHERE user_id = 2 GROUP BY symbol, quote")
     if len(rows) < 1:
         return render_template("index.html")
+    
+
     return render_template("index.html", rows=rows, )
 
 
