@@ -7,7 +7,7 @@
 {% block main %}
     <h1> Portfolio</h1>
 
-    <table>
+    <table class="quotes-table">
         <tr>
             <th>SYMBOL</th>
             <th>AMOUNT</th>
@@ -19,7 +19,7 @@
                 <td>{{ entry['symbol'] }}</td>
                 <td>{{ entry['amount'] }}</td>
                 <td>{{ entry['quote'] }}</td>
-                <td>{{ entry['current_value'] }}</td>
+                <td>{{ entry['current_quote'] }}</td>
             </tr>
         {% endfor %}
     </table>

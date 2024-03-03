@@ -51,11 +51,12 @@ def index():
         sum = sum + row['amount'] * row['quote']
 
 
+    print(portfolio)
     userEntry = db.execute("SELECT cash FROM users WHERE id = ?", session.get("user_id"))
     if len(userEntry) != 1:
         return apology("Internal Server Error", 500)
 
-    return render_template("index.html", portfolio=portfolio, sum=sum, cash=userEntry['cash'])
+    return render_template("index.html", portfolio=portfolio, sum=sum, cash=userEntry[0]['cash'])
 
 
 @app.route("/buy", methods=["GET", "POST"])
