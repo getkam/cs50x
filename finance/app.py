@@ -200,7 +200,8 @@ def sell():
     if request.method == "POST":
         selected = request.form.get('shares')
         quote = lookup(selected)
-        
+        amount_possesion = db.execute("SEL")
+
         db.execute("UPDATE ")
 
         return apology("TODO", 400)
