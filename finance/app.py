@@ -59,7 +59,8 @@ def buy():
         userEntry = db.execute("SELECT * FROM users WHERE id = ?", userId)
         if userEntry != 1:
             return apology("DB Issue", 500)
-        if 
+        if amount * quote['price'] > userEntry[0].cash:
+            return apology("Not enough money", 400)
 
     else:
         return render_template("buy.html")
