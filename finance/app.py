@@ -119,10 +119,13 @@ def register():
             return apology("must provide username", 403)
 
         password = request.form.get("password")
-        if password.len < 5 or not re.search(r"[a-z]",password):
+        if password.len < 5 or not re.search(r"[a-z]",password) or not re.search(r"[\d]",password):
             return apology("password must contain 5 characters including a letter and a digit", 403)
 
         confirmpassword = request.form.get("confirmpassword")
+        if password !=confirmpassword :
+            return apology("passwords are not the same", 403)
+        
     if request.method == "GET":
         return render_template("register.html")
     return render_template("register.html")
