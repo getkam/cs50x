@@ -194,7 +194,7 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    rows = db.execute("SELECT DISTINCT(symbol) as symbol FROM transaction WHERE user_id = ?", session.get("user_id"))
+    rows = db.execute("SELECT DISTINCT(symbol) as symbol FROM transactions WHERE user_id = ?", session.get("user_id"))
     if len(rows) < 1:
         return apology("Nothing to sell", 400)
     if request.method=="POST":
