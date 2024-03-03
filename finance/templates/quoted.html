@@ -19,7 +19,8 @@
                 </tr>
             {% endfor %}
         </table>
-        
+        {% else %}
+           <p>No quotes available.</p>
         {% endif %}
     </form>
 {% endblock %}
