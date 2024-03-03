@@ -61,7 +61,7 @@ def buy():
             return apology("DB Issue", 500)
         if amount * quote['price'] > userEntry[0].cash:
             return apology("Not enough money", 400)
-
+        db.execute("UPDATE transactions ")
     else:
         return render_template("buy.html")
 
