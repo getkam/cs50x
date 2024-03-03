@@ -127,6 +127,7 @@ def register():
             return apology("passwords are not the same", 403)
 
         db.execute("INSERT INTO users (username, hash) VALUES (?,?);",username, password)
+        db.conn.commit;
         return render_template("index.html")
     if request.method == "GET":
         return render_template("register.html")
