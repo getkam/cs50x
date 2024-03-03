@@ -50,6 +50,7 @@ def index():
         portfolio.append(portfolioEntry)
         sum = sum + row['amount'] * row['quote']
 
+    sum = round(sum, 2)
     userEntry = db.execute("SELECT cash FROM users WHERE id = ?", session.get("user_id"))
     if len(userEntry) != 1:
         return apology("Internal Server Error", 500)
