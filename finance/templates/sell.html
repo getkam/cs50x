@@ -5,8 +5,23 @@
 {% endblock %}
 
 {% block main %}
+<form action="/sell" method="post">
+    <div class="mb-3">
+        <select class="form-control mx-auto w-auto">
+            <option value ="" disabled selected>--wybierz symbol--</option>
+            {% for row in rows %}
+                <option>{{ row['symbol'] }}</option>
+            {% endfor %}
+        </select>
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit">Sell</button>
+         </div>
+    </div>
+
+
+</form>
+
     <h1>Sell your shares</h1>
-    <select>
-        <
-    </select>
+    <form></form>
+
 {% endblock %}
