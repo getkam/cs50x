@@ -55,8 +55,9 @@ def buy():
             return apology("Amount must be a number", 400)
         if amount < 0:
             return apology("Amount cannot be less than 0", 400)
-        user = session.get("user_id")
-        userEntry = db.execute("SELECT * FROM users WHERE id")
+        userId = session.get("user_id")
+        userEntry = db.execute("SELECT * FROM users WHERE id = ?", userId)
+        if userEntry
 
     else:
         return render_template("buy.html")
