@@ -1,3 +1,3 @@
-function validatePassword(){
-    
+function validatePassword(event){
+
 }
