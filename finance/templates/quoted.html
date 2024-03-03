@@ -8,10 +8,10 @@
     <form action="/quoted" method="post">
         {% if quotes %}
         <table>
-            <th>
-                <td>Symbol</td>
-                <td>Price</td>
-            </th>
+            <tr>
+                <th>Symbol</td>
+                <th>Price</td>
+            </tr>
             {% for quote in quotes %}
                 <tr>
                     <td>{{ quote['symbol'] }}</td>
@@ -19,6 +19,7 @@
                 </tr>
             {% endfor %}
         </table>
+        
         {% endif %}
     </form>
 {% endblock %}
