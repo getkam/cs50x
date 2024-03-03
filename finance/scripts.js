@@ -4,7 +4,6 @@ function validatePassword(event){
 
     if (!pattern.text(pass))
     {
-        alert("Password dosn't match criteria");
+        alert("Password doesn't match criteria");
     }
-
 }
