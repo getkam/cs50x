@@ -40,10 +40,17 @@ def index():
     if len(rows) < 1:
         return render_template("index.html")
     portfolio = []
+    sum = 0
     for row in rows:
-        
+        portfolioEntry = dict(rows)
+        currentPrice = lookup(row['symbol'])
+        if not currentPrice:
+            portfolioEntry['current_quote'] = "Unavailable"
+        portfolioEntry['current_quote']=currentPrice['price']
+        portfolio.append(portfolioEntry)
 
-    return render_template("index.html", rows=rows, )
+
+    return render_template("index.html", portfolio=portfolio )
 
 
 @app.route("/buy", methods=["GET", "POST"])
