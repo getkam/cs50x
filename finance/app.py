@@ -50,7 +50,8 @@ def buy():
         amount = request.form.get("amount")
         try:
             amount = int(amount)
-        e
+        except ValueError:
+            return apology("Amount must be a number")
         if amount < 0:
             return apology("Amount cannot be less than 0")
     else:
