@@ -58,14 +58,15 @@ def buy():
 
         userId = session.get("user_id")
         userEntry = db.execute("SELECT * FROM users WHERE id = ?", userId)
-        if userEntry != 1:
+        if len(userEntry) != 1:
             return apology("DB Issue", 500)
 
-        if amount * quote['price'] > userEntry[0].cash:
+        if amount * quote['price'] > userEntry[0]['cash']:
             return apology("Not enough money", 400)
 
         db.execute("INSERT INTO transactions (user_id, symbol, amount, quote) VALUES (?, ?, ?, ?)", userId, quote['symbol'], amount, quote['price'])
-        db.execute("UPDATE users SET cash = ? WHERE id = ?", userEntry[0].cash - (amount * quote['price']) )
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", userEntry[0]['cash'] - (amount * quote['price']), userId )
+        return 
     else:
         return render_template("buy.html")
 
