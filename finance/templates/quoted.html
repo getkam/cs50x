@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Quote
+    Quoted
 {% endblock %}
 
 {% block main %}
-    <form action="/quoted" method="get">
+    <form action="/quoted" method="post">
         {% if quotes %}
         <table>
             <th>
