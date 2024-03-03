@@ -89,7 +89,7 @@ def buy():
         db.execute(
             "UPDATE users SET cash = ? WHERE id = ?", userEntry[0]['cash'] - (amount * quote['price']), userId
             )
-        return render_template("history.html")
+        return redirect("/")
     else:
         return render_template("buy.html")
 
