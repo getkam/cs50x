@@ -55,13 +55,17 @@ def buy():
             return apology("Amount must be a number", 400)
         if amount < 0:
             return apology("Amount cannot be less than 0", 400)
+
         userId = session.get("user_id")
         userEntry = db.execute("SELECT * FROM users WHERE id = ?", userId)
         if userEntry != 1:
             return apology("DB Issue", 500)
+
         if amount * quote['price'] > userEntry[0].cash:
             return apology("Not enough money", 400)
-        db.execute("UPDATE transactions ")
+
+        db.execute("INSERT INTO transactions (user_id, symbol, amount, quote) VALUES (?, ?, ?, ?)", userId, quote['symbol'], amount, quote['price'])
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", userEntry[0].cash - (amount * quote['price']) )
     else:
         return render_template("buy.html")
 
