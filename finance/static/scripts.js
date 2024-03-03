@@ -3,8 +3,9 @@ function validatePassword(){
     let pass = document.getElementById("password").value
     //let pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-    if (pass.lenght < 8 && /[a-z]/.test(pass) && /[A-Z]/.test(pass))
+    if (pass.lenght < 5)
     {
-        document.getElementById("errorPasswordValidation").innerTest = "Password doesn't match criteria"
+        alert('Password must have at least 5 characters')
+       // document.getElementById("errorPasswordValidation").innerTest = "Password doesn't match criteria"
     }
 }
