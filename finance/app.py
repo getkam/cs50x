@@ -111,10 +111,10 @@ def quote():
         symbol = request.form.get("symbol")
         quotes = lookup(symbol)
         print(quotes)
+        if quotes == None:
+            return apology("Invalid Symbol", 403)
         if not isinstance(quotes, list):
             quotes = [quotes]
-        if not quote:
-            return apology("Invalid Symbol", 403)
         return render_template("quoted.html", quotes=quotes)
     else:
         return render_template("quote.html")
