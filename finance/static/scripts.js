@@ -10,4 +10,11 @@ function validatePassword(){
 
 function checkIfPasswordsAreMatching(){
 
+    let password = document.getElementById("password").value;
+    let confirmpassword = document.getElementById("confirmpassword").value;
+
+    if (password != confirmpassword){
+        alert('Passwords are not matching');
+    }
+
 }
