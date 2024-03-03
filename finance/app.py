@@ -43,19 +43,19 @@ def index():
     sum = 0
     for row in rows:
         portfolioEntry = dict(row)
+        portfolioEntry['quote']=usd(row['quote'])
         currentPrice = lookup(row['symbol'])
         if not currentPrice:
             portfolioEntry['current_quote'] = "Unavailable"
-        portfolioEntry['current_quote']=currentPrice['price']
+        portfolioEntry['current_quote']=usd(currentPrice['price'])
         portfolio.append(portfolioEntry)
         sum = sum + row['amount'] * row['quote']
 
-    sum = round(sum, 2)
     userEntry = db.execute("SELECT cash FROM users WHERE id = ?", session.get("user_id"))
     if len(userEntry) != 1:
         return apology("Internal Server Error", 500)
 
-    return render_template("index.html", portfolio=portfolio, sum=sum, cash=userEntry[0]['cash'])
+    return render_template("index.html", portfolio=portfolio, sum=usd(sum), cash=usd(userEntry[0]['cash']))
 
 
 @app.route("/buy", methods=["GET", "POST"])
