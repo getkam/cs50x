@@ -9,3 +9,5 @@ function validatePassword(){
        // document.getElementById("errorPasswordValidation").innerTest = "Password doesn't match criteria"
     }
 }
+
+function checkIfPassordAre
