@@ -36,7 +36,7 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    rows = db.execute("SELECT symbol, SUM(amount) as amount, quote FROM transactions WHERE user_id = 2 GROUP BY symbol, quote")
+    rows = db.execute("SELECT symbol, SUM(amount) as amount, quote FROM transactions WHERE user_id = ? GROUP BY symbol, quote", session.get("user_id"))
     if len(rows) < 1:
         return render_template("index.html")
     portfolio = []
@@ -48,9 +48,14 @@ def index():
             portfolioEntry['current_quote'] = "Unavailable"
         portfolioEntry['current_quote']=currentPrice['price']
         portfolio.append(portfolioEntry)
+        sum = sum + row['sum']*['quote']
 
 
-    return render_template("index.html", portfolio=portfolio )
+    userEntry = db.execute("SELECT cash FROM users WHERE id = ?", session.get("user_id"))
+    if len(userEntry) != 1:
+        return apology("Internal Server Error", 500)
+
+    return render_template("index.html", portfolio=portfolio, sum=sum, cash=userEntry['cash'])
 
 
 @app.route("/buy", methods=["GET", "POST"])
