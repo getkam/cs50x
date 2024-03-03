@@ -46,9 +46,13 @@ def buy():
     if request.method == "POST":
         symbol = lookup(request.form.get("symbol"))
         if not symbol:
-            return apology("")
-
-        amount = request.form.get("")
+            return apology("Invalid symbol")
+        amount = request.form.get("amount")
+        try:
+            amount = int(amount)
+        e
+        if amount < 0:
+            return apology("Amount cannot be less than 0")
     else:
         return render_template("buy.html")
 
