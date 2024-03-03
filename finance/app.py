@@ -200,4 +200,4 @@ def sell():
     if request.method="POST":
         return apology("TODO", 400)
     else:
-        return render_template("sell.html", )
+        return render_template("sell.html", rows=rows)
