@@ -1,7 +1,7 @@
 function validatePassword(){
     let pass = document.getElementById("password").value
 
-    if (pass.length < 5 || !/[A-z]/.test(pass) || !/[@\.$!%*?&]/.test(pass) || !/d/.test(pass))
+    if (pass.length < 5 || !/[A-z]/.test(pass) || !/d/.test(pass))
     {
         alert('Password must have at least 5 characters, letter, digit and special sign');
         document.getElementById("password").value = "";
