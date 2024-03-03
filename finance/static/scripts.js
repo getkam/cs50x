@@ -3,7 +3,7 @@ function validatePassword(){
 
     if (pass.length < 5 || !/[a-z]/.test(pass) || !/\d/.test(pass))
     {
-        alert('Password must have at least 5 characters, letter, digit and special sign');
+        alert('Password must have at least 5 characters including letter and  digit');
         document.getElementById("password").value = "";
     }
 }
