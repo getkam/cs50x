@@ -5,7 +5,6 @@ function validatePassword(){
     {
         alert('Password must have at least 5 characters, letter, digit and special sign');
         document.getElementById("password").value = "";
-       // document.getElementById("errorPasswordValidation").innerTest = "Password doesn't match criteria"
     }
 }
 
