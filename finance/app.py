@@ -110,7 +110,7 @@ def quote():
     if request.method == "POST":
         symbol = request.form.get("symbol")
         quotes = lookup(symbol)
-        console.log(quotes);
+        print(quotes)
         if not quote:
             return apology("Invalid Symbol", 403)
         return render_template("quoted.html", quotes=quotes)
@@ -121,6 +121,8 @@ def quote():
 @login_required
 def quoted(quotes):
     """ Display quates """
+    print("Quoted")
+    print(quotes)
     return render_template("quoted.html", quotes=quotes)
 
 @app.route("/register", methods=["GET", "POST"])
