@@ -5,22 +5,20 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/quoted" method="post">
-        {% if quotes %}
-        <table>
+    {% if quotes %}
+    <table>
+        <tr>
+            <th>Symbol</td>
+            <th>Price</td>
+        </tr>
+        {% for quote in quotes %}
             <tr>
-                <th>Symbol</td>
-                <th>Price</td>
+                <td>{{ quote['symbol'] }}</td>
+                <td>{{ quote['price'] }}</td>
             </tr>
-            {% for quote in quotes %}
-                <tr>
-                    <td>{{ quote['symbol'] }}</td>
-                    <td>{{ quote['price'] }}</td>
-                </tr>
-            {% endfor %}
-        </table>
-        {% else %}
-           <p>No quotes available.</p>
-        {% endif %}
-    </form>
+        {% endfor %}
+    </table>
+    {% else %}
+        <p>No quotes available.</p>
+    {% endif %}
 {% endblock %}
