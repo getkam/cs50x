@@ -118,8 +118,9 @@ def quote():
 
 @app.route("/quoted")
 @login_required
-def quoted():
+def quoted(quotes):
     """ Display quates """"
+    return render_template("quoted.html", quotes=quotes)
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
