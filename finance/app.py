@@ -199,7 +199,10 @@ def sell():
         return apology("Nothing to sell", 400)
     if request.method == "POST":
         selected = request.form.get('shares')
-        
+        quote = lookup(selected)
+        value = 
+        db.execute("UPDATE ")
+
         return apology("TODO", 400)
     else:
         return render_template("sell.html", rows=rows)
