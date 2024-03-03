@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block main %}
+<form action="/quoted" method="post">
     {% if quote %}
     <table>
         <th>
@@ -19,4 +20,5 @@
      {% endfor%}
     </table>
     {% endif %}
+</form>
 {% endblock %}
