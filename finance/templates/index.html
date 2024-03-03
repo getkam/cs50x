@@ -22,7 +22,18 @@
                 <td>{{ entry['current_quote'] }}</td>
             </tr>
         {% endfor %}
+        </table>
+        <hr>
+        <table class="quotes-table">
+            <tr>
+                <th>TOTAL SUM OF INVESTMENTS</th>
+                <td>{{ sum }}</td>
+            </tr>
+            <tr>
+                <th>REMAINING CASH</th>
+                <td>{{ cash }}</td>
+            </tr>
     </table>
 
-    
+
 {% endblock %}
