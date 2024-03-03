@@ -6,6 +6,7 @@
 
 {% block main %}
 <form action="/sell" method="post">
+    <h1>Sell your shares</h1>
     <div class="mb-3">
         <select class="form-control mx-auto w-auto">
             <option value ="" disabled selected>--wybierz symbol--</option>
@@ -13,15 +14,14 @@
                 <option>{{ row['symbol'] }}</option>
             {% endfor %}
         </select>
-        <div class="mb-3">
-            <button class="btn btn-primary" type="submit">Sell</button>
-         </div>
+
     </div>
-
-
+    <div class="mb-3">
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </div>
 </form>
 
-    <h1>Sell your shares</h1>
-    <form></form>
+
+
 
 {% endblock %}
