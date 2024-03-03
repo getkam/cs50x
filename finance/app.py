@@ -116,11 +116,11 @@ def register():
     if request.method == "POST":
         username = request.form.get("username")
         if not username:
-            return render_template("register.html")
+            return apology("must provide username", 403)
 
         password = request.form.get("password")
         if password.len < 5 or :
-            return render_template("register.html")
+            return apology("password must contain 5 characters including a letter and a digit", 403)
 
         confirmpassword = request.form.get("confirmpassword")
     if request.method == "GET":
