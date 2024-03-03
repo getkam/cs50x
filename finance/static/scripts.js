@@ -1,7 +1,5 @@
 function validatePassword(){
-    console.log("Function called");
     let pass = document.getElementById("password").value
-    //let pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
     if (pass.length < 5 || !/[a-z]/.test(pass) || !/[A-Z]/.test(pass) || /[@\.$!%*?&]/.test(pass) || !/d/.test(pass))
     {
@@ -10,4 +8,6 @@ function validatePassword(){
     }
 }
 
-function checkIfPassordAre
+function checkIfPasswordsAreMatching(){
+
+}
