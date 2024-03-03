@@ -200,7 +200,7 @@ def sell():
     if request.method == "POST":
         selected = request.form.get('shares')
         quote = lookup(selected)
-        value = 
+        
         db.execute("UPDATE ")
 
         return apology("TODO", 400)
