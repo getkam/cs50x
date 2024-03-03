@@ -112,10 +112,9 @@ def quote():
         quote = lookup(symbol)
         if not quote:
             return apology("Invalid Symbol", 403)
-        else return render_template("quote.html", quote=quote)
+        return render_template("quote.html", quote=quote)
     else:
     return render_template("quote.html")
-
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
