@@ -125,6 +125,7 @@ def register():
         confirmpassword = request.form.get("confirmpassword")
         if password !=confirmpassword :
             return apology("passwords are not the same", 403)
+        
         db.execute("INSERT INTO users (username, hash) VALUES (?,?)",username, password)
         return render_template("index.html")
     if request.method == "GET":
