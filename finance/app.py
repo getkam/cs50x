@@ -36,7 +36,7 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    rows = db.execute("SELECT symbol, SUM(amount) as amount, quote FROM transactions WHERE user_id = ? GROUP BY symbol, quote", session.get("user_id"))
+    rows = db.execute("SELECT symbol, SUM(CASE WHEN type='buy' ELSE 0 END) - SUM(CASE WHEN type='sell' ELSE 0 END) as amount, quote FROM transactions WHERE user_id = ? GROUP BY symbol, quote", session.get("user_id"))
     if len(rows) < 1:
         return render_template("index.html")
     portfolio = []
