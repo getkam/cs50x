@@ -6,18 +6,16 @@
 
 {% block main %}
     <h2>Searching results:</h2>
-    {% if quotes %}
+    {% if quote %}
     <table class="quotes-table">
         <tr>
             <th>Symbol</td>
             <th>Price</td>
         </tr>
-        {% for quote in quotes %}
-            <tr>
-                <td>{{ quote['symbol'] }}</td>
-                <td>{{ quote['price'] }}</td>
-            </tr>
-        {% endfor %}
+        <tr>
+            <td>{{ quote['symbol'] }}</td>
+            <td>{{ quote['price'] }}</td>
+        </tr>
     </table>
     {% else %}
         <p>No quotes available.</p>
