@@ -195,7 +195,7 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    rows = db.execute("SELECT symbol, (SUM(CASE WHEN type='buy' THEN amount ELSE 0 END) - SUM(CASE WHEN type='sell' THEN amount ELSE 0 END)) as amount FROM transactions WHERE user_id = ?", session.get("user_id"))
+    rows = db.execute("SELECT symbol, (SUM(CASE WHEN type='buy' THEN amount ELSE 0 END) - SUM(CASE WHEN type='sell' THEN amount ELSE 0 END)) as amount FROM transactions WHERE user_id = ? GROUP BY symbol HAVING (SUM(CASE WHEN type='buy' THEN amount ELSE 0 END) - SUM(CASE WHEN type='sell' THEN amount ELSE 0 END)) > 0;", session.get("user_id"))
     if len(rows) < 1:
         return apology("Nothing to sell", 400)
     if request.method == "POST":
