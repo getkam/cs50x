@@ -163,7 +163,7 @@ def quote():
         print(quote)
         if quote == None:
             return apology("Invalid Symbol", 400)
-        return render_template("quoted.html", quote=usd(quote))
+        return render_template("quoted.html", quote=quote)
     else:
         return render_template("quote.html")
 
