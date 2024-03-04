@@ -55,7 +55,7 @@ def index():
     userEntry = db.execute("SELECT cash FROM users WHERE id = ?", session.get("user_id"))
     if len(userEntry) != 1:
         return apology("Internal Server Error", 500)
-
+    
     return render_template("index.html", portfolio=portfolio, sum=usd(sum), cash=usd(userEntry[0]['cash']))
 
 
