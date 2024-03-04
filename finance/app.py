@@ -209,7 +209,7 @@ def sell():
         amount_possesion = db.execute("SELECT SUM(amount) as amount FROM transactions WHERE user_id =? AND symbol = ?", session.get("user_id"), selected)
         new_saldo = int(user_cash[0]['cash'])+int(amount_possesion[0]['amount']) * quote['price']
         db.execute("UPDATE users SET cash = ? WHERE id = ?",new_saldo,session.get("user_id"))
-        db.execute("INSERT INTO transactions (user_id, symbol, amount, quote)VALUES (?, ?, ?, ?)", session.get("user_id"), selected, amount_possesion[0]['amount'], -1 * quote['price'])
+        db.execute("INSERT INTO transactions (user_id, symbol, amount, quote)VALUES (?, ?, ?, ?)", session.get("user_id"), selected, amount_possesion[0]['amount'], quote['price'])
         return redirect("/")
     else:
         return render_template("sell.html", rows=rows)
