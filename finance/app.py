@@ -42,14 +42,15 @@ def index():
     portfolio = []
     sum = 0
     for row in rows:
-        portfolioEntry = dict(row)
-        portfolioEntry['quote']=usd(row['quote'])
-        currentPrice = lookup(row['symbol'])
-        if not currentPrice:
-            portfolioEntry['current_quote'] = "Unavailable"
-        portfolioEntry['current_quote']=usd(currentPrice['price'])
-        portfolio.append(portfolioEntry)
-        sum = sum + row['amount'] * row['quote']
+        if row['amount']:
+            portfolioEntry = dict(row)
+            portfolioEntry['quote']=usd(row['quote'])
+            currentPrice = lookup(row['symbol'])
+            if not currentPrice:
+                portfolioEntry['current_quote'] = "Unavailable"
+            portfolioEntry['current_quote']=usd(currentPrice['price'])
+            portfolio.append(portfolioEntry)
+            sum = sum + row['amount'] * row['quote']
 
     userEntry = db.execute("SELECT cash FROM users WHERE id = ?", session.get("user_id"))
     if len(userEntry) != 1:
