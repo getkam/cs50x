@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Log In
+    C$50 Finance
 {% endblock %}
 
 {% block main %}
@@ -29,16 +29,16 @@
                 </tr>
             {% endfor %}
         {% endif %}
-        </table>
-        <hr>
-        <table class="quotes-table">
-            <tr>
-                <th>TOTAL SUM OF INVESTMENTS</th>
-                <td>{{ sum }}</td>
-            </tr>
-            <tr>
-                <th>REMAINING CASH</th>
-                <td>{{ cash }}</td>
-            </tr>
+    </table>
+    <hr>
+    <table class="quotes-table">
+        <tr>
+            <th>TOTAL SUM OF INVESTMENTS</th>
+            <td>{{ sum }}</td>
+        </tr>
+        <tr>
+            <th>REMAINING CASH</th>
+            <td>{{ cash }}</td>
+        </tr>
     </table>
 {% endblock %}
