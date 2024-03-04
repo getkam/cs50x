@@ -8,17 +8,18 @@
     <h1> Portfolio</h1>
 
     <table class="quotes-table">
+
+        {% if not portfolio %}
+            <div>
+                Time to go shoping...
+            </div>
+        {% else %}
         <tr>
             <th>SYMBOL</th>
             <th>AMOUNT</th>
             <th>BUYING PRICE</th>
             <th>CURRENT PRICE</th>
         </tr>
-        {% if not portfolio %}
-            <div>
-                Time to go shoping... 
-            </div>
-        {% else %}
             {% for entry in portfolio %}
                 <tr>
                     <td>{{ entry['symbol'] }}</td>
