@@ -14,14 +14,20 @@
             <th>BUYING PRICE</th>
             <th>CURRENT PRICE</th>
         </tr>
-        {% for entry in portfolio %}
-            <tr>
-                <td>{{ entry['symbol'] }}</td>
-                <td>{{ entry['amount'] }}</td>
-                <td>{{ entry['quote'] }}</td>
-                <td>{{ entry['current_quote'] }}</td>
-            </tr>
-        {% endfor %}
+        {% if not portfolio %}
+            <div>
+                Time to go shoping... 
+            </div>
+        {% else %}
+            {% for entry in portfolio %}
+                <tr>
+                    <td>{{ entry['symbol'] }}</td>
+                    <td>{{ entry['amount'] }}</td>
+                    <td>{{ entry['quote'] }}</td>
+                    <td>{{ entry['current_quote'] }}</td>
+                </tr>
+            {% endfor %}
+        {% endif %}
         </table>
         <hr>
         <table class="quotes-table">

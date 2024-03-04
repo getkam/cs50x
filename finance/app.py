@@ -203,7 +203,6 @@ def sell():
         quote = lookup(selected)
         if not quote:
             return apology("Something went wrong", 500)
-
         user_cash = db.execute("SELECT cash FROM users WHERE id= ?",session.get("user_id"))
         if len(user_cash) != 1:
             return apology("Something went wrong", 500)
