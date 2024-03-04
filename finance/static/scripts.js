@@ -11,13 +11,13 @@ function validatePassword(){
 function checkIfPasswordsAreMatching(){
 
     let password = document.getElementById("password").value;
-    let confirmpassword = document.getElementById("confirmpassword").value;
+    let confirmpassword = document.getElementById("confirmation").value;
 
     if (password != confirmpassword){
         alert('Passwords are not matching');
     }
-
 }
+
 function validateAmountOfShares(){
     let amount = parseInt(document.getELementById("amount").value)
 

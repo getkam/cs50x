@@ -181,7 +181,7 @@ def register():
         if len(password) < 5 or not re.search(r"[a-z]",password) or not re.search(r"[\d]",password):
             return apology("password must contain 5 characters including a letter and a digit", 400)
 
-        confirmpassword = request.form.get("confirmpassword")
+        confirmpassword = request.form.get("confirmation")
         if password !=confirmpassword :
             return apology("passwords are not the same", 400)
 
