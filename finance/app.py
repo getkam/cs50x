@@ -174,7 +174,7 @@ def register():
         username = request.form.get("username")
         if not username:
             return apology("must provide username", 400)
-        userDB = db.execute("SELECT id FROM users WHERE name = ?", username)
+        userDB = db.execute("SELECT id FROM users WHERE username = ?", username)
         if len(userDB) != 0:
             return apology("username exist", 400)
 
