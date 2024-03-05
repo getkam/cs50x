@@ -206,13 +206,19 @@ def sell():
         quote = lookup(selected)
         if not quote:
             return apology("Something went wrong", 500)
+        amount_to_sell = int(request.form.get('shares'))
+        amount_possesion = db.execute("SELECT SUM(amount) as amount FROM transactions WHERE user_id =? AND symbol = ?", session.get("user_id"), selected)
+        if amount_to_sell < 0:
+            return apology("Amount cannot be less than 0", 400)
+        if amount_to_sell > amount_possesion[0]['amount']:
+            return apology("Not enough shares in possession", 400)
         user_cash = db.execute("SELECT cash FROM users WHERE id= ?",session.get("user_id"))
         if len(user_cash) != 1:
             return apology("Something went wrong", 500)
-        amount_possesion = db.execute("SELECT SUM(amount) as amount FROM transactions WHERE user_id =? AND symbol = ?", session.get("user_id"), selected)
-        new_saldo = float(user_cash[0]['cash']) + int(amount_possesion[0]['amount']) * quote['price']
+
+        new_saldo = float(user_cash[0]['cash']) + int(amount_to_sell) * quote['price']
         db.execute("UPDATE users SET cash = ? WHERE id = ?",new_saldo,session.get("user_id"))
-        db.execute("INSERT INTO transactions (user_id, symbol, amount, quote, type)VALUES (?, ?, ?, ?, 'sell')", session.get("user_id"), selected, amount_possesion[0]['amount'], quote['price'])
+        db.execute("INSERT INTO transactions (user_id, symbol, amount, quote, type)VALUES (?, ?, ?, ?, 'sell')", session.get("user_id"), selected, amount_to_sell, quote['price'])
         return redirect("/")
     else:
         return render_template("sell.html", rows=rows)
