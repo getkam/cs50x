@@ -68,7 +68,7 @@ def buy():
         if not quote:
             return apology("Invalid symbol", 400)
 
-        amount = request.form.get("amount")
+        amount = request.form.get("shares")
         try:
             amount = int(amount)
         except ValueError:
