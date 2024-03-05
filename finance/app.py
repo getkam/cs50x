@@ -202,7 +202,7 @@ def sell():
     if len(rows) < 1:
         return apology("Nothing to sell", 400)
     if request.method == "POST":
-        selected = request.form.get('shares')
+        selected = request.form.get('symbol')
         quote = lookup(selected)
         if not quote:
             return apology("Something went wrong", 500)
