@@ -44,11 +44,11 @@ def index():
     for row in rows:
         if row['amount']:
             portfolioEntry = dict(row)
-            portfolioEntry['quote']=usd(row['quote'])
+            portfolioEntry['quote'] = usd(row['quote'])
             currentPrice = lookup(row['symbol'])
             if not currentPrice:
                 portfolioEntry['current_quote'] = "Unavailable"
-            portfolioEntry['current_quote']=usd(currentPrice['price'])
+            portfolioEntry['current_quote'] = usd(currentPrice['price'])
             portfolio.append(portfolioEntry)
             sum = sum + row['amount'] * row['quote']
 
@@ -85,11 +85,12 @@ def buy():
             return apology("Not enough money", 400)
 
         db.execute(
-            "INSERT INTO transactions (user_id, symbol, amount, quote, type)VALUES (?, ?, ?, ?, 'buy')", userId, quote['symbol'], amount, quote['price']
-            )
+            "INSERT INTO transactions (user_id, symbol, amount, quote, type)VALUES (?, ?, ?, ?, 'buy')", userId, quote[
+                'symbol'], amount, quote['price']
+        )
         db.execute(
             "UPDATE users SET cash = ? WHERE id = ?", userEntry[0]['cash'] - (amount * quote['price']), userId
-            )
+        )
         return redirect("/")
     else:
         return render_template("buy.html")
@@ -170,6 +171,7 @@ def quote():
     else:
         return render_template("quote.html")
 
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
@@ -182,11 +184,11 @@ def register():
             return apology("username exist", 400)
 
         password = request.form.get("password")
-        if len(password) < 5 or not re.search(r"[a-z]",password) or not re.search(r"[\d]",password):
+        if len(password) < 5 or not re.search(r"[a-z]", password) or not re.search(r"[\d]", password):
             return apology("password must contain 5 characters including a letter and a digit", 400)
 
         confirmpassword = request.form.get("confirmation")
-        if password !=confirmpassword :
+        if password != confirmpassword:
             return apology("passwords are not the same", 400)
 
         db.execute("INSERT INTO users (username, hash) VALUES (?,?)", username, generate_password_hash(password))
@@ -209,18 +211,20 @@ def sell():
         if not quote:
             return apology("Something went wrong", 500)
         amount_to_sell = int(request.form.get('shares'))
-        amount_possesion = db.execute("SELECT SUM(amount) as amount FROM transactions WHERE user_id =? AND symbol = ?", session.get("user_id"), selected)
+        amount_possesion = db.execute(
+            "SELECT SUM(amount) as amount FROM transactions WHERE user_id =? AND symbol = ?", session.get("user_id"), selected)
         if amount_to_sell < 0:
             return apology("Amount cannot be less than 0", 400)
         if amount_to_sell > amount_possesion[0]['amount']:
             return apology("Not enough shares in possession", 400)
-        user_cash = db.execute("SELECT cash FROM users WHERE id= ?",session.get("user_id"))
+        user_cash = db.execute("SELECT cash FROM users WHERE id= ?", session.get("user_id"))
         if len(user_cash) != 1:
             return apology("Something went wrong", 500)
 
         new_saldo = float(user_cash[0]['cash']) + int(amount_to_sell) * quote['price']
-        db.execute("UPDATE users SET cash = ? WHERE id = ?",new_saldo,session.get("user_id"))
-        db.execute("INSERT INTO transactions (user_id, symbol, amount, quote, type)VALUES (?, ?, ?, ?, 'sell')", session.get("user_id"), selected, amount_to_sell, quote['price'])
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", new_saldo, session.get("user_id"))
+        db.execute("INSERT INTO transactions (user_id, symbol, amount, quote, type)VALUES (?, ?, ?, ?, 'sell')",
+                   session.get("user_id"), selected, amount_to_sell, quote['price'])
         return redirect("/")
     else:
         return render_template("sell.html", rows=rows)
